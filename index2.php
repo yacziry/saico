@@ -62,16 +62,19 @@ $nombreTec = $user->nomAp($tec);
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o"
+                                        aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone"
+                                        aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
                             </div>
 
                             <!-- Top Header Content -->
-                            <div class="top-header-meta d-flex">                               
+                            <div class="top-header-meta d-flex">
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="index.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Cerrar sesion</span></a>
-                                </div>                               
+                                    <a href="index.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Cerrar
+                                            sesion</span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,7 +90,8 @@ $nombreTec = $user->nomAp($tec);
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand LOGO-->
-                        <!--a href="http://www.aicosc.com" class="nav-brand"--><img src="img/core-img/IC.png" alt=""><!--/a-->
+                        <!--a href="http://www.aicosc.com" class="nav-brand"--><img src="img/core-img/IC.png" alt="">
+                        <!--/a-->
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -111,15 +115,15 @@ $nombreTec = $user->nomAp($tec);
                                             <li><a href="formBuscarNr.php">Numero de reporte</a></li>
                                             <li><a href="formBuscarFr.php">Fecha</a></li>
                                             <li><a href="formBuscarPcl.php">Palabra clave</a></li>
-                                            <li><a href="formBuscarCl.php">Cliente</a></li>                                                                                
+                                            <li><a href="formBuscarCl.php">Cliente</a></li>
                                         </ul>
-                                    </li>                                                                                                
-                                </ul>                                  
+                                    </li>
+                                </ul>
                             </div>
                             <!-- Navbar End -->
                         </div>
                     </nav>
-                    <!-- Search Form -->                    
+                    <!-- Search Form -->
                 </div>
             </div>
         </div>
@@ -129,7 +133,8 @@ $nombreTec = $user->nomAp($tec);
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/4.jpg);">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
+            style="background-image: url(img/bg-img/4.jpg);">
             <h2>Bienvenido (a): <?php echo $nombreTec; ?></h2>
         </div>
         <div class="container">
@@ -139,24 +144,30 @@ $nombreTec = $user->nomAp($tec);
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index2.php"><i class="fa fa-home"></i> Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tecnicos</li>
-                        </ol>                                       
-                    </nav>											
-					<br>
-                    <div align="center"> 
+                        </ol>
+                    </nav>
+                    <br>
+                    <div align="center">
                         <h2>CARACTERIZACIÓN</h2>
-                        <a href="formCaracterizacion.php"><img src="img/index/caracterizacion.jpg" id="caracterizacion" width="300" height="300"></a>
-                        <a href="#"><img src="img/index/relevado_de_esfuerzos.jpg" id="relevado_de_esfuerzos" width="270" height="270" ></a>
-                        <a href="formDureza.php"><img src="img/index/dureza.jpg" id="dureza" width="300" height="300" width="300" height="300"></a>
-                        <a href="#"><img src="img/index/ensayo_de_tension.jpg" id="ensayo_de_tension"  ></a>
-                        <a href="formMetalografia.php"><img src="img/index/metalografia.jpg" id="metalografia" ></a>
-                        <a href="formAnalisisQuimico.php"><img src="img/index/analisis_quimico.jpg" id="analisis_quimico"  ></a><br>                        
+                        <a href="formCaracterizacion.php"><img src="img/index/caracterizacion.jpg" id="caracterizacion"
+                                width="300" height="300"></a>
+                        <a href="#"><img src="img/index/relevado_de_esfuerzos.jpg" id="relevado_de_esfuerzos"
+                                width="270" height="270"></a>
+                        <a href="formDureza.php"><img src="img/index/dureza.jpg" id="dureza" width="300" height="300"
+                                width="300" height="300"></a>
+                        <a href="#"><img src="img/index/ensayo_de_tension.jpg" id="ensayo_de_tension"></a>
+                        <a href="formMetalografia.php"><img src="img/index/metalografia.jpg" id="metalografia"></a>
+                        <a href="formAnalisisQuimico.php"><img src="img/index/analisis_quimico.jpg"
+                                id="analisis_quimico"></a><br>
                     </div>
                     <br>
-                    <div align="center"> 
+                    <div align="center">
                         <h2>PRUEBAS NO DESTRUCTIVAS</h2>
                         <br>
-                        <a href="formLiquidos.php"><img src="img/index/liquidos_penetrantes.jpg" id="liquidos_penetrantes"  ></a>
-                        <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg" id="particulas_magneticas"></a><br>
+                        <a href="formLiquidos.php"><img src="img/index/liquidos_penetrantes.jpg"
+                                id="liquidos_penetrantes"></a>
+                        <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg"
+                                id="particulas_magneticas"></a><br>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
@@ -179,7 +190,8 @@ $nombreTec = $user->nomAp($tec);
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget">
                             <div class="footer-logo mb-30">
-                                <!--a href="http://www.aicosc.com"--><img src="img/core-img/AICO.bmp" alt=""><!--/a-->
+                                <!--a href="http://www.aicosc.com"--><img src="img/core-img/AICO.bmp" alt="">
+                                <!--/a-->
                             </div>
                             <p>Buscanos en redes sociales</p>
                             <div class="social-info">
@@ -204,7 +216,7 @@ $nombreTec = $user->nomAp($tec);
                                     <li><a href="#">Calificacion</a></li>
                                     <li><a href="#">Inspectores CWI</a></li>
                                     <li><a href="#">Auditorias tecnicas a proveedores</a></li>
-                                    <li><a href="#">Verificacion de maquinas de soldar</a></li>                                    
+                                    <li><a href="#">Verificacion de maquinas de soldar</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -219,11 +231,11 @@ $nombreTec = $user->nomAp($tec);
 
                             <!-- Single Best Seller Products -->
                             <div class="single-best-seller-product d-flex align-items-center">
-                                <p>www.aicosc.com</p>                               
+                                <p>www.aicosc.com</p>
                             </div>
 
                             <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">                                
+                            <div class="single-best-seller-product d-flex align-items-center">
                             </div>
                         </div>
                     </div>
@@ -236,7 +248,8 @@ $nombreTec = $user->nomAp($tec);
                             </div>
 
                             <div class="contact-information">
-                                <p><span>Direccion: </span>Calle 33-A por 60 No.75 Colonia Justo sierra, Cd. del Carmen Campeche CP. 24110</p>
+                                <p><span>Direccion: </span>Calle 33-A por 60 No.75 Colonia Justo sierra, Cd. del Carmen
+                                    Campeche CP. 24110</p>
                                 <p><span>Telefono: </span> 938- 197- 8820</p>
                                 <p><span>Email: </span>especialista@aicosc.com</p>
                                 <p><span>Horario: </span> Lun - Dom: 24 hrs</p>
@@ -258,7 +271,9 @@ $nombreTec = $user->nomAp($tec);
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
                             <p>&copy;
-                            Copyright AICO - <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados</a>
+                                Copyright AICO - <script>
+                                    document.write(new Date().getFullYear());
+                                </script> Todos los derechos reservados</a>
                             </p>
                         </div>
                     </div>
