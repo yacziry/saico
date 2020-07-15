@@ -1,0 +1,350 @@
+﻿@media print {
+    div.saltopagina {
+        display: block;
+        page-break-before: always;
+		/* arriba, derecha, abajo, izq*/
+		margin: 0.2cm 0.5cm 0.5cm 1.7cm;
+
+    }
+	h6 {
+		counter-increment: numero_capitulo 1;
+	}
+	h6:before {
+		content: " de" counter(numero_capitulo);
+		counter-increment: numero_capitulo;
+	}
+} 
+caption {
+   padding: 0.3em;
+}
+.fields{
+	text-align: center;
+ }
+.cuerpo_2 table {
+	font-family: Arial;
+	font-size: 10px;
+}
+.cuerpo table{
+	font-family: Arial;
+	font-size: 11px;
+	border-spacing:0;
+	font-weight: bold;
+}
+#centrado {
+	text-align: center;
+}
+.encabezado table {
+	font-family: AriaL;
+	font-size:13px;
+	border-spacing:0;
+	border: 1px solid black;
+	border-collapse: collapse solid black;
+}
+#negrita {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;	
+}
+.m_table table {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	border-spacing:0;
+}
+.m_table table tr td {
+	text-align: center;
+	text-transform: uppercase;
+	text-align:center;
+	font-family: Arial;
+	font-size: 12px;
+}
+.m_table input{
+	text-align: center;
+	text-transform: uppercase;
+	text-align:center;
+	font-family: Arial;
+	font-size: 12px;
+}
+#imag {
+	font-family: Arial;
+	font-size: 11px;
+	text-align: center; 
+}
+.footer {
+    font-family: Arial;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+.sinborde {
+  border: 0;
+  font-family: Arial;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.texto{
+	font-family: Arial;
+    font-size: 12px;
+}
+.fields{
+	text-align: center;
+	background-color: #C0C0BF;
+ }
+ .img{
+ 	 table-layout: fixed;
+	 border-collapse: collapse;
+ }
+
+ .img td, th{
+ 	 word-wrap: break-word;
+ }
+ .fiel{
+	background-color: #C0C0BF;
+		font-weight: bold;
+ }
+ .composicion_q table tr td {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+.sombreado {
+	text-align: center;
+	background-color: #a5cbd8;
+	border: 0px;
+	font-family: Arial;
+	font-size: 14px;
+}
+#preview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+	background-color:;
+}
+#preview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+	border: 3px solid #000000;
+}
+#preview{
+	max-width: 464;
+}
+#preview img{
+	max-width: inherit;
+}
+#apreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+	background-color: ;
+}
+#apreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+	border: 3px solid #000000;
+}
+#apreview{
+	max-width: 464;
+}
+#apreview img{
+	max-width: inherit;
+}
+#bpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+	background-color: ;
+}
+#bpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+	border: 3px solid #000000;
+}
+#bpreview{
+	max-width: 464;
+}
+#bpreview img{
+	max-width: inherit;
+}
+#cpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+	background-color: ;
+}
+#cpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+	border: 3px solid #000000;
+}
+#cpreview{
+	max-width: 464;
+}
+#cpreview img{
+	max-width: inherit;
+}
+#dpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+	background-color: ;
+}
+#dpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+	border: 3px solid #000000;
+}
+#dpreview{
+	max-width: 464;
+}
+#dpreview img{
+	max-width: inherit;
+}
+select{	
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	appearance:none;
+	text-align-last:center;
+}
+#prev{
+	max-width: 464px;
+	border: 3px solid #000000;
+}
+#prev img{
+	max-width: inherit;
+	margin-left: auto;
+    margin-right: auto;
+    display: block;	
+}
+.borde input{
+	background-color: transparent;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: ;
+	text-transform: uppercase;
+	text-align:center;
+	font-family: Arial;
+	font-size: 12px;
+}
+#textA{
+	text-transform: uppercase;
+	text-align: center;
+	font-family: Arial;
+	font-size: 12px;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: ;
+	text-transform: uppercase;
+	text-align:center;
+}
+.sombreado {
+	text-align: center;
+	background-color: #a5cbd8;
+	border: 0px;
+	font-weight: bold;
+}
+.inputfinales{
+	font-family: Arial;
+	font-size: 11px;
+	border: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.obser{
+	resize: none;
+	border: 0;
+	font-family: AriaL;
+	font-size:13px;
+	text-transform: uppercase;
+	border: 3px solid black;
+	border-collapse: collapse solid black;
+}
+.inputfinales2 {
+    text-align: center;
+    font-family: Arial;
+    font-size: 11px;
+    border: 0;
+    text-transform: uppercase;
+	resize: none;
+}
+#resultadosImage {
+    width: 350px;
+    height: 470px;
+    object-fit: none;
+    background-color:;
+}
+
+#resultadosImage img {
+        max-width: inherit;
+        width: 350px;
+        height: 470px;
+        object-fit: cover;
+        border: 3px solid #000000;
+    }
+
+#resultadosImage {
+    max-width: 350px;
+}
+
+#resultadosImage img {
+        max-width: inherit;
+    }
+.norma{
+	color: red;
+	font-weight: bold;
+}
+/*imagenes der analisis quimico*/
+#imgAnalisis{
+	width: 350px;
+	height: 450px;
+	object-fit: none;
+}
+#imgAnalisis img{
+	max-width: inherit;
+	width: 350px;
+	height: 450px;
+	object-fit: cover;
+
+}
+#imgAnalisis{
+	max-width: 350;
+}
+#imgAnalisis img{
+	max-width: inherit;
+}
+#imgAnalisis2{
+	width: 450px;
+	height: 450px;
+	object-fit: none;
+}
+#imgAnalisis2 img{
+	max-width: inherit;
+	width: 450px;
+	height: 450px;
+	object-fit: cover;
+
+}
+#imgAnalisis2{
+	max-width: 450;
+}
+#imgAnalisis2 img{
+	max-width: inherit;
+}
+

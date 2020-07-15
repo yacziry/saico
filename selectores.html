@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#boton2").click(function () {
+            $("#parrafo1").hide();
+        });//click
+
+        $("#boton1").click(function () {
+            $("#parrafo1").show();
+        });//click2  
+
+        /*$("#texto").keyup(function () {
+            $.get("pruebajson.php",
+                function (data, status) {
+                    $("#parrafo1").html(data);
+            });*/
+        $("#texto").keyup(function () {
+            valor = $("#texto").val();
+            $.post("obtenerNormas.php",
+                {parametro: valor}, 
+                function (data, status) {
+                    aJSON = JSON.parse(data);
+                    cad = "";
+                    for (i = 0; i < aJSON.length; i++) {
+                        cad += "<tr><td>" + aJSON[i].norma + "</td><td>" + aJSON[i].c + "</td></tr>";
+                    }
+                    $("#tabla").html(cad);
+            });
+        /*$("#combo option ").keyup(function () {
+            valor = $("#combo").val();
+            $.post("obtenerNormas.php",
+                {parametro: valor},
+                function (data, status) {
+                    aJSON = JSON.parse(data);
+                    $("#texto").html(aJSON[0].norma);
+            });*/
+        });//click2 
+    });//ready
+</script>
+<body>
+    <button id="boton1">Mostrar</button><br />
+    <button id="boton2">Ocultar</button>
+
+    <input type="text" id="texto" /><br />
+    <select class="form-control" name="clNorma" id="combo" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <p>
+        Los datos personales ("Los Datos") solicitados por Desarrollo y Capacitación en Internet SA de CV ("DCInternet"), con domicilio en Altadena 26 Col. Nápoles CP 03810, México, D.F., son tratados con la finalidad de brindarle el servicio que nos solicita, conocer sus necesidades de productos o servicios y estar en posibilidad de ofrecerle los que más se adecuen a sus preferencias; comunicarle promociones, atender quejas y aclaraciones, y en su caso, tratarlos para fines compatibles con los mencionados en este Aviso de Privacidad y que se consideren análogos para efectos legales. En caso de formalizar con Usted la aceptación de algún producto o servicio ofrecido por DCInternet, sus Datos serán utilizados para el cumplimiento de las obligaciones derivadas de esa relación jurídica. Los Datos podrían ser transferidos a sociedades subsidiarias, filiales, afiliadas y controladoras del Responsable, dentro de territorio nacional o en el extranjero para los mismos fines.Los Datos serán tratados de conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento. La confidencialidad de los Datos está garantizada y los mismos están protegidos por medidas de seguridad administrativas, técnicas y físicas, para evitar su daño, pérdida, alteración, destrucción, uso, acceso o divulgación indebida. Únicamente las personas autorizadas tendrán acceso a sus Datos.En caso de existir alguna modificación al presente Aviso de Privacidad se hará de su conocimiento en nuestro sitio de Internet http://www.dcinternet.com.mx/En caso de existir alguna modificación al presente Aviso de Privacidad se hará de su conocimiento en nuestro sitio de Internet en la siguiente página: Aviso_de_PrivacidadPodrá ejercer los derechos de acceso, rectificación, cancelación u oposición al tratamiento de sus Datos, presentando su solicitud a través del correo electrónico: privacidad@dcinternet.com.mx o por escrito dirigido al área de comunicación corporativa en Altadena 26 Col. Nápoles CP 03810, México, D.F.
+    </p><br />
+    <input type="text" id="" /><br />
+    <p id="parrafo1"> </p><br />
+    <table border="1" id="tabla">
+    </table>
+
+    <br />
+
+</body>
+</html>

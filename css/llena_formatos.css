@@ -1,0 +1,255 @@
+
+header .profileLogo .logoPlaceholder {	
+	text-align: center;
+	
+}
+/*body{
+    background-image: url('/AICO/img/sliderfb2.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}*/
+.cabecera{
+	color: white;
+	text-align: center;
+}
+.borde {
+    border: 0;
+    resize: none;
+}
+ .fields{
+	text-align: center;
+	background-color: #C0C0BF;
+
+ }
+ .invisible{
+	background-color: #C0C0BF;
+	border: 0;
+ }
+
+.fieldd{
+	background-color: #C0C0BF;
+	border-color: black;
+
+ }
+ .composicion_q table tr td {
+	font-family: Arial;
+	font-weight: bold;
+	text-align: center;
+}
+.sombreado {
+	text-align: center;
+	font-weight: bold;
+	background-color: #a5cbd8;
+	border: 0px;
+	font-family: Arial;
+}
+#sombreado {
+	text-align: center;
+	font-weight: bold;
+	background-color: #C2E5B0;
+	font-family: Arial;
+}
+.sombreadoGris {
+	text-align: center;
+	background-color: #CAC3C3;
+	border: 0px;
+}
+.note {
+  opacity: 0.4;
+}
+#preview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+}
+#preview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+
+}
+#preview{
+	max-width: 464;
+}
+#preview img{
+	max-width: inherit;
+}
+#apreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+
+}
+#apreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+
+}
+#apreview{
+	max-width: 464;
+}
+#apreview img{
+	max-width: inherit;
+}
+#bpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+
+}
+#bpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+
+}
+#bpreview{
+	max-width: 464;
+}
+#bpreview img{
+	max-width: inherit;
+}
+#cpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+}
+#cpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+
+}
+#cpreview{
+	max-width: 464;
+}
+#cpreview img{
+	max-width: inherit;
+}
+#dpreview{
+	width: 464px;
+	height: 264px;
+	object-fit: none;
+}
+#dpreview img{
+	max-width: inherit;
+	width: 464px;
+	height: 264px;
+	object-fit: cover;
+
+}
+#dpreview{
+	max-width: 464;
+}
+#dpreview img{
+	max-width: inherit;
+}
+#imag {
+	font-family: Arial;
+	font-size: 12px;
+	text-align: center; 
+	font-weight: bold;
+}
+.footer{
+	font-family: Arial;
+	font-size: 11px;
+	text-align: center;
+	font-weight: bold;
+}
+#byetext{
+	resize: none;
+}
+.color {
+    text-align: center;
+    background-color: #c7fce2;
+}
+.textoVertical{
+      -webkit-transform: rotate(-90deg); 
+      -moz-transform: rotate(-90deg); 
+      -ms-transform: rotate(-90deg); 
+      -o-transform: rotate(-90deg); 
+      transform: rotate(-90deg); 
+      
+      -webkit-transform-origin: 50% 50%; 
+      -moz-transform-origin: 50% 50%; 
+      -ms-transform-origin: 50% 50%; 
+      -o-transform-origin: 50% 50%; 
+      transform-origin: 50% 50%; 
+      font-size: 14px;  
+	  font-family: Arial;
+      position: relative; 
+      top: 0px; 
+}
+.encabezadoUt{
+	text-align: center;
+	line-height: 200px;
+}
+#fotoMetalografia{
+  border-collapse: separate;
+  border: 3px solid;
+}
+p{
+	font-weight: bold;
+}
+#resultadosImage{
+	width: 350;
+	height: 450;
+	object-fit: none;
+}
+#resultadosImage img{
+	max-width: inherit;
+	width: 350;
+	height: 450;
+	object-fit: cover;
+
+}
+#resultadosImage{
+	max-width: 450;
+}
+#resultadosImage img{
+	max-width: inherit;
+}
+/*imagenes der analisis quimico*/
+#imgAnalisis{
+	width: 350px;
+	height: 450px;
+	object-fit: none;
+}
+#imgAnalisis img{
+	max-width: inherit;
+	width: 350px;
+	height: 450px;
+	object-fit: cover;
+
+}
+#imgAnalisis{
+	max-width: 350;
+}
+#imgAnalisis img{
+	max-width: inherit;
+}
+#imgAnalisis2{
+	width: 450px;
+	height: 450px;
+	object-fit: none;
+}
+#imgAnalisis2 img{
+	max-width: inherit;
+	width: 450px;
+	height: 450px;
+	object-fit: cover;
+
+}
+#imgAnalisis2{
+	max-width: 450;
+}
+#imgAnalisis2 img{
+	max-width: inherit;
+}

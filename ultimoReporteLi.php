@@ -1,0 +1,22 @@
+<?php
+//****************************************
+//LIQUIDOS
+//*****************************************
+//enviar parametros para buscar palabra clave
+require 'clientesDAO.php';
+require 'liquidosDAO.php';
+//convertimos el cliente en clave
+$c = new Cliente();
+$deCliente = $_POST[('cliente')];
+//$deCliente = "Corporativo Industrial y Comercial, S.A DE C.V.";
+$cl = $c->buscarClave($deCliente);
+//hacemos la consulta
+$li = new Liquidos();
+$resultado = $li->cliente($cl);
+
+if($resultado != false){
+	echo json_encode($resultado);
+}else{
+	echo json_encode(false);
+}
+?>

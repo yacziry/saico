@@ -1,0 +1,54 @@
+a img 
+{
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 35%;
+    border: 5px solid #eaeaea;
+}
+
+img:hover
+{
+    border: 5px solid #494747;
+}
+
+#caracterizacion
+{
+    padding: 20px 20px 35px;
+}
+
+#metalografia
+{
+    padding: 29px 42px 35px;
+}
+
+#analisis_quimico
+{
+    padding: 40px 11px 35px;
+}
+
+#dureza
+{
+    padding: 46px 77px;
+}
+
+#ensayo_de_tension
+{
+    padding: 20px 54px;
+}
+
+#particulas_magneticas
+{
+    padding: 28px 52px;
+}
+
+#liquidos_penetrantes
+{
+    padding: 15px 45px;
+}
+
+#ultrasonido_aws
+{
+    padding: 35px 10px;
+}
+

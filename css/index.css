@@ -1,0 +1,97 @@
+﻿
+
+input[type="text"], input[type="password"], input[type="date"], input[type="url"], input[type="number"],  {
+    width: 97%;
+    height: 45px;
+    margin: 0 0 15px;
+    padding: 10px 1%;
+    font-size: 18px;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.textIndex{
+    width: 97%;
+    height: 45px;
+    margin: 0 0 15px;
+    padding: 10px 1%;
+    font-size: 18px;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+#link{
+	font-weight: bold;
+	color: green;
+    text-align: center;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+    display: inline-block;
+    background: #2394D5;
+    padding: 5px 15px;
+    color: #fff;
+    border: 0 none;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+	opacity: .8;
+}
+
+.main input[type="text"], .main input[type="password"] {
+	text-align: center;
+	border:0;
+}
+.main input[type="submit"] {
+    width: 99%;
+    margin: 0 auto;
+    padding: 13px 0;
+}
+
+.main{
+    width: 40%;
+    background-color: rgba(255,255,255,.4);
+    text-align: center;
+	border-radius: 8px;
+	margin: 5% auto 0 auto;
+	padding: 3%;
+    position: relative;
+}
+
+.error{
+    background-color: #E74F4F;
+    position: absolute;
+    top: 0;
+    padding: 10px 0 ;
+    border-radius:  0 0 5px 5px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.vinculos{
+    font-size: 14px;
+}
+output{
+	color: red;
+	font-weight: bold;
+}
+p{
+	color: green;
+	font-weight: bold;
+}
+#sombreado {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #C2E5B0;
+    font-family: Arial;
+}
+
