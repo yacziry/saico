@@ -1,9 +1,9 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciones del PHP xd
 error_reporting(0);
 ini_set("session.cookie_lifetime","14400");
 ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+// Comienzo de la sesion
 session_start();
 
 if(isset($_SESSION['tecnico'])){
