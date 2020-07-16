@@ -157,7 +157,7 @@ $nombreTec = $user->nomAp($tec);
                         <br>
                         <a href="formLiquidos.php"><img src="img/index/liquidos_penetrantes.jpg" id="liquidos_penetrantes"  ></a>
                         <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg" id="particulas_magneticas"></a><br>
-                        <a href="formUltrasonido.php"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
+                        <a href="formUltrasonido.php"><img src="./img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                     </div>
