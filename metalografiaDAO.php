@@ -59,21 +59,6 @@ class Metalografia implements IEntidadM{
             echo "$e->getMessage()";
         }
     }
-    //funcion que busca ID
-    public function buscarClave($clave) { 
-        $sentencia = "SELECT * from tsreportemetalografia m join tsimagenes using(id) WHERE m.id = :clave";
-        try{
-            $stm = $this->db->prepare ($sentencia);
-            $stm->bindValue(':clave', $clave);
-            $stm->execute();
-            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-
-            return $registros;
-
-        }catch(Exception $e){
-            echo "$e->getMessage()";
-        }
-    }
     //funcion que busca el ultimo id por nr
     public function buscarID($clNumReporte) { 
         $sentencia = "SELECT id FROM tsreportemetalografia WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
@@ -134,33 +119,6 @@ class Metalografia implements IEntidadM{
         $sql2 = rtrim($sql,',');
         $sql2 .= "WHERE clNumReporte = '";
         $sql2 .= $clNumReporte."'";
-		//ECHO $sql2;
-        try{
-            $stmt = $this->db->prepare($sql2);
-            //$stmt->bindValue(':clNumReporte', $clNumReporte);
-            $stmt->execute();
-            if($stmt->rowCount()==1){
-               
-            return true;
-                return true;
-            }else{
-                return FALSE;     
-			}
-
-        }catch (PDOException $e){
-            echo $e->getMessage();  
-        }
-    }
-    public function modificarClave($id, $arrayMetalografia) {
-        $sql= "UPDATE tsreportemetalografia SET ";
-        //coonstruccion de la cadena sql como UPDATE
-        foreach($arrayMetalografia as $key => $value){
-            $sql .= $key . "='" .$value."'".",";     
-		}
-        //rtrim quita la ultima coma
-        $sql2 = rtrim($sql,',');
-        $sql2 .= "WHERE id = '";
-        $sql2 .= $id."'";
 		//ECHO $sql2;
         try{
             $stmt = $this->db->prepare($sql2);

@@ -137,22 +137,6 @@ class BuscarFormatos implements IEntidadbuscar{
             }//catch
 		}//if
 
-        if($tecnica == "Analisis Quimico"){
-		    $sentencia = "SELECT DISTINCT clContrato, clNumReporte,feTecnico, cacliente_clCliente from tsreporteanalisis WHERE feTecnico BETWEEN  :feInicio  AND  :feFin";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                $stm->bindValue(':feInicio', $feInicio);
-			    $stm->bindValue(':feFin', $feFin);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-
     }//buscarFeReporte
 
     //buscar por cliente de reporte
@@ -226,23 +210,9 @@ class BuscarFormatos implements IEntidadbuscar{
             }catch(Exception $e){
                 echo $e->getMessage();
             }//catch
-        }//if
-        if($tecnica == "Analisis Quimico"){
-		    $sentencia = "SELECT DISTINCT clContrato, clNumReporte,feTecnico, cacliente_clCliente from tsreporteanalisis WHERE cacliente_clCliente = :claveCL";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-			    $stm->bindValue(':claveCL', $claveCL);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-        }//if
+        }//if		
 	}
-    //Buscar reportes por numero de reporte
+
     public function buscarNumReporte($tecnica, $clNumReporte) {
 		if ($tecnica == "Caracterizacion"){
 			$sentencia = "SELECT * from tsreportecaracterizacion rc join tsimgcaracterizacion using(id) WHERE rc.clNumReporte = :clNumReporte ORDER by id ASC LIMIT 1";
@@ -319,120 +289,8 @@ class BuscarFormatos implements IEntidadbuscar{
                 echo $e->getMessage();
             }//catch
 		}//if
-
-        if ($tecnica == "Analisis Quimico"){
-		    $sentencia = "SELECT * from tsreporteanalisis WHERE clNumReporte = :clNumReporte ORDER by id ASC LIMIT 1";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clNumReporte', $clNumReporte);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-                
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
 		       
 	}
-    //Buscar reportes id para modificar
-    public function buscarClave($tecnica, $clave) {
-		if ($tecnica == "Caracterizacion"){
-			$sentencia = "SELECT * from tsreportecaracterizacion rc join tsimgcaracterizacion using(id) WHERE rc.id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo "$e->getMessage()";
-            }//catch
-		}//if
-        if ($tecnica == "Metalografia"){
-		    $sentencia = "SELECT * from tsreportemetalografia rm join tsimagenes using(id) WHERE rm.id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-        if ($tecnica == "Particulas"){
-		    $sentencia = "SELECT * from tsreporteparticulas rp join tsimgparticulas using(id) WHERE rp.id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-        if ($tecnica == "Liquidos"){
-		    $sentencia = "SELECT * from tsreporteliquidos rl join tsimgliquidos using(id) WHERE rl.id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-        if ($tecnica == "Dureza"){
-		    $sentencia = "SELECT * from tsreportedureza WHERE id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-
-        if ($tecnica == "Analisis Quimico"){
-		    $sentencia = "SELECT * from tsreporteanalisis WHERE id = :clave";
-            try{
-                $stm = $this->db->prepare ($sentencia);
-                //$stm->bindValue(':tecnica', $tecnica);
-			    $stm->bindValue(':clave', $clave);
-                $stm->execute();
-                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
-                
-                return $registros;
-
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }//catch
-		}//if
-		       
-	}
-
     //funcion que obtyiene clCliente y devuelve deCliente(prueba)
     public function buscar($clCliente){
         $sentencia = "SELECT deCliente FROM cacliente WHERE clCliente = :clCliente";

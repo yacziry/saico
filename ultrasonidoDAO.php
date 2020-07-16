@@ -45,7 +45,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
     //funcion que busca todos los ultimos registros insertados por nr
     public function buscar($clNumReporte) { 
-        $sentencia = "SELECT * FROM tsreportecaracterizacion WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
+        $sentencia = "SELECT * FROM tsreportebocadetubo WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
@@ -60,17 +60,16 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
 
     //funcion que busca el ultimo id por nr
-    public function buscarID($clNumReporte) { 
-        $sentencia = "SELECT id FROM tsreportecaracterizacion WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
+    public function buscarID() { 
+        $sentencia = "SELECT id FROM tsreporteliquidos ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
-            $stm->bindValue(':clNumReporte', $clNumReporte);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
             foreach ($registros as $r){
-                $lastId = $r->id;
-            }
-            return $lastId;
+                $id = $r->id;
+            } 
+            return $id;
 
         }catch(Exception $e){
             echo $e->getMessage();
@@ -79,7 +78,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
 
     //funcion que busca todos los registros insertados por noReporte
     public function buscarReporte($clNumReporte) { 
-        $sentencia = "SELECT * from tsreportecaracterizacion rc join tsimgcaracterizacion using(id) WHERE rc.clNumReporte = :clNumReporte";
+        $sentencia = "SELECT * from tsreportebocadetubo rc join tsimgbocadetubo using(id) WHERE rc.clNumReporte = :clNumReporte";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
@@ -94,7 +93,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
     //funcion que busca el ultimo clNumReporte por cliente
     public function cliente($cliente) { 
-        $sentencia = "SELECT clNumReporte from tsreportecaracterizacion WHERE cacliente_clCliente = :cliente ORDER BY id DESC LIMIT 1";
+        $sentencia = "SELECT clNumReporte from tsreportebocadetubo WHERE cacliente_clCliente = :cliente ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':cliente', $cliente);
@@ -109,7 +108,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
 
     public function modificar($clNumReporte, $arrayCaracterizacion) {
-        $sql= "UPDATE tsreportecaracterizacion SET ";
+        $sql= "UPDATE tsreportebocadetubo SET ";
         //coonstruccion de la cadena sql como UPDATE
         foreach($arrayCaracterizacion as $key => $value){
             $sql .= $key . "='" .$value."'".",";     

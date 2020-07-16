@@ -24,7 +24,6 @@ if(isset($_SESSION['tecnico'])){
         $cliente = $cl->buscar($row->cacliente_clCliente);
 		foreach ($forReportes as $row){
     ?>
-<div class="saltopagina">
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -222,17 +221,17 @@ if(isset($_SESSION['tecnico'])){
                 <td id="imag"></td>
             </tr>
             <tr>
-                <td height="264" style="border-width: 0px;">
-	                <div id="imag" height="264" align="center">
-	                <img id="ver" ><img src="<?php echo  $row->deGrano; ?>"></di>
+                <td style="border-width: 0px;">
+	            <div id="apreview"><img src="<?php echo  $row->deGrano; ?>"></div></td>
 	            </td>
                 <td></td>
                 <td style="border-width: 0px;">
-	                <div id="apreview"><img src="img/metalografia/<?php echo  $row->deImagen2; ?>"></div></td>
+	            <div id="apreview"><img src="img/metalografia/<?php echo  $row->deImagen2; ?>"></div></td>
             </tr>
             <tr>
-                <td id="imag">TAMA&Ntilde;O DE GRANO                 
-                </td>                 
+                <td id="imag" height="33">TAMA&Ntilde;O DE GRANO
+                    
+                </td>
                 <td></td>
                 <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
             </tr>
@@ -264,7 +263,6 @@ if(isset($_SESSION['tecnico'])){
         </table>
     </div><!--footer-->
 </div><!--center-->
-</div><!--saltoPagina-->
 <?php
 }
 ?>

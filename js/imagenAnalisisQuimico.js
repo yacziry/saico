@@ -34,20 +34,5 @@ document.getElementById("afile").onchange = function(e) {
 
     apreview.innerHTML = '';
     apreview.append(image);
-    var percent2 = 0;
-    timerId = setInterval(function() {
-        //increment progress bar
-        percent2 += 5;
-        $('.progress-bar').css('width', percent2+'%');
-        $('.progress-bar').attr('aria-valuenow', percent2);
-        $('.progress-bar').text(percent2+'%');
- 
-        //complete
-        if (percent2 == 100) {
-            clearInterval(timerId);
-            $('.information').show();
-        }
- 
-     }, 1000);//setInterval
   };
 }

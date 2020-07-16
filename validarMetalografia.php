@@ -61,7 +61,11 @@ if(isset($_SESSION['tecnico']) && isset($_POST)){
             include_once 'imagenesMetalografiaDAO.php';
             $ruta = "img/metalografia/";
             $size= $_FILES['deImagen']['size'];
-            
+            if($size > 350000){
+                
+	            exit("El archivo es muy grande");
+                //header("location:formMetalografia.php?msgC=El archivo es muy grande");
+            }else{
 	            include_once 'MetalografiaDAO.php';
                 $m = new Metalografia();
                 //obtener el lastid si se hizo el registro
@@ -84,6 +88,7 @@ if(isset($_SESSION['tecnico']) && isset($_POST)){
 		        }else{
                     header("location:formMetalografia.php?msgUser=No se guardaron los datos");
                 }
+		    }//si hubo registro
     }//sino hubo errores 
 
         header("location:formMetalografiaContinuar.php");

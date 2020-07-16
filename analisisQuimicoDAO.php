@@ -79,26 +79,10 @@ class AnalisisQuimico implements IEntidadAQ{
 
     //funcion que busca todos los registros insertados por noReporte
     public function buscarReporte($clNumReporte) { 
-        $sentencia = "SELECT * from tsreporteanalisis raq join tsimganalisis using(id) WHERE raq.clNumReporte = :clNumReporte";
+        $sentencia = "SELECT * from tsreporteanalisis rc join tsimgcaracterizacion using(id) WHERE rc.clNumReporte = :clNumReporte";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
-            $stm->execute();
-            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-
-            return $registros;
-
-        }catch(Exception $e){
-            echo "$e->getMessage()";
-        }
-    }
-
-    //funcion que busca ID
-    public function buscarClave($clave) { 
-        $sentencia = "SELECT * from tsreporteanalisis raq join tsimganalisis using(id) WHERE raq.id = :clave";
-        try{
-            $stm = $this->db->prepare ($sentencia);
-            $stm->bindValue(':clave', $clave);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
 
@@ -124,10 +108,10 @@ class AnalisisQuimico implements IEntidadAQ{
         }
     }
 
-    public function modificar($clNumReporte, $arrayAnalisisQuimico) {
+    public function modificar($clNumReporte, $arrayCaracterizacion) {
         $sql= "UPDATE tsreporteanalisis SET ";
         //coonstruccion de la cadena sql como UPDATE
-        foreach($arrayAnalisisQuimico as $key => $value){
+        foreach($arrayCaracterizacion as $key => $value){
             $sql .= $key . "='" .$value."'".",";     
 		}
         //rtrim quita la ultima coma
@@ -137,35 +121,6 @@ class AnalisisQuimico implements IEntidadAQ{
 		//ECHO $sql2;
         try{
             $stmt = $this->db->prepare($sql2);
-            //$stmt->bindValue(':clNumReporte', $clNumReporte);
-            $stmt->execute();
-            if($stmt->rowCount()==1){
-               
-            return true;
-                return true;
-            }else{
-                return FALSE;     
-			}
-
-        }catch (PDOException $e){
-            echo $e->getMessage();  
-        }
-    }
-
-    public function modificarClave($id, $arrayAnalisisQuimico) {
-        $sql= "UPDATE tsreporteanalisis SET ";
-        //coonstruccion de la cadena sql como UPDATE
-        foreach($arrayAnalisisQuimico as $key => $value){
-            $sql .= $key . "='" .$value."'".",";     
-		}
-        //rtrim quita la ultima coma
-        $sql2 = rtrim($sql,',');
-        $sql2 .= "WHERE id = '";
-        $sql2 .= $id."'";
-		//ECHO $sql2;
-        try{
-            $stmt = $this->db->prepare($sql2);
-            //$stmt->bindValue(':clNumReporte', $clNumReporte);
             $stmt->execute();
             if($stmt->rowCount()==1){
                
@@ -189,7 +144,3 @@ class AnalisisQuimico implements IEntidadAQ{
     }//__destruct
 
 }// classMetalografia
-/*$a = new AnalisisQuimico();
-$arrayAnalisisQuimico = array('clContrato'=>"hghg", 'deProyecto'=>"hgvh");
-$z = $a->modificar("123123", $arrayAnalisisQuimico);
-var_dump($z);*/

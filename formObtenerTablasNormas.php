@@ -13,7 +13,7 @@ $arreglo = $x->insertar($arrayNorma);
 if($arreglo){
 	echo json_encode($arreglo);
 }else{
-	echo json_encode(false);
+	return false;
 }
 
 //header("location: formBuscarNr.php");

@@ -37,6 +37,7 @@ if(isset($_SESSION['tecnico'])){
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -293,13 +294,13 @@ if(isset($_SESSION['tecnico'])){
                                         <td>Ni</td>
                                      </tr>
                                      <tr>
-                                        <td><input class="form-control" type="text" name="c"></td>
-                                        <td><input class="form-control" type="text" name="mn"></td>
-                                        <td><input class="form-control" type="text" name="p"></td>
-                                        <td><input class="form-control" type="text" name="s"></td>
-                                        <td><input class="form-control" type="text" name="si"></td>
-                                        <td><input class="form-control" type="text" name="cu"></td>
-                                        <td><input class="form-control" type="text" name="ni"></td>
+                                        <td><input class="form-control" type="text" name="deC"></td>
+                                        <td><input class="form-control" type="text" name="deMn"></td>
+                                        <td><input class="form-control" type="text" name="deP"></td>
+                                        <td><input class="form-control" type="text" name="deS"></td>
+                                        <td><input class="form-control" type="text" name="deSi"></td>
+                                        <td><input class="form-control" type="text" name="deCu"></td>
+                                        <td><input class="form-control" type="text" name="deNi"></td>
                                      </tr>
                                      <tr class="fields">
                                         <td>Cr</td>
@@ -311,10 +312,10 @@ if(isset($_SESSION['tecnico'])){
                                         <td>&nbsp;</td>
                                      </tr>
                                      <tr>
-                                        <td><input class="form-control" type="text" name="cr"></td>
-                                        <td><input class="form-control" type="text" name="mo"></td>
-                                        <td><input class="form-control" type="text" name="v"></td>
-                                        <td><input class="form-control" type="text" name="nb"></td>
+                                        <td><input class="form-control" type="text" name="deCr"></td>
+                                        <td><input class="form-control" type="text" name="deMo"></td>
+                                        <td><input class="form-control" type="text" name="deV"></td>
+                                        <td><input class="form-control" type="text" name="deNb"></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -327,9 +328,8 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                         </div>
                         <div align="center">
-                            <br>
 	                        <input id="file" type="file" name="deImagen1">
-	                        <div id="imgAnalisis" align="center"></div>                                 
+	                        <div id="imgAnalisis" align="center"></div></td>                                    
                         </div>  
                         <br>
                         <div class="form-row">
@@ -413,11 +413,7 @@ if(isset($_SESSION['tecnico'])){
                                 <input class="form-control" type="text" value="VISTA GENERAL DEL ELEMENTO" id="sombreado" disabled>
                             </div>
                         </div></div>
-                        <div align="center"> 
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                            <br>
+                        <div align="center">                           
 	                        <input id="afile" type="file" name="deImagen2">
 	                        <div id="imgAnalisis2" align="center"></div></td>
                         </div>

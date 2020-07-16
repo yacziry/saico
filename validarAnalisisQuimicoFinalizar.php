@@ -41,51 +41,52 @@ if(isset($_SESSION['tecnico']) && isset($_POST)){
         header("location:formAnalisisQuimico.php?msgC=Descripcion no debe estar vacio");
 	}else{
         //creamos array con todos los datos procesados
-        $arrayAnalisisQuimico = array('clContrato'=>$_POST['clContrato'],'deProyecto'=>$_POST['deProyecto'],'clOrdenTrabajo'=>$_POST['clOrdenTrabajo'],
-            'clFolio'=>$_POST['clFolio'],'deIsometrico'=>$_POST['deIsometrico'],'clNumReporte'=>$_POST['clNumReporte'],'feTecnico'=>$_POST['feTecnico'],
-            'deLugar'=>$_POST['deLugar'],'clPartida'=>$_POST['clPartida'],'deTrazabilidad'=>$_POST['deTrazabilidad'],'deTubEstruc'=>$_POST['deTubEstruc'],
-            'deDescripcion'=>$_POST['deDescripcion'],'deMarca'=>$_POST['deMarca'],'deModelo'=>$_POST['deModelo'],'deSerie'=>$_POST['deSerie'],'c'=>$_POST['c'],
-            'mn'=>$_POST['mn'],'p'=>$_POST['p'],'s'=>$_POST['s'],'si'=>$_POST['si'],'cu'=>$_POST['cu'],'ni'=>$_POST['ni'],'cr'=>$_POST['cr'],
-            'mo'=>$_POST['mo'],'v'=>$_POST['v'],'nb'=>$_POST['nb'],'deObservaciones'=>$_POST['deObservaciones'],'clUsuario'=>$usuario,'feRegistro'=>$fecha,
-            'deElabora'=>$_POST['deElabora'],'deAprueba'=>$_POST['deAprueba'],'cacliente_clCliente'=>$_POST['deCliente'],'canorma_norma'=>$_POST['clNorma']);
-        //var_dump($arrayAnalisisQuimico);
-        $aq = new AnalisisQuimico();
-        $lastId = $aq->insertar($arrayAnalisisQuimico);
-        //creamos ruta para guardar img
-        $ruta = "img/analisisQuimico/";
-        $size= $_FILES['deImagen1']['size'];
+        $arrayAnalisisQuimico=array('clContrato'=>$_POST['clContrato'], 'deProyecto'=>$_POST['deProyecto'], 'clOrdenTrabajo'=>$_POST['clOrdenTrabajo'],
+            'clFolio'=>$_POST['clFolio'], 'deIsometrico'=>$_POST['deIsometrico'], 'clNumReporte'=>$_POST['clNumReporte'],'feTecnico'=>$_POST['feTecnico'],
+            'deLugar'=>$_POST['deLugar'], 'clPartida'=>$_POST['clPartida'], 'deTrazabilidad'=>$_POST['deTrazabilidad'],
+            'deTubEstruc'=>$_POST['deTubEstruc'], 'deDescripcion'=>$_POST['deDescripcion'], 'deMarca'=>$_POST['deMarca'], 'deModelo'=>$_POST['deModelo'],
+            'deSerie'=>$_POST['deSerie'], 'deC'=>$_POST['deC'], 'deMn'=>$_POST['deMn'], 'deP'=>$_POST['deP'], 'deS'=>$_POST['deS'],'deSi'=>$_POST['deSi'],
+			'deCu'=>$_POST['deCu'],'deNi'=>$_POST['deNi'],'deCr'=>$_POST['deCr'],'deMo'=>$_POST['deMo'],'deV'=>$_POST['deV'],'deNb'=>$_POST['deNb'],
+            'deObservaciones'=>$_POST['deObservaciones'],'clUsuario'=>$usuario,'feRegistro'=>$fecha, 'deElabora'=>$_POST['deElabora'],
+			'deAprueba'=>$_POST['deAprueba'], 'cacliente_clCliente'=>$_POST['deCliente'], 'canorma_norma'=>$_POST['clNorma']);
+           
+            //creamos ruta para guardar img
+            $ruta = "img/analisisQuimico/";
+            $size= $_FILES['deImagen1']['size'];
                         
-        $aq = new AnalisisQuimico();
-        //obtener el lastid si se hizo el registro
-        $lastId = $aq->insertar($arrayAnalisisQuimico);
-        if($lastId){
-	        if(move_uploaded_file($_FILES['deImagen1']['tmp_name'], $ruta.$_FILES['deImagen1']['name']) && move_uploaded_file($_FILES['deImagen2']['tmp_name'], $ruta.$_FILES['deImagen2']['name'])){
-                $extension = ".".pathinfo($ruta.$_FILES['deImagen1']['name'], PATHINFO_EXTENSION);
-                $extension2 = ".".pathinfo($ruta.$_FILES['deImagen2']['name'], PATHINFO_EXTENSION);
-		        if(rename($ruta.$_FILES['deImagen1']['name'], $ruta.$fecha.$extension)){
-                    rename($ruta.$_FILES['deImagen2']['name'], $ruta.$fecha."-(02)".$extension2);
-		        }else{
-		            exit("No se cambiaron los nombres de los archivos");
-		        }
-                $imagen = new Imagen();
-		        $arreglo = array('id'=>$lastId,'clNumReporte'=>$_POST['clNumReporte'],'deImagen1'=>$fecha.$extension,'deImagen2'=>$fecha."-(02)".$extension2,'feRegistro'=>$fecha);
-		        $imagen->insertar($arreglo);
-	        }else{
-		        echo "error, no se movio";
-            }	                                           
-		}else{
-            //header("location:formCaracterizacion.php?msgUser=No se guardaron los datos");
-			echo "error, no se guardaron los datos";
-        }
-    }//sino hubo errores 
-    session_start();
-    //variable de sesion reporte
-    $reporteS = $_POST['clNumReporte'];
-    $_SESSION["reporteS"] = $reporteS;
-    //variable sesion norma
-    $clNorma = $_POST['clNorma'];
-    $_SESSION["clNorma"] = $clNorma;
-    header("location:formMostrarAnalisisQuimico.php");
+            $aq = new AnalisisQuimico();
+            //obtener el lastid si se hizo el registro
+            $lastId = $aq->insertar($arrayAnalisisQuimico);
+            //echo $lastId;
+            if($lastId){
+	            if(move_uploaded_file($_FILES['deImagen1']['tmp_name'], $ruta.$_FILES['deImagen1']['name']) && move_uploaded_file($_FILES['deImagen2']['tmp_name'], $ruta.$_FILES['deImagen2']['name'])){
+                    $extension = ".".pathinfo($ruta.$_FILES['deImagen1']['name'], PATHINFO_EXTENSION);
+                    $extension2 = ".".pathinfo($ruta.$_FILES['deImagen2']['name'], PATHINFO_EXTENSION);
+		            if(rename($ruta.$_FILES['deImagen1']['name'], $ruta.$fecha.$extension)){
+                        rename($ruta.$_FILES['deImagen2']['name'], $ruta.$fecha."-(02)".$extension2);
+		            }else{
+		                exit("No se cambiaron los nombres de los archivos");
+		            }
+                    $imagen = new Imagen();
+		            $arreglo = array('id'=>$lastId,'clNumReporte'=>$_POST['clNumReporte'],'deImagen1'=>$fecha.$extension,'deImagen2'=>$fecha."-(02)".$extension2,'feRegistro'=>$fecha);
+		            $imagen->insertar($arreglo);
+	            }else{
+		            echo "error, no se movio";
+                }	                                           
+		    }else{
+                    //header("location:formCaracterizacion.php?msgUser=No se guardaron los datos");
+					echo "error, no se guardaron los datos";
+            }
+
+        }//sino hubo errores 
+        session_start();
+        //variable de sesion reporte
+        $reporteS = $_POST['clNumReporte'];
+        $_SESSION["reporteS"] = $reporteS;
+        //variable sesion norma
+        $clNorma = $_POST['clNorma'];
+        $_SESSION["clNorma"] = $clNorma;
+        //header("location:formCaracterizacionContinuar.php");
 		
 }else{
     header("location:notFound.html");
