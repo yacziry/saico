@@ -288,6 +288,21 @@ class BuscarFormatos implements IEntidadbuscar{
             }catch(Exception $e){
                 echo $e->getMessage();
             }//catch
+        }
+        if ($tecnica == "Ultrasonido"){
+		    $sentencia = "SELECT * from tsreportebocadetubo WHERE clNumReporte = :clNumReporte ORDER by id ASC LIMIT 1";
+            try{
+                $stm = $this->db->prepare ($sentencia);
+                //$stm->bindValue(':tecnica', $tecnica);
+			    $stm->bindValue(':clNumReporte', $clNumReporte);
+                $stm->execute();
+                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+                return $registros;
+
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }//catch
 		}//if
 		       
 	}

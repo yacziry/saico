@@ -32,6 +32,10 @@ switch ($cTecnica){
         $m  = new  BuscarNR();
         $m->BuscarDureza($cTecnica, $clNumReporte);
     break;
+     case "Ultrasonido": //Si la variable consulta vale ...
+        $m  = new  BuscarNR();
+        $m->BuscarUltrasonido($cTecnica, $clNumReporte);
+    break;
 }
 class BuscarNR{
     function BuscarMetalografia($cTecnica, $clNumReporte){
@@ -84,6 +88,17 @@ class BuscarNR{
 	    }else{
             echo json_encode(false);
 	    }
+    }
+
+    function BuscarUltrasonido($cTecnica, $clNumReporte){
+        $x  = new  BuscarFormatos();
+        $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
+        if($arreglo){
+            echo json_encode($arreglo);
+            //header("location:formMetalografia.php");
+	    }else{
+            echo json_encode(false);
+        }
     }
 }
 /*$a = new  BuscarNR();
