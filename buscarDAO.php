@@ -37,6 +37,8 @@ class BuscarFormatos implements IEntidadbuscar{
             //return false;  
 		//}
         if($tecnica == "Metalografia"){
+            $feInicio = 0;
+            $feFin = 0;
 		    $sentencia = "SELECT DISTINCT clContrato, clNumReporte,feTecnico, cacliente_clCliente from tsreportemetalografia WHERE feTecnico BETWEEN  :feInicio  AND  :feFin";
             try{
                 $stm = $this->db->prepare ($sentencia);
