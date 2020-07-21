@@ -45,7 +45,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
     //funcion que busca todos los ultimos registros insertados por nr
     public function buscar($clNumReporte) { 
-        $sentencia = "SELECT * FROM tsreportebocadetubo WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
+        $sentencia = "SELECT * FROM tsreportebocadetubo WHERE clNumReporte = ':clNumReporte' ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
