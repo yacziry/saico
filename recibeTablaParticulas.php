@@ -1,7 +1,7 @@
 <?php
 require 'particulasDAO.php';
-//require 'resultadoParticulasDAO.php';
-require 'particulasPRUEBA.php';
+require 'resultadoParticulasDAO.php';
+//require 'particulasPRUEBA.php';
 
 $dePieza = $_POST['pieza'];
 $deJunta = $_POST['junta'];
@@ -19,7 +19,7 @@ foreach ($ultimoRegistro as $row){
 	$clNumReporte = $row->clNumReporte;
 }
 
-$resultadoParticulas=array('dePieza'=>$dePieza,'clNumReporte'=>$clNumReporte,'deJunta'=>$deJunta, 'deLongitud'=>$deLongitud,
+$resultadoParticulas=array('clNumReporte'=>$clNumReporte,'dePieza'=>$dePieza,'deJunta'=>$deJunta, 'deLongitud'=>$deLongitud,
 'deDiscontinuidad'=>$deDiscontinuidad, 'deEvaluacion'=>$deEvaluacion, 'deObservaciones'=>$deObservaciones, 'tsReporteParticulas_id'=>$id);
 //var_dump($resultadoParticulas);
 

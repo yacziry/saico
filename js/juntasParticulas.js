@@ -19,12 +19,12 @@ $(document).ready(function () {
         }
     });
     //inserta renglon combinado dinamico
-    $("#combinar").on('click', function () {
+    $("#").on('click', function () {
         count++;
         var nuevaFila = "<tr>";
         for (var i = 0; i < 1; i++) {
-            // aÒadimos las columnas
-            nuevaFila += "<td colspan='5' class='pieza'><input size='120' value='pieza: '></td>";
+            // a√±adimos las columnas
+            nuevaFila += "<td colspan='5' class='pieza'><input name='pieza[]' size='120' value='pieza: '></td>";
         }
         nuevaFila += "<td>";
         nuevaFila += "</tr>";
@@ -32,6 +32,57 @@ $(document).ready(function () {
         $("#tablaReportes").append(nuevaFila);
         }
     });
+<<<<<<< HEAD
+
+    $('#insertarPieza').on('click', function () {
+        var pieza = $('#pieza').val();
+        $('.pieza input').each(function () {
+            var pieza = $(this).val();
+            alert(junta);
+       });
+        $('.junta input').each(function () {
+             var junta = $(this).val();
+             //alert(junta);
+        });
+        $('.longitud input').each(function () {
+             var longitud = $(this).val();
+             //alert(longitud);
+        });
+        $('.discontinuidad input').each(function () {
+             var discontinuidad = $(this).val();
+             //alert(discontinuidad);
+        });
+        $('.evaluacion input').each(function () {
+             var evaluacion = $(this).val();
+             //alert(evaluacion);
+        });
+        $('.observaciones input').each(function () {
+             var observaciones = $(this).val();
+             //alert(observaciones);
+        });
+            $.ajax({
+                type: 'POST',
+                url: 'recibeTablaParticulas.php',
+                data: jQuery('#tablaResultado').serialize(),
+                cache: false,
+                success: function (data) {
+                    //$("#resultado").load('formParticulas.php');
+                    $("#resultado").load(" #resultado");
+                //mostrar lo que recibimos
+                console.log(data);
+                }
+            });
+    });//pruebaON
+    $('#finalizar').on('click', function () {
+        var pieza = $('#pieza').val();
+        $('.pieza input').each(function () {
+            var pieza = $(this).val();
+            //alert(junta);
+       });
+        $('.junta input').each(function () {
+             var junta = $(this).val();
+             //alert(junta);
+=======
     var aPieza = Array();
     var aJuntas = Array();  
     var aLongitud = Array();
@@ -86,52 +137,37 @@ $(document).ready(function () {
                 //alert('Se agrego un valor nuevo ' + aLongitud);
                 //console.log(aLongitud);
 		    }
+>>>>>>> f366292e7f394ed27fc1c67f44fc8f226b12f1d4
         });
-        $(".discontinuidad input").each(function(){
-            var discontinuidad = $(this).val();
-            if(aDiscontinuidad.length > 12){
-                alert('Array lleno ' + aDiscontinuidad);
-		    }else{
-                aDiscontinuidad.push(discontinuidad);
-                //alert('Se agrego un valor nuevo ' + aDiscontinuidad)
-                //console.log(aDiscontinuidad);
-		    }
+        $('.longitud input').each(function () {
+             var longitud = $(this).val();
+             //alert(longitud);
         });
-        $(".evaluacion input").each(function(){
-            var evaluacion = $(this).val();
-            if(aEvaluacion.length > 12){
-                alert('Array lleno ' + aEvaluacion);
-		    }else{
-                aEvaluacion.push(evaluacion);
-                //alert('Se agrego un valor nuevo ' + aEvaluacion)
-                //console.log(aEvaluacion);
-		    }
+        $('.discontinuidad input').each(function () {
+             var discontinuidad = $(this).val();
+             //alert(discontinuidad);
         });
-        $(".observaciones input").each(function(){
-            var observaciones = $(this).val();
-            if(aObservaciones.length > 12){
-                alert('Array lleno ' + aObservaciones);
-		    }else{
-                aObservaciones.push(observaciones);
-                //alert('Se agrego un valor nuevo ' + aObservaciones)
-                //console.log(aObservaciones);
-		    }
+        $('.evaluacion input').each(function () {
+             var evaluacion = $(this).val();
+             //alert(evaluacion);
         });
-    });
-        
-    /*$("#prueba").on('click', function(){
-        $(".pieza input").each(function(){
-            var pieza = $(this).val();
-            if(aPieza.length > 12){
-                alert('Array lleno ' + aPieza);
-		    }else{
-                aPieza.push(pieza);
-                //alert('Se agrego un valor nuevo ' + aPieza)
-                //console.log(aJuntas);
-		    }
+        $('.observaciones input').each(function () {
+             var observaciones = $(this).val();
+             //alert(observaciones);
         });
-    });*/
-    //alert(aTotal);
-    //console.log(aPieza);
-    //console.log(aJuntas);
+            $.ajax({
+                type: 'POST',
+                url: 'recibeTablaParticulas.php',
+                data: jQuery('#tablaResultado').serialize(),
+                cache: false,
+                success: function (data) {
+                    //$("#resultado").load('formParticulas.php');
+                    $("#resultado").load(" #resultado");
+                //mostrar lo que recibimos
+                console.log(data);
+                }
+            });
+    });//pruebaON
+    
+    
 });

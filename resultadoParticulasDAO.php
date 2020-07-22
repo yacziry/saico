@@ -20,29 +20,47 @@ class ResultadoParticulas implements IEntidadR{
     }//__construct
 
     //funcion que inserta un array y devuelve un lastid
-    public function insertar($resultadoParticulas) {  
-		$sql="INSERT INTO tsresultadosparticulas(dePieza, clNumReporte, deJunta, deLongitud, deDiscontinuidad, deEvaluacion, deObservaciones, tsReporteParticulas_id) values (?,?,?,?,?,?,?,?)";
-        try{
-            //$stmt= $this->db->prepare($sql);
+    public function insertar($arreglo) {
+        try {
 
-            foreach($resultadoParticulas as $row){
-                $x = "(".$row.")".", ";
-                //$sql2 = rtrim($x, ',');
-                echo $x;
-                //$stmt->bindParam($x);            
-                //$stmt->execute();
+            $sql = "INSERT INTO tsresultadosparticulas (clNumReporte, dePieza, deJunta, "
+                    . " deLongitud, deDiscontinuidad, deEvaluacion, "
+                    . " deObservaciones, tsReporteParticulas_id ) "
+                    . " VALUES (:clNumReporte, :dePieza, :deJunta,"
+                    . " :deLongitud, :deDiscontinuidad, :deEvaluacion, "
+                    . " :deObservaciones,:tsReporteParticulas_id )";
+
+            $stmt = $this->db->prepare($sql);
+
+            $stmt->bindParam(':dePieza', $dePieza);
+            $stmt->bindParam(':clNumReporte', $clNumReporte);
+            $stmt->bindParam(':deJunta', $deJunta);
+            $stmt->bindParam(':deLongitud', $deLongitud);
+            $stmt->bindParam(':deDiscontinuidad', $deDiscontinuidad);
+            $stmt->bindParam(':deEvaluacion', $deEvaluacion);
+            $stmt->bindParam(':deObservaciones', $deObservaciones);
+            $stmt->bindParam(':tsReporteParticulas_id', $tsReporteParticulas_id);
+
+            for ($index = 0; $index < count($arreglo['deJunta']); $index++) {
+                $dePieza = $arreglo['dePieza'];
+                $clNumReporte = $arreglo['clNumReporte'];
+                $deJunta = $arreglo['deJunta'][$index];
+                $deLongitud = $arreglo['deLongitud'][$index];
+                $deDiscontinuidad = $arreglo['deDiscontinuidad'][$index];
+                echo $arreglo['deDiscontinuidad'][$index] . "<br>";
+                $deEvaluacion = $arreglo['deEvaluacion'][$index];
+                $deObservaciones = $arreglo['deObservaciones'][$index];
+                $tsReporteParticulas_id = $arreglo['tsReporteParticulas_id'];
+                $stmt->execute();
             }
-            /*$foranea = $this->db->lastInsertId();
-            if($stmt->rowCount()==1){
-                return $foranea;
-            }else{
-                return FALSE;     
-			}*/
+            echo "A todo dar... <br>";
 
-        }catch (PDOException $e){
-            echo $e->getMessage();  
+            return TRUE;
+        } catch (PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
+            $this->db = null;
+            return FALSE;
         }
-        
     }
 
     //funcion que busca todos los ultimos registros insertados por nr

@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciones del PHP xd
 error_reporting(0);
 session_destroy();
 ?>
