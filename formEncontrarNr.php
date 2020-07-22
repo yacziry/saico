@@ -28,13 +28,13 @@ switch ($cTecnica){
         $m  = new  BuscarNR();
         $m->BuscarLiquidos($cTecnica, $clNumReporte);
     break;
-    case "Dureza": //Si la variable consulta vale ...
+     case "Dureza": //Si la variable consulta vale ...
         $m  = new  BuscarNR();
         $m->BuscarDureza($cTecnica, $clNumReporte);
     break;
-    case "Analisis Quimico": //Si la variable consulta vale ...
+     case "Ultrasonido": //Si la variable consulta vale ...
         $m  = new  BuscarNR();
-        $m->BuscarAnalisisQuimico($cTecnica, $clNumReporte);
+        $m->BuscarUltrasonido($cTecnica, $clNumReporte);
     break;
 }
 class BuscarNR{
@@ -64,6 +64,7 @@ class BuscarNR{
         $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
         if($arreglo){
             echo json_encode($arreglo);
+            //header("location:formMetalografia.php");
 	    }else{
             echo json_encode(false);
 	    }
@@ -73,6 +74,7 @@ class BuscarNR{
         $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
         if($arreglo){
             echo json_encode($arreglo);
+            //header("location:formMetalografia.php");
 	    }else{
             echo json_encode(false);
 	    }
@@ -82,20 +84,23 @@ class BuscarNR{
         $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
         if($arreglo){
             echo json_encode($arreglo);
+            //header("location:formMetalografia.php");
 	    }else{
             echo json_encode(false);
 	    }
     }
-    function BuscarAnalisisQuimico($cTecnica, $clNumReporte){
+
+    function BuscarUltrasonido($cTecnica, $clNumReporte){
         $x  = new  BuscarFormatos();
         $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
         if($arreglo){
             echo json_encode($arreglo);
+            //header("location:formMetalografia.php");
 	    }else{
             echo json_encode(false);
-	    }
+        }
     }
 }
 /*$a = new  BuscarNR();
-$c = $a->BuscarAnalisisQuimico("Analisis Quimico", "123123");
+$c = $a->BuscardUREZA("Dureza", "123");
 echo json_encode($c);*/

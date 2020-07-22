@@ -38,7 +38,7 @@ if(isset($_SESSION['tecnico'])){
 	     <!-- ICONO PESTAÑA -->
 		<link href="img/IC.png" rel="icon">
         <meta charset="utf8_general_ci">
-        <title>Informe de Caracterizacion</title>
+        <title>Informe de metalografia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/for_metalografia.css" type="text/css">
 		<script src="js/jquery/jquery-2.1.1.min.js"></script>

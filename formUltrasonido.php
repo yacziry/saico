@@ -25,7 +25,7 @@ if(isset($_SESSION['tecnico'])){
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
     <script src="js/normaReferencia.js"></script>
-    <script src="js/ultimoReporteUI.js"></script>
+    <script src="js/ultimoReporteUl.js"></script>
 
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -213,7 +213,7 @@ if(isset($_SESSION['tecnico'])){
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>No. de plano</label>
-                                    <input class="form-control" type="text" name="deIsometrico" required>
+                                    <input class="form-control" type="text" name="clPlano" required>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
@@ -231,10 +231,6 @@ if(isset($_SESSION['tecnico'])){
                                     <label>Fecha</label>
                                     <input class="form-control" type="date" name="feTecnico" required>
                                 </div>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar" required>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
@@ -316,7 +312,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="deModo">Modo</label>
-                                <input class="form-control" type="text" name="deModo" required>
+                                <input class="form-control" type="text" name="deModo"  disabled>
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
@@ -324,20 +320,20 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRetraso">Retraso</label>
-                                <input class="form-control" type="text" name="deRetraso" required>
+                                <input class="form-control" type="text" name="deRetraso"  disabled>
                             </div>
                             <div class="form-group col-md-12">
                                 <label>Rechazo:</label>
                                 <div class="ml-4 form-check form-check-inline">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="deRechazo"
-                                            id="deRechazo" value="ON" > ON
+                                            value="ON" > ON
                                     </label>
                                 </div>
                                 <div class="ml-4 form-check form-check-inline">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="deRechazo"
-                                            id="deRechazo" value="OFF" > OFF
+                                            value="OFF"  checked> OFF
                                     </label>
                                 </div>
 
@@ -345,15 +341,15 @@ if(isset($_SESSION['tecnico'])){
 
                             <div class="form-group col-md-4">
                                 <label for="deHazRecto">Haz Recto</label>
-                                <input class="form-control" type="text" name="deHazRecto" required>
+                                <input class="form-control" type="text" name="deHazRecto"  disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deHazAng">Haz Ang.</label>
-                                <input class="form-control" type="text" name="deHazAng" required>
+                                <input class="form-control" type="text" name="deHazAng"  disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="voltaje">Voltaje</label>
-                                <input class="form-control" type="text" name="voltaje" required>
+                                <input class="form-control" type="text" name="voltaje" value="Alto" required>
                             </div>
                             <!-- <div class="form-group"> Posible necesidad de uso
                                 <label for="sel1">Select list:</label>
@@ -396,7 +392,7 @@ if(isset($_SESSION['tecnico'])){
                                 </div>
                             </div>
                             <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal"
-                        onclick="validarRegistroUltrasonido.php">Enviar</button>
+                            onclick=this.form.action="validarUltrasonidoContinuar.php">Enviar</button>
                             <!-- <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="button" value="Insertar fila combinada" id="combinar" class="btn alazea-btn mt-15">
@@ -520,7 +516,7 @@ if(isset($_SESSION['tecnico'])){
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn alazea-btn mt-15" id="enviar" data-dismiss="modal"
-                        onclick="">Enviar</button>
+                        onclick="validarPartFinalizar.php">Enviar</button>
                 </div>
             </div>
         </div>

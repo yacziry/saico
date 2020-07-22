@@ -294,10 +294,6 @@ if(isset($_SESSION['tecnico'])){
                                     </td></table>
                                 </tr>
                             </table>
-                            <br>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
                         </div><!--DIV encabezado-->
                         <fieldset>
                             <legend align="center">FIRMAS</legend>

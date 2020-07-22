@@ -75,21 +75,6 @@ class Particulas implements IEntidadP{
         }
     }
 
-    //funcion que devuelve el ultimo id y clave para tabla resultados
-    public function ultimoID() { 
-        $sentencia = "SELECT id, clNumReporte FROM tsreporteparticulas ORDER BY id DESC LIMIT 1";
-        try{
-            $stm = $this->db->prepare ($sentencia);
-            $stm->execute();
-            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-            
-            return $registros;
-
-        }catch(Exception $e){
-            echo $e->getMessage();
-        }
-    }
-
     //funcion que busca todos los registros insertados por noReporte
     //IMPORTANTE, ESTA PENDIENTE UN JOIN PARA TABLA RESULTADOS
     public function buscarReporte($clNumReporte) { 
@@ -137,5 +122,5 @@ class Particulas implements IEntidadP{
 //**************************************************
 //PRUEBAS DE METODOS, INSTNCIAS LISTAS
 /*$a = new Particulas();
-$x = $a->ultimoID();
+$x = $a->buscarID();
 var_dump($x);*/

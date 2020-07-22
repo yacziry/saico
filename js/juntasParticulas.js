@@ -1,16 +1,16 @@
 // crear tabla dinamica de resultado particulas
-$(document).on('ready', function () {
+$(document).ready(function () {
     var count = 0;
     //inserta renglon dinamico
     $("#insertar").on('click', function () {
         count++;
         var nuevaFila = "<tr>";
 
-        nuevaFila += "<td class='junta'>" + "<input name='junta[]'>" + "</td>";
-        nuevaFila += "<td class='longitud'>" + "<input name='longitud[]'>" + "</td>";
-        nuevaFila += "<td class='discontinuidad'>" + "<input name='discontinuidad[]' value='Ninguna'>" + "</td>";
-        nuevaFila += "<td class='evaluacion'>" + "<input name='evaluacion[]' value='Aceptado'>" + "</td>";
-        nuevaFila += "<td class='observaciones'>" + "<input name='observaciones[]' value='---'>" + "</td>";
+        nuevaFila += "<td class='junta'>" + "<input>" + "</td>";
+        nuevaFila += "<td class='longitud'>" + "<input>" + "</td>";
+        nuevaFila += "<td class='discontinuidad'>" + "<input value='Ninguna'>" + "</td>";
+        nuevaFila += "<td class='evaluacion'>" + "<input value='Aceptado'>" + "</td>";
+        nuevaFila += "<td class='observaciones'>" + "<input value='---'>" + "</td>";
         //}
         nuevaFila += "</tr>";
         if(count <= 12){
@@ -32,45 +32,39 @@ $(document).on('ready', function () {
         $("#tablaReportes").append(nuevaFila);
         }
     });
-
-    $('#prueba').on('click', function () {
-        var pieza = $('#pieza').val();
-
-        $('.junta input').each(function () {
-             var junta = $(this).val();
-             //alert(junta);
-        });
-        $('.longitud input').each(function () {
-             var longitud = $(this).val();
-             //alert(longitud);
-        });
-        $('.discontinuidad input').each(function () {
-             var discontinuidad = $(this).val();
-             //alert(discontinuidad);
-        });
-        $('.evaluacion input').each(function () {
-             var evaluacion = $(this).val();
-             //alert(evaluacion);
-        });
-        $('.observaciones input').each(function () {
-             var observaciones = $(this).val();
-             //alert(observaciones);
-        });
-            $.ajax({
-                type: 'POST',
-                url: 'recibeTablaParticulas.php',
-                data: jQuery('#tablaResultado').serialize(), pieza,
-                cache: false,
-                success: function (data) {
-                //mostrar lo que recibimos
-                console.log(data);
-                }
+    var aPieza = Array();
+    var aJuntas = Array();  
+    var aLongitud = Array();
+    var aDiscontinuidad = Array();
+    var aEvaluacion = Array();
+    var aObservaciones = Array();
+    var aTotal = Array();
+    var aUnaPieza = Array();
+    piezaManual
+    $("#prueba").on('click', function(){
+        $(".pieza input").each(function(){
+            var pieza = $(this).val();
+            $(".junta input").each(function(){
+                var junta = $(this).val();
+                if(aPieza.length > 120){
+                    alert('Array lleno ' + aPieza);
+		        }else{
+                    aPieza.push(pieza);
+                    aPieza.push(junta);
+                    //alert('Se agrego un valor nuevo ' + aPieza)
+                    console.log(aPieza);
+		        }
             });
-    });//pruebaON
-    
-    
-    //$("#prueba").on('click', function(){
-               
+        });
+        var piezaManual = $("#piezaManual").val();
+        if(piezaManual){
+            aUnaPieza.push(piezaManual);
+            alert(aUnaPieza);
+		}else{
+            
+            alert("vacio");
+		}
+        
     /*$("#prueba").on('click', function(){
         $(".junta input").each(function(){
             var junta = $(this).val();
@@ -83,7 +77,7 @@ $(document).on('ready', function () {
                 //console.log(aJuntas);
 		    }
         });*/
-        /*$(".longitud input").each(function(){
+        $(".longitud input").each(function(){
             var longitud = $(this).val();
             if(aLongitud.length > 12){
                 alert('Array lleno ' + aLongitud);

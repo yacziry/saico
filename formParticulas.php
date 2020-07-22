@@ -175,7 +175,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                         </div>
                     </div>
-                    <form action="" method="POST" id="tablaResultado">
+                    <form action="validarParticulas.php" method="POST">
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -360,7 +360,7 @@ if(isset($_SESSION['tecnico'])){
                                         <td colspan="5" align="center">RESULTADOS</td>
                                     </tr>
                                     <tr class="fields">
-                                        <td colspan="5">PIEZA: <input type="text" id="pieza" name="pieza" class="borde" size="110" required></td>
+                                        <td colspan="5">PIEZA: <input type="text" id="piezaManual" name="pieza" class="borde" size="110" required></td>
                                     </tr>
                                     <tr class="fields">
                                         <th>JUNTA</th>
@@ -382,7 +382,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="button" value="Insertar otra pieza" id="combinar" class="btn alazea-btn mt-15">
+                                    <input type="button" value="Insertar fila combinada" id="combinar" class="btn alazea-btn mt-15">
                                 </div>
                             </div>
                         </div><!--form-row-->
