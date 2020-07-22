@@ -173,18 +173,18 @@ if (isset($_SESSION['tecnico'])) {
                     <?php
                     require 'clientesDAO.php';
                     $clientes = new Cliente();
-                    require 'ultrasonidoDAO.php';
-                    $cd = new bocaDeTubo();
+                    require 'bocaTuboDAO.php';
+                    $cd = new BocaDeTubo();
                     $registros = $cd->buscar($reporteS);
                     foreach ($registros as $row) {
                     }
                     ?>
-                    <form action="" method="POST" enctype="multipart/form-data" name="f">
+                    <form action="" method="POST" enctype="multipart/form-data" >
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Cliente</label>
-                                    <select class="form-control" name="deCliente">
+                                    <select class="form-control" name="deCliente" disabled>
                                         <?php
                                         $c = $clientes->seleccionado($row->cacliente_clCliente);
                                         foreach ($c as $r) {
@@ -197,93 +197,93 @@ if (isset($_SESSION['tecnico'])) {
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Contrato</label>
-                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" required>
+                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="ex3">Proyecto</label>
-                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" required>
+                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>No. de plano</label>
-                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" required>
+                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" required>
+                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" required>
+                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" required>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
-                                <input class="form-control" type="text" name="clCodigo" value="<?php echo  $row->clCodigo; ?>" required>
+                                <input class="form-control" type="text" name="clCodigo" value="<?php echo  $row->clCodigo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Material</label>
-                                <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" required>
+                                <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" disabled>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required> <?php echo  $row->deDescripcion; ?></textarea>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" disabled> <?php echo  $row->deDescripcion; ?></textarea>
                             </div>
                             <hr width="9999">
                             <h2 class="cabeceraForm">Equipo</h2>
                             <br>
                             <div class="form-group col-md-4">
                                 <label for="deMarca">Marca</label>
-                                <input class="form-control" type="text" name="deMarca" value="<?php echo  $row->deMarca; ?>" required>
+                                <input class="form-control" type="text" name="deMarca" value="<?php echo  $row->deMarca; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deModelo">Modelo</label>
-                                <input class="form-control" type="text" name="deModelo" value="<?php echo  $row->deModelo; ?>" required>
+                                <input class="form-control" type="text" name="deModelo" value="<?php echo  $row->deModelo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs" value="<?php echo  $row->deNs; ?>" required>
+                                <input class="form-control" type="text" name="deNs" value="<?php echo  $row->deNs; ?>" disabled>
                             </div>
                             <hr width="1280">
                             <h2 class="cabeceraForm">Transductor</h2>
                             <br>
                             <div class="form-group col-md-4">
                                 <label for="deMarca2">Marca</label>
-                                <input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>" required>
+                                <input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deModelo2">Modelo</label>
-                                <input class="form-control" type="text" name="deModelo2" value="<?php echo  $row->deModelo2; ?>" required>
+                                <input class="form-control" type="text" name="deModelo2" value="<?php echo  $row->deModelo2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs2">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs2" value="<?php echo  $row->deNs2; ?>" required>
+                                <input class="form-control" type="text" name="deNs2" value="<?php echo  $row->deNs2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="deFrec">FREC</label>
-                                <input class="form-control" type="text" name="deFrec" value="<?php echo  $row->deFrec; ?>" required>
+                                <input class="form-control" type="text" name="deFrec" value="<?php echo  $row->deFrec; ?>" disabled>
                             </div>
                             <hr width="1280">
                             <h2 class="cabeceraForm">Acoplante</h2>
                             <br>
                             <div class="form-group col-md-4">
                                 <label for="deTipoAcoplante">Tipo</label>
-                                <input class="form-control" type="text" name="deTipoAcoplante" value="<?php echo  $row->deTipoAcoplante; ?>" required>
+                                <input class="form-control" type="text" name="deTipoAcoplante" value="<?php echo  $row->deTipoAcoplante; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs3">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs3" value="<?php echo  $row->deNs3; ?>" required>
+                                <input class="form-control" type="text" name="deNs3" value="<?php echo  $row->deNs3; ?>" disabled>
                             </div>
 
                         </div>
@@ -295,15 +295,15 @@ if (isset($_SESSION['tecnico'])) {
                             <br>
                             <div class="form-group col-md-3">
                                 <label for="deGanancia">Ganancia</label>
-                                <input class="form-control" type="text" name="deGanancia" value="<?php echo  $row->deGanancia; ?>" required>
+                                <input class="form-control" type="text" name="deGanancia" value="<?php echo  $row->deGanancia; ?>" disabled>
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deTipo">Tipo</label>
-                                <input class="form-control" type="text" name="deTipo" value="<?php echo  $row->deTipo; ?>" required>
+                                <input class="form-control" type="text" name="deTipo" value="<?php echo  $row->deTipo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRango">Rango</label>
-                                <input class="form-control" type="text" name="deRango" value="<?php echo  $row->deRango; ?>" required>
+                                <input class="form-control" type="text" name="deRango" value="<?php echo  $row->deRango; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="deModo">Modo</label>
@@ -311,7 +311,7 @@ if (isset($_SESSION['tecnico'])) {
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
-                                <input class="form-control" type="text" name="deNivelDac" value="<?php echo  $row->deNivelDac; ?>" required>
+                                <input class="form-control" type="text" name="deNivelDac" value="<?php echo  $row->deNivelDac; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRetraso">Retraso</label>
@@ -362,7 +362,7 @@ if (isset($_SESSION['tecnico'])) {
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="voltaje">Voltaje</label>
-                                        <input class="form-control" type="text" name="voltaje" value="<?php echo  $row->voltaje; ?>" required>
+                                        <input class="form-control" type="text" name="voltaje" value="<?php echo  $row->voltaje; ?>" disabled>
                                     </div>
                                     <!-- <div class="form-group"> Posible necesidad de uso
                                 <label for="sel1">Select list:</label>

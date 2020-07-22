@@ -7,57 +7,58 @@ session_start();
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+include_once 'bocaTuboDAO.php';
 
 if (isset($_SESSION['tecnico']) && isset($_POST)) {
 
         if (empty($_POST['deCliente'])) {
-                header("location:formUltrasonido.php?msgC=El valor de cliente no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=El valor de cliente no debe estar vacio");
         } elseif (empty($_POST['feTecnico'])) {
-                header("location:formUltrasonido.php?msgC=El nombre del contrato no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=El nombre del contrato no debe estar vacio");
         } elseif (empty($_POST['deLugar'])) {
-                header("location:formUltrasonido.php?msgC=El nombre del proyecto no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=El nombre del proyecto no debe estar vacio");
         } elseif (empty($_POST['clContrato'])) {
-                header("location:formUltrasonido.php?msgC=Num de plano no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Num de plano no debe estar vacio");
         } elseif (empty($_POST['deProyecto'])) {
-                header("location:formUltrasonido.php?msgC=Num de reporte no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Num de reporte no debe estar vacio");
         } elseif (empty($_POST['clNumReporte'])) {
-                header("location:formUltrasonido.php?msgC=Lugar no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Lugar no debe estar vacio");
         } elseif (empty($_POST['clPlano'])) {
-                header("location:formUltrasonido.php?msgC=Fecha no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Fecha no debe estar vacio");
         } elseif (empty($_POST['deDescripcion'])) {
-                header("location:formUltrasonido.php?msgC=Lugar no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Lugar no debe estar vacio");
         } elseif (empty($_POST['clCodigo'])) {
-                header("location:formUltrasonido.php?msgC=Código no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Código no debe estar vacio");
         } elseif (empty($_POST['deMaterial'])) {
-                header("location:formUltrasonido.php?msgC=Material no seleccionado");
+                header("location:formBocaTubo.php?msgC=Material no seleccionado");
         } elseif (empty($_POST['deMarca'])) {
-                header("location:formUltrasonido.php?msgC=Descripción no debe estar vacio");
+                header("location:formBocaTubo.php?msgC=Descripción no debe estar vacio");
         } elseif (empty($_POST['deModelo'])) {
-                header("location:formUltrasonido.php?msgC=Marca del equipo no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Marca del equipo no puedo estar vacio");
         } elseif (empty($_POST['deNs'])) {
-                header("location:formUltrasonido.php?msgC=Modelo del equipo no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Modelo del equipo no puedo estar vacio");
         } elseif (empty($_POST['deMarca2'])) {
-                header("location:formUltrasonido.php?msgC=Num de Serie no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Num de Serie no puedo estar vacio");
         } elseif (empty($_POST['deModelo2'])) {
-                header("location:formUltrasonido.php?msgC=Marca Transductor no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Marca Transductor no puedo estar vacio");
         } elseif (empty($_POST['deNs2'])) {
-                header("location:formUltrasonido.php?msgC=Modelo Transductor no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Modelo Transductor no puedo estar vacio");
         } elseif (empty($_POST['deFrec'])) {
-                header("location:formUltrasonido.php?msgC=Num de Serie Transductor no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Num de Serie Transductor no puedo estar vacio");
         } elseif (empty($_POST['deTipoAcoplante'])) {
-                header("location:formUltrasonido.php?msgC=Frecuencia Transductor no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Frecuencia Transductor no puedo estar vacio");
         } elseif (empty($_POST['deNs3'])) {
-                header("location:formUltrasonido.php?msgC=Tipo Acoplante no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Tipo Acoplante no puedo estar vacio");
         } elseif (empty($_POST['deGanancia'])) {
-                header("location:formUltrasonido.php?msgC=Num de serie Acoplante no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Num de serie Acoplante no puedo estar vacio");
         } elseif (empty($_POST['deTipo'])) {
-                header("location:formUltrasonido.php?msgC=Ganancia no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Ganancia no puedo estar vacio");
         } elseif (empty($_POST['deRango'])) {
-                header("location:formUltrasonido.php?msgC=Tipo Equipo no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Tipo Equipo no puedo estar vacio");
         } elseif (empty($_POST['deNivelDac'])) {
-                header("location:formUltrasonido.php?msgC=Rango Equipo no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Rango Equipo no puedo estar vacio");
         } elseif (empty($_POST['voltaje'])) {
-                header("location:formUltrasonido.php?msgC=Voltaje no puedo estar vacio");
+                header("location:formBocaTubo.php?msgC=Voltaje no puedo estar vacio");
                 // FALTA AGREGAR CAMPOS DE FIRMAS Y EMPRESA
         } else {
                 $usuario = $_SESSION['tecnico'];
@@ -98,12 +99,10 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         
                 );
                 //Insertar array en bd
-                include_once 'UltrasonidoDAO.php';
-                $p = new bocaDeTubo();
+                
+                $p = new BocaDeTubo();
                 $bocaDeTubo = $p->insertar($arraybocaDeTubo);
-                if ($bocaDeTubo) {
-                        $arrayPartResultado = array();
-                }
+                
                 //variable de sesion reporte
                 $reporteS = $_POST['clNumReporte'];
                 $_SESSION["reporteS"] = $reporteS;

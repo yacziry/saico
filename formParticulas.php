@@ -383,7 +383,7 @@ if(isset($_SESSION['tecnico'])){
                                     <input type="button" value="Insertar pieza" id="insertarPieza" class="btn alazea-btn mt-15">
                                 </div>
                             </div>
-                        </div><!--form-row-->
+                        </div><form-row-->
                         <br><br><br><br>
                         <fieldset>
                             <legend align="center">FIRMAS</legend>

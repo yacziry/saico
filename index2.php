@@ -152,7 +152,7 @@ $nombreTec = $user->nomAp($tec);
                                 width="300" height="300"></a>
                         <a href="#"><img src="img/index/relevado_de_esfuerzos.jpg" id="relevado_de_esfuerzos"
                                 width="270" height="270"></a>
-                        <a href="formDureza.php"><img src="img/index/dureza.jpg" id="dureza" width="300" height="300"
+                        <a href="formDureza.php"><img src="img/index/dureza.jpg" id="dureza"
                                 width="300" height="300"></a>
                         <a href="#"><img src="img/index/ensayo_de_tension.jpg" id="ensayo_de_tension"></a>
                         <a href="formMetalografia.php"><img src="img/index/metalografia.jpg" id="metalografia"></a>
@@ -167,7 +167,7 @@ $nombreTec = $user->nomAp($tec);
                                 id="liquidos_penetrantes"></a>
                         <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg"
                                 id="particulas_magneticas"></a><br>
-                        <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
+                        <a href="formBocaTubo.php"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                     </div>

@@ -361,7 +361,7 @@ if(isset($_SESSION['tecnico'])){
                                 </select>
                             </div> -->
                         </div>
-                        <div class="table-responsive" align="center">
+                        <!--div class="table-responsive" align="center">
                             <table border="1" align="center" id="resultado">
                                 <thead>
                                     <tr style="font-size: small" class="fields">
@@ -381,18 +381,18 @@ if(isset($_SESSION['tecnico'])){
                                         <th>Resultado</th>                     
                                     </tr>
                                 </thead>
-                                <!-- <tbody id="tablaReportes"> -->
+                                <!-- <tbody id="tablaReportes">
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="form-row" align="center" id="botonesDim">
-                            <div class="col-12 col-sm-6">
+                        </div-->
+                        <div class="form-row" align="center">
+                            <!--div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">          
                                 </div>
-                            </div>
+                            </div-->
                             <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal"
-                            onclick=this.form.action="validarUltrasonidoContinuar.php">Enviar</button>
+                            onclick=this.form.action="validarUltrasonidoContinuar.php">Registrar juntas</button>
                             <!-- <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="button" value="Insertar fila combinada" id="combinar" class="btn alazea-btn mt-15">
@@ -426,101 +426,7 @@ if(isset($_SESSION['tecnico'])){
     </div>
     <br>
     <!-- ##### Breadcrumb Area End ##### -->
-    <!-- ##### Modal Area Start ##### -->
-    <div class="modal fade" id="agregarModal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Agregar nueva norma</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label>Norma</label>
-                            <input type="text" class="form-control" id="norma" placeholder="Escribir aqui" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Dureza Brinell maxima</label>
-                            <input type="text" class="form-control" id="deBrinell_Max_modal" placeholder="Escribir aqui"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label>Tension minima</label>
-                            <input type="text" class="form-control" id="deKsi_Min_modal" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Cedencia</label>
-                            <input type="text" class="form-control" id="deCedencia" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Tension maxima</label>
-                            <input type="text" class="form-control" id="deKsi_Max" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>C</label>
-                            <input type="text" class="form-control" id="c_modal" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Mn</label>
-                            <input type="text" class="form-control" id="mn" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>P</label>
-                            <input type="text" class="form-control" id="p" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>S</label>
-                            <input type="text" class="form-control" id="s" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Si</label>
-                            <input type="text" class="form-control" id="si" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Cu</label>
-                            <input type="text" class="form-control" id="cu" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Ni</label>
-                            <input type="text" class="form-control" id="ni" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Cr</label>
-                            <input type="text" class="form-control" id="cr" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Mo</label>
-                            <input type="text" class="form-control" id="mo" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>V</label>
-                            <input type="text" class="form-control" id="v" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Nb</label>
-                            <input type="text" class="form-control" id="nb" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>N</label>
-                            <input type="text" class="form-control" id="n" placeholder="Escribir aqui" />
-                        </div>
-                        <div class="form-group">
-                            <label>Notas</label>
-                            <input type="text" class="form-control" id="deNotas" placeholder="Escribir aqui" />
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn alazea-btn mt-15" id="enviar" data-dismiss="modal"
-                        onclick="validarPartFinalizar.php">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
         <!-- Main Footer Area -->
@@ -653,5 +559,3 @@ if(isset($_SESSION['tecnico'])){
 </body>
 
 </html>
-
-<script src="js/imagenesCaracterizacion.js"></script>

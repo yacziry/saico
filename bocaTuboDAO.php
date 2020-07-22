@@ -9,7 +9,7 @@ interface IEntidadUl{ //Nombre de entidad sin cofirmar
     public function eliminar($x);    
 }//interface
 
-class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
+class BocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     private  $db;
     public function __construct() {
         $this->db=ConexionDB::getConexion();
@@ -45,7 +45,7 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
     //funcion que busca todos los ultimos registros insertados por nr
     public function buscar($clNumReporte) { 
-        $sentencia = "SELECT * FROM tsreportebocadetubo WHERE clNumReporte = ':clNumReporte' ORDER BY id DESC LIMIT 1";
+        $sentencia = "SELECT * FROM tsreportebocadetubo WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
@@ -58,7 +58,6 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
             echo $e->getMessage();
         }
     }
-
     //funcion que busca el ultimo id por nr
     public function buscarID() { 
         $sentencia = "SELECT id FROM tsreporteliquidos ORDER BY id DESC LIMIT 1";
@@ -143,3 +142,8 @@ class bocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }//__destruct
 
 }// classMetalografia
+
+/*$a = new BocaDeTubo();
+$clNumReporte = "1";
+$x = $a->buscar($clNumReporte);
+var_dump($x);*/
