@@ -177,12 +177,12 @@ if(isset($_SESSION['tecnico'])){
 		                foreach ($registros as $row){                        
                         }
                     ?>
-                    <form action="" method="POST">
+                    <form action="" method="POST" id="tablaResultado">
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Cliente</label>
-                                    <select class="form-control" name="deCliente">
+                                    <select class="form-control" name="deCliente" disabled>
                                             <?php                                       
                                             $c = $clientes->seleccionado($row->cacliente_clCliente);
                                             foreach ($c as $r){
@@ -195,55 +195,55 @@ if(isset($_SESSION['tecnico'])){
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Contrato</label>
-                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" required>
+                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="ex3">Proyecto</label>
-                                    <input class="form-control" type="text" name="deProyecto" required>
+                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Folio</label>
-                                    <input class="form-control" type="text" name="clFolio" required>
+                                    <input class="form-control" type="text" name="clFolio" value="<?php echo  $row->clFolio; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte" required>
+                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico" required>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-8">
                                 <div class="form-group">
                                     <label>Lugar</label>
-                                    <input class="form-control" type="text" name="deLugar" required>
+                                    <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Plano</label>
-                                    <input class="form-control" type="text" name="clPlano" required>
+                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <div class="form-group">
                                     <label>Descripcion</label>
-                                    <input class="form-control" type="text" name="deDescripcion" required>
+                                    <input class="form-control" type="text" name="deDescripcion" value="<?php echo  $row->deDescripcion; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Codigo</label>
-                                    <input class="form-control" type="text" name="clCod_Inspeccion" required>
+                                    <input class="form-control" type="text" name="clCod_Inspeccion" value="<?php echo  $row->clCod_Inspeccion; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -269,21 +269,21 @@ if(isset($_SESSION['tecnico'])){
                                 </tr>
                                 <tr>
                                     <td class="fieldd">PARTICULAS</td>
-                                    <td><input type="text" name="deMarca1" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deModelo1" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deLote1" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deTipo1" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deColor1" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deAplicacion1" class="borde" size="10" maxlength="13" required></td>
+                                    <td><input type="text" name="deMarca1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deMarca1; ?>" disabled></td>
+                                    <td><input type="text" name="deModelo1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deModelo1; ?>" disabled></td>
+                                    <td><input type="text" name="deLote1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deLote1; ?>" disabled></td>
+                                    <td><input type="text" name="deTipo1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deTipo1; ?>" disabled></td>
+                                    <td><input type="text" name="deColor1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deColor1; ?>" disabled></td>
+                                    <td><input type="text" name="deAplicacion1" class="borde" size="10" maxlength="13" value="<?php echo  $row->deAplicacion1; ?>" disabled></td>
                                 </tr>
                                 <tr>
                                     <td class="fieldd">CONTRASTANTE</td>
-                                    <td><input type="text" name="deMarca2" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deModelo2" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deLote2" class="borde" size="10" maxlength="13" required></td>
+                                    <td><input type="text" name="deMarca2" class="borde" size="10" maxlength="13" value="<?php echo  $row->deMarca2; ?>" disabled></td>
+                                    <td><input type="text" name="deModelo2" class="borde" size="10" maxlength="13" value="<?php echo  $row->deModelo2; ?>" disabled></td>
+                                    <td><input type="text" name="deLote2" class="borde" size="10" maxlength="13" value="<?php echo  $row->deLote2; ?>" disabled></td>
                                     <td><input type="text" name="deTipo2" class="borde" size="10" maxlength="13" value="NA" disabled></td>
-                                    <td><input type="text" name="deColor2" class="borde" size="10" maxlength="13" required></td>
-                                    <td><input type="text" name="deAplicacion2" class="borde" size="10" maxlength="13" required></td>
+                                    <td><input type="text" name="deColor2" class="borde" size="10" maxlength="13" value="<?php echo  $row->deColor2; ?>" disabled></td>
+                                    <td><input type="text" name="deAplicacion2" class="borde" size="10" maxlength="13" value="<?php echo  $row->deAplicacion2; ?>" disabled></td>
                                 </tr>
                                 <tr>
                                     <td class="fieldd">EQUIPO</td>
@@ -295,11 +295,11 @@ if(isset($_SESSION['tecnico'])){
                                 </tr>
                                 <tr>
                                     <td class="fieldd">YUGO</td>
-                                    <td><input type="text" name="deMarca3" class="borde" size="10" required></td>
-                                    <td><input type="text" name="deModelo3" class="borde" size="10" required></td>
-                                    <td><input type="text" name="deNs" class="borde" size="10" required></td>
-                                    <td id="ac" align="center"><input type="radio" name="deCorriente" class="borde" size="10" value="ac" required></td>
-                                    <td id="dc" align="center"><input type="radio" name="deCorriente" class="borde" size="10" value="dc" required></td>
+                                    <td><input type="text" name="deMarca3" class="borde" size="10" value="<?php echo  $row->deMarca3; ?>" disabled></td>
+                                    <td><input type="text" name="deModelo3" class="borde" size="10" value="<?php echo  $row->deModelo3; ?>" disabled></td>
+                                    <td><input type="text" name="deNs" class="borde" size="10" value="<?php echo  $row->deNs; ?>" disabled></td>
+                                    <td id="ac" align="center"><input type="radio" name="deCorriente" class="borde" size="10" value="ac" disabled></td>
+                                    <td id="dc" align="center"><input type="radio" name="deCorriente" class="borde" size="10" value="dc" disabled></td>
                                  </tr>
                             </table>                               
                         </div><!--responsive-->
@@ -308,43 +308,43 @@ if(isset($_SESSION['tecnico'])){
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Tipo de material</label>
-                                    <input class="form-control" type="text" name="deTipoMaterial" required>
+                                    <input class="form-control" type="text" name="deTipoMaterial" value="<?php echo  $row->deTipoMaterial; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Componente</label>
-                                    <input class="form-control" type="text" name="deComponente" required>
+                                    <input class="form-control" type="text" name="deComponente" value="<?php echo  $row->deComponente; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Condicion superficial</label>
-                                    <input class="form-control" type="text" name="deCondicion_Sup" required>
+                                    <input class="form-control" type="text" name="deCondicion_Sup" value="<?php echo  $row->deCondicion_Sup; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Temperatura</label>
-                                    <input class="form-control" type="text" name="deTemperatura" required>
+                                    <input class="form-control" type="text" name="deTemperatura" value="<?php echo  $row->deTemperatura; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Espesor</label>
-                                    <input class="form-control" type="text" name="deEspesor" required>
+                                    <input class="form-control" type="text" name="deEspesor" value="<?php echo  $row->deEspesor; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Tipo de luz</label>
-                                    <input class="form-control" type="text" name="deTipo_Luz" required>
+                                    <input class="form-control" type="text" name="deTipo_Luz" value="<?php echo  $row->deTipo_Luz; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Intensidad</label>
-                                    <input class="form-control" type="text" name="deIntensidad" required>
+                                    <input class="form-control" type="text" name="deIntensidad" value="<?php echo  $row->deIntensidad; ?>" disabled>
                                 </div>
                             </div>                        
                         </div><!--form-row-->
@@ -367,7 +367,7 @@ if(isset($_SESSION['tecnico'])){
                                     </tr>
                                 </thead>
                                 <tbody id="tablaReportes">
-                                    <td colspan="5"><input type="text" id="pieza" name="pieza" class="borde" placeholder="pieza" size="110" required></td>
+                                    <td colspan="5"><input type="text" id="pieza" name="pieza" class="borde" placeholder="pieza" size="110" ></td>
                                 </tbody>
                             </table>
                         </div>
@@ -389,26 +389,26 @@ if(isset($_SESSION['tecnico'])){
                             <div class="form-row">
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group">                                   
-                                        <input class="form-control" type="text" name="deFirma1" placeholder="Nombre..." required>
+                                        <input class="form-control" type="text" name="deFirma1"  value="<?php echo  $row->deFirma1; ?>" disabled>
                                         <br>
                                         <label>Nombre de la empresa</label>
-                                        <textarea class="form-control" type="text" name="deEmpresa1" style="resize:none;" rows="3">T&eacute;cnico N I/II SNT-TC-1A Asesor&iacute;a e Inspecci&oacute;n en Construcci&oacute;n Costa Fuera, S.C</textarea>
+                                        <textarea class="form-control" type="text" name="deEmpresa1" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa1; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group">                                   
-                                        <input class="form-control" type="text" name="deFirma2" placeholder="Nombre..." required>
+                                        <input class="form-control" type="text" name="deFirma2" value="<?php echo  $row->deFirma2; ?>" disabled>
                                         <br>
                                         <label>Nombre de la empresa</label>
-                                        <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3">Coordinador de control de calidad Propetrol</textarea>
+                                        <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa2; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group">                                    
-                                        <input class="form-control" type="text" name="deFirma3" placeholder="Nombre..." required>
+                                        <input class="form-control" type="text" name="deFirma3"  value="<?php echo  $row->deFirma3; ?>" disabled>
                                         <br>
                                         <label>Nombre de la empresa</label>
-                                        <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3">Ingeniero de campo Propetrol</textarea>
+                                        <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa3; ?></textarea>
                                     </div>
                                 </div>
                             </div><!--form-row-->
@@ -416,14 +416,14 @@ if(isset($_SESSION['tecnico'])){
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Registrar juntas" class="btn alazea-btn mt-15" id="" onclick=this.form.action="validarPartFinalizar.php">          
+                                    <input type="submit" value="Finalizar" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotPart.php">          
                                 </div>
                             </div>
-                            <!--div class="col-12 col-sm-6">
+                            <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Hacer otro registro" id="prueba" class="btn alazea-btn mt-15" onclick=this.form.action="validarParticulas.php">
+                                    <input type="submit" value="Hacer otro registro" id="nuevoRegistro" class="btn alazea-btn mt-15" onclick=this.form.action="formParticulasNR.php">
                                 </div>
-                            </!--div>
+                            </div>
                         </div>
                         <br>
                     </form>

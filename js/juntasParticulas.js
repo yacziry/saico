@@ -35,10 +35,6 @@ $(document).ready(function () {
 
     $('#insertarPieza').on('click', function () {
         var pieza = $('#pieza').val();
-        $('.pieza input').each(function () {
-            var pieza = $(this).val();
-            alert(junta);
-       });
         $('.junta input').each(function () {
              var junta = $(this).val();
              //alert(junta);
@@ -73,7 +69,6 @@ $(document).ready(function () {
             });
     });//pruebaON
     $('#finalizar').on('click', function () {
-        var pieza = $('#pieza').val();
         $('.pieza input').each(function () {
             var pieza = $(this).val();
             //alert(junta);
@@ -110,7 +105,44 @@ $(document).ready(function () {
                 console.log(data);
                 }
             });
-    });//pruebaON
-    
+    });//pruebaON*/
+    $('#nuevoRegistro').on('click', function () {
+        $('.pieza input').each(function () {
+            var pieza = $(this).val();
+            //alert(junta);
+       });
+        $('.junta input').each(function () {
+             var junta = $(this).val();
+             //alert(junta);
+        });
+        $('.longitud input').each(function () {
+             var longitud = $(this).val();
+             //alert(longitud);
+        });
+        $('.discontinuidad input').each(function () {
+             var discontinuidad = $(this).val();
+             //alert(discontinuidad);
+        });
+        $('.evaluacion input').each(function () {
+             var evaluacion = $(this).val();
+             //alert(evaluacion);
+        });
+        $('.observaciones input').each(function () {
+             var observaciones = $(this).val();
+             //alert(observaciones);
+        });
+            $.ajax({
+                type: 'POST',
+                url: 'recibeTablaParticulas.php',
+                data: jQuery('#tablaResultado').serialize(),
+                cache: false,
+                success: function (data) {
+                    //$("#resultado").load('formParticulas.php');
+                    $("#resultado").load(" #resultado");
+                //mostrar lo que recibimos
+                console.log(data);
+                }
+            });
+    });//pruebaON*/
     
 });

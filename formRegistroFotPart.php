@@ -1,9 +1,9 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciï¿½nes del PHP xd
 error_reporting(0);
 ini_set("session.cookie_lifetime","14400");
 ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+// Comienzo de la sesiï¿½n
 session_start();
 
 if(isset($_SESSION['tecnico'])){
@@ -268,10 +268,10 @@ if(isset($_SESSION['tecnico'])){
                                 <tr>
                                     <td><table width="970" border="0">                                   
                                             <tr>
-                                                <td width="470" height="300"><input id="file" type="file" name="deImagen1">
+                                                <td width="470" height="300"><input id="file" type="file" name="deImagen1" required>
 	                                            <div id="preview"></div>
                                                 </td>
-                                                <td width="470" height="300"><input  id="afile" type="file" name="deImagen2">
+                                                <td width="470" height="300"><input  id="afile" type="file" name="deImagen2" required>
 	                                            <div id="apreview"></div>
                                                 </td>
                                             </tr>
@@ -280,10 +280,10 @@ if(isset($_SESSION['tecnico'])){
 	                                            <td align="center"><input size="50" placeholder="Descripcion" name="deDescripcion2" class="sinborde"></td>
                                             </tr>
                                             <tr>
-                                                <td width="470" height="300"><input id="bfile" type="file" name="deImagen3">
+                                                <td width="470" height="300"><input id="bfile" type="file" name="deImagen3" required>
 	                                            <div id="bpreview">
 	                                            </div></td>
-                                                <td width="470" height="300"><input id="cfile" type="file" name="deImagen4">
+                                                <td width="470" height="300"><input id="cfile" type="file" name="deImagen4" required>
 	                                            <div id="cpreview">
 	                                            </div></td>
                                             </tr>
