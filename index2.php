@@ -72,8 +72,7 @@ $nombreTec = $user->nomAp($tec);
                             <div class="top-header-meta d-flex">
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="index.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Cerrar
-                                            sesion</span></a>
+                                    <a href="index.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Cerrar sesion</span></a>
                                 </div>
                             </div>
                         </div>
@@ -164,17 +163,11 @@ $nombreTec = $user->nomAp($tec);
                     <div align="center">
                         <h2>PRUEBAS NO DESTRUCTIVAS</h2>
                         <br>
-<<<<<<< HEAD
                         <a href="formLiquidos.php"><img src="img/index/liquidos_penetrantes.jpg"
                                 id="liquidos_penetrantes"></a>
                         <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg"
                                 id="particulas_magneticas"></a><br>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
-=======
-                        <a href="formLiquidos.php"><img src="img/index/liquidos_penetrantes.jpg" id="liquidos_penetrantes"  ></a>
-                        <a href="formParticulas.php"><img src="img/index/particulas_magneticas.jpg" id="particulas_magneticas"></a><br>
-                        <a href="formUltrasonido.php"><img src="./img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
->>>>>>> f366292e7f394ed27fc1c67f44fc8f226b12f1d4
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                         <a href="#"><img src="img/index/ultrasonido_aws.jpg" id="ultrasonido_aws"></a>
                     </div>

@@ -24,7 +24,7 @@ if(isset($_SESSION['tecnico'])){
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
-	<script src="js/juntasParticulas.js"></script>
+	<!--script src="js/juntasParticulas.js"></!--script>
     <script src="js/ultimoReportePa.js"></script>
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 

@@ -142,7 +142,7 @@ if(isset($_SESSION['tecnico'])){
                                             <li><a href="formBuscarCl.php">Cliente</a></li>                                                                                
                                         </ul>
                                     </li>
-                                </ul>     jj                                                            
+                                </ul>                                                                 
                             </div>
                             <!-- Navbar End -->
                         </div>
