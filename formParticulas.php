@@ -353,15 +353,12 @@ if(isset($_SESSION['tecnico'])){
                             <input type="button" class="btn btn-secondary" value="Agregar juntas">
                         </div>
                         <br-->
-                        <div class="table-responsive" align="center">
+                        <!--div class="table-responsive" align="center">
                             <table border="1" align="center" id="resultado">
                                 <thead>
                                     <tr class="fields">
                                         <td colspan="5" align="center">RESULTADOS</td>
-                                    </tr>
-                                    <tr class="fields">
-                                        <td colspan="5">PIEZA: <input type="text" id="pieza" name="pieza" class="borde" size="110" required></td>
-                                    </tr>
+                                    </tr>                                    
                                     <tr class="fields">
                                         <th>JUNTA</th>
                                         <th>LONGITUD EN m</th>
@@ -371,9 +368,10 @@ if(isset($_SESSION['tecnico'])){
                                     </tr>
                                 </thead>
                                 <tbody id="tablaReportes">
+                                    <td colspan="5"><input type="text" id="pieza" name="pieza" class="borde" placeholder="pieza" size="110" required></td>
                                 </tbody>
                             </table>
-                        </div>
+                        </!--div>
                         <div class="form-row" align="center" id="botonesDim">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -382,10 +380,11 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="button" value="Insertar otra pieza" id="combinar" class="btn alazea-btn mt-15">
+                                    <input type="button" value="Insertar pieza" id="insertarPieza" class="btn alazea-btn mt-15">
                                 </div>
                             </div>
                         </div><!--form-row-->
+                        <br><br><br><br>
                         <fieldset>
                             <legend align="center">FIRMAS</legend>
                             <div class="form-row">
@@ -418,14 +417,14 @@ if(isset($_SESSION['tecnico'])){
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Finalizar" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="validarPartFinalizar.php">          
+                                    <input type="submit" value="Registrar juntas" class="btn alazea-btn mt-15" id="" onclick=this.form.action="validarPartFinalizar.php">          
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
+                            <!--div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="" value="Registrar mas juntas" id="prueba" class="btn alazea-btn mt-15" onclick=this.form.action="">
+                                    <input type="submit" value="Hacer otro registro" id="prueba" class="btn alazea-btn mt-15" onclick=this.form.action="validarParticulas.php">
                                 </div>
-                            </div>
+                            </!--div>
                         </div>
                         <br>
                     </form>
