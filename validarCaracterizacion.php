@@ -73,7 +73,7 @@ if(isset($_SESSION['tecnico']) && isset($_POST)){
                 $c = new Caracterizacion();
                 //obtener el lastid si se hizo el registro
                 $lastId = $c->insertar($arrayCaracterizacion);
-                //echo $lastId;
+                echo $lastId;
                 if($lastId){
 	                if(move_uploaded_file($_FILES['deImagen']['tmp_name'], $ruta.$_FILES['deImagen']['name']) && move_uploaded_file($_FILES['deImagen2']['tmp_name'], $ruta.$_FILES['deImagen2']['name']) && move_uploaded_file($_FILES['deImagen3']['tmp_name'], $ruta.$_FILES['deImagen3']['name'])){
                         $extension = ".".pathinfo($ruta.$_FILES['deImagen']['name'], PATHINFO_EXTENSION);

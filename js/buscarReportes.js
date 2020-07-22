@@ -5,74 +5,6 @@ $(document).ready(function () {
         cTecnica = $("#tecnica option:selected").text();
     });//onchange
 
-    //Obtener ID para modificar
-    $('#clave').keyup(function (event) {
-        var clave = $('#clave').val();
-            $.post("modificarClave.php",
-                {
-                    tecnica: cTecnica,
-                    clave: clave
-                },
-                function (data, status) {
-                    aJSON = JSON.parse(data);
-                    cad = "";
-                    if(cTecnica == "Analisis Quimico") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveAQ.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-                    if(cTecnica == "Metalografia") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveMetalografia.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-                    if(cTecnica == "Caracterizacion") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveCaracterizacion.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-                    if(cTecnica == "Dureza") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveAQ.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-                    if(cTecnica == "Particulas") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveAQ.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-                    if(cTecnica == "Liquidos") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].id + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href=''><p id='link'>---</p></a></td><td><a href='formActualizarClaveAQ.php'><p id='link'>Actualizar</p></a></td></tr>";
-                            //asigno variable a numero de reporte
-                            //numReporte = aJSON[i].clNumReporte;
-                        }
-                        $("#sinRegistros").css("display", "none");
-                        $("#tablaReportes").html(cad);
-                    }
-            });//post 
-    });//onchange
-
     // OBTENER LOS ELEMNTOS DINAMICOS JQUERY
     $(document).on('click', '#ver', function(){       
         clNumReporte = $("#clNumReporte").val();      
@@ -150,9 +82,9 @@ $(document).ready(function () {
                 $("#sinRegistros").css("display", "none");
                 $("#tablaReportes").html(cad);
 
-                if(cTecnica == "Analisis Quimico") {
+                if(cTecnica == "Ultrasonido") {
                     for (i = 0; i < aJSON.length; i++) {
-                         cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='formMostrarAquimicoNR.php'><p id='link'>Ver<p/></button></td><td><a href='formActualizarAQ.php'><p id='link'>Actualizar</p></a></td></tr>";
+                         cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='formMostrarUltrasonidoNR.php'><p id='link'>Ver<p/></button></td><td><a href='formActualizarUltrasonido.php'><p id='link'>Actualizar</p></a></td></tr>";
                     }
                 }//ifliq
                 $("#sinRegistros").css("display", "none");
@@ -209,13 +141,6 @@ $(document).ready(function () {
                         }
                     $("#tablaReportes").html(cad);
                     }//Metalografiaif
-
-                    if(cTecnica == "Analisis Quimico") {
-                        for (i = 0; i < aJSON.length; i++) {
-                            cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar</p></a></td></tr>";
-                        }
-                    $("#tablaReportes").html(cad);
-                    }//Metalografiaif
         });//post
     });//click
     //JQuery para cliente 
@@ -264,14 +189,6 @@ $(document).ready(function () {
                 }//Caracterizacion
 
                 if(cTecnica == "Liquidos") {
-                    for (i = 0; i < aJSON.length; i++) {
-                    cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar<p></a></td></tr>";
-                }
-                $("#tablaReportes").html(cad);
-                $("#sinRegistros").hide();
-                }//Caracterizacion
-
-                if(cTecnica == "Analisis Quimico") {
                     for (i = 0; i < aJSON.length; i++) {
                     cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar<p></a></td></tr>";
                 }

@@ -23,6 +23,7 @@ if(isset($_SESSION['tecnico'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
+    <script src="js/validarImagenes.js"></script>
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
     <script src="js/ultimoReporteMe.js"></script>
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -121,8 +122,8 @@ if(isset($_SESSION['tecnico'])){
                                     </li>  
                                     <li><a href="#">Pruebas no destructivas</a>
                                         <ul class="dropdown">
-                                            <li><a href="formMetalografia.php">Particulas Magneticas</a></li>
-                                            <li><a href="formLiquidos.php">Liquidos Penetrantes</a></li>
+                                            <li><a href="llena_particulas.html">Particulas Magneticas</a></li>
+                                            <li><a href="llena_liquidos.html">Liquidos Penetrantes</a></li>
                                             <li><a href="">Ultrasonido AWS D1.1</a>
                                                 <ul class="dropdown">
                                                     <li><a href="">Toma de espesores</a></li>
@@ -350,11 +351,7 @@ if(isset($_SESSION['tecnico'])){
                                         <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
                                     </tr>
                                 </table>
-                                <br>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                </div>
-                                <br>
+                                <br><br>
                             </div><!--responsive-->
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -544,4 +541,4 @@ if(isset($_SESSION['tecnico'])){
 </body>
 </html>
 
-<script src="js/imgMetalografia.js"></script>
+<script src="/AICO/js/carga_imagen.js"></script>

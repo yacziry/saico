@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $(document).on('change', '#cliente', function (event) {
         cliente = $("#cliente option:selected").text();
-        $.post("ultimoReporteCa.php",
+        $.post("ultimoReporteUl.php",
             {
                 cliente: cliente
             },

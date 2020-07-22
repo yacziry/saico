@@ -1,15 +1,15 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciï¿½nes del PHP xd
 error_reporting(0);
-ini_set("session.cookie_lifetime","14400");
-ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+ini_set("session.cookie_lifetime", "14400");
+ini_set("session.gc_maxlifetime", "14400");
+// Comienzo de la sesiï¿½n
 session_start();
 
-if(isset($_SESSION['tecnico'])){
+if (isset($_SESSION['tecnico'])) {
     $tec = $_SESSION['tecnico'];
-	$reporteS = $_SESSION['reporteS'];
-}else{
+    $reporteS = $_SESSION['reporteS'];
+} else {
     header("location:notFound.html");
     die();
 }
@@ -25,7 +25,7 @@ if(isset($_SESSION['tecnico'])){
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
-	<script src="js/normaReferencia.js"></script>
+    <script src="js/normaReferencia.js"></script>
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
@@ -41,7 +41,7 @@ if(isset($_SESSION['tecnico'])){
 
 <body>
     <!-- Preloader -->
-    
+
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -59,11 +59,11 @@ if(isset($_SESSION['tecnico'])){
                             </div>
 
                             <!-- Top Header Content -->
-                            <div class="top-header-meta d-flex">                               
+                            <div class="top-header-meta d-flex">
                                 <!-- Login -->
                                 <div class="login">
                                     <a href="index.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Cerrar sesion</span></a>
-                                </div>                               
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -112,9 +112,9 @@ if(isset($_SESSION['tecnico'])){
                                                     <li><a href="formDureza.php">Dureza</a></li>
                                                     <li><a href="llena_d_relevado.html">Relevado de esfuerzos</a></li>
                                                 </ul>
-                                            </li>                                            
+                                            </li>
                                         </ul>
-                                    </li>  
+                                    </li>
                                     <li><a href="#">Pruebas no destructivas</a>
                                         <ul class="dropdown">
                                             <li><a href="formParticulas.html">Particulas Magneticas</a></li>
@@ -125,7 +125,7 @@ if(isset($_SESSION['tecnico'])){
                                                     <li><a href="">Haz Angular</a></li>
                                                     <li><a href="">Clase X y R</a></li>
                                                 </ul>
-                                            </li>                                            
+                                            </li>
                                         </ul>
                                     </li>
                                     <li><a href="#" class="fa fa-search" aria-hidden="true"></a>
@@ -133,18 +133,23 @@ if(isset($_SESSION['tecnico'])){
                                             <li><a href="formBuscarNr.php">Numero de reporte</a></li>
                                             <li><a href="formBuscarFr.php">Fecha</a></li>
                                             <li><a href="formBuscarPcl.php">Palabra clave</a></li>
-                                            <li><a href="formBuscarCl.php">Cliente</a></li>                                                                                
+                                            <li><a href="formBuscarCl.php">Cliente</a></li>
                                         </ul>
                                     </li>
-                                </ul>                                                                 
+                                </ul>
                             </div>
                             <!-- Navbar End -->
-                        </div><!--menu-->
-                    </nav><!--nav-->
-                    <!-- Search Form -->                    
-                </div><!--container-->
-            </div><!--nav container-->
-        </div><!--menu-->
+                        </div>
+                        <!--menu-->
+                    </nav>
+                    <!--nav-->
+                    <!-- Search Form -->
+                </div>
+                <!--container-->
+            </div>
+            <!--nav container-->
+        </div>
+        <!--menu-->
     </header>
     <!-- ##### Header Area End ##### -->
 
@@ -161,30 +166,30 @@ if(isset($_SESSION['tecnico'])){
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href=""><i class="fa fa-home"></i> Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tecnicos</li>
-                        </ol>                                       
+                        </ol>
                     </nav>
-					<?php
-						require 'clientesDAO.php';
-                        $clientes = new Cliente();
-                        require 'caracterizacionDAO.php';
-                        $cd = new Caracterizacion();
-                        $registros = $cd->buscar($reporteS);
-		                foreach ($registros as $row){                        
-                        }
+                    <?php
+                    require 'clientesDAO.php';
+                    $clientes = new Cliente();
+                    require 'caracterizacionDAO.php';
+                    $cd = new Caracterizacion();
+                    $registros = $cd->buscar($reporteS);
+                    foreach ($registros as $row) {
+                    }
                     ?>
                     <form action="" method="POST" enctype="multipart/form-data" name="f">
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <label for="ex3" >Cliente</label>
+                                    <label for="ex3">Cliente</label>
                                     <select class="form-control" name="deCliente">
-                                    <?php                                       
+                                        <?php
                                         $c = $clientes->seleccionado($row->cacliente_clCliente);
-                                        foreach ($c as $r){
-                                            echo '<option value="'.$r->clCliente.'">'.$r->deCliente.'</option>';
-                                        } 
-                                    ?>
-                                    </select>    
+                                        foreach ($c as $r) {
+                                            echo '<option value="' . $r->clCliente . '">' . $r->deCliente . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -220,7 +225,7 @@ if(isset($_SESSION['tecnico'])){
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte"   value="<?php echo  $row->clNumReporte; ?>" required>
+                                    <input class="form-control" type="text" name="clNumReporte" required>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
@@ -243,15 +248,15 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Accesorio
-                                <input class="form-control" type="radio" name="deTubEstruc" value="Accesorio" required></label>
+                                    <input class="form-control" type="radio" name="deTubEstruc" value="Accesorio" required></label>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Tuberia
-                                <input class="form-control" type="radio" name="deTubEstruc"  value="Tuberia" required></label>
+                                    <input class="form-control" type="radio" name="deTubEstruc" value="Tuberia" required></label>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Estructural
-                                <input class="form-control" type="radio" name="deTubEstruc" value="Estructural" required></label>
+                                    <input class="form-control" type="radio" name="deTubEstruc" value="Estructural" required></label>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="comment">Descripcion del trabajo y notas:</label>
@@ -266,17 +271,17 @@ if(isset($_SESSION['tecnico'])){
                             <div class="table-responsive" align="center">
                                 <table class="table table-bordered" borde="1" align="center">
                                     <thead>
-                                    <tr>
-                                        <td colspan="6" class="fields" height="35">DATOS DEL EQUIPO</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fields">MARCA</td>
-                                        <td><input class="form-control" type="text" name="deMarca1" value="<?php echo  $row->deMarca1; ?>"></td>
-                                        <td class="fields">MODELO</td>
-                                        <td><input class="form-control" type="text" name="deModelo1" value="<?php echo  $row->deModelo1; ?>"></td>
-                                         <td class="fields">NO.SERIE</td>
-                                        <td><input class="form-control" type="text" name="deSerie1" value="<?php echo  $row->deSerie1; ?>"></td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="6" class="fields" height="35">DATOS DEL EQUIPO</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fields">MARCA</td>
+                                            <td><input class="form-control" type="text" name="deMarca1" value="<?php echo  $row->deMarca1; ?>"></td>
+                                            <td class="fields">MODELO</td>
+                                            <td><input class="form-control" type="text" name="deModelo1" value="<?php echo  $row->deModelo1; ?>"></td>
+                                            <td class="fields">NO.SERIE</td>
+                                            <td><input class="form-control" type="text" name="deSerie1" value="<?php echo  $row->deSerie1; ?>"></td>
+                                        </tr>
                                 </table>
                                 <br>
                                 <table borde="1" class="table table-bordered">
@@ -286,43 +291,42 @@ if(isset($_SESSION['tecnico'])){
                                     <tr>
                                         <td><input class="form-control" type="text" name="numDureza1" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
                                         <td><input class="form-control" type="text" name="numDureza2" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-                                        <td><input class="form-control" type="text" name="numDureza3"  onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-                                        <td><input class="form-control" type="text" name="numDureza4"  onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
+                                        <td><input class="form-control" type="text" name="numDureza3" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
+                                        <td><input class="form-control" type="text" name="numDureza4" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
                                         <td><input class="form-control" type="text" name="numDureza5" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-	                                    <td rowspan="2" class="fields">PROMEDIO</td>
-	                                    <td rowspan="2"><input type="text" class="form-control" style="text-align:center;" name="clPromedio" class="borde"  step="any" id="prom1" size="10"></td>
+                                        <td rowspan="2" class="fields">PROMEDIO</td>
+                                        <td rowspan="2"><input type="text" class="form-control" style="text-align:center;" name="clPromedio" class="borde" step="any" id="prom1" size="10"></td>
                                     </tr>
                                     <tr>
                                         <td><input class="form-control" type="text" name="numDureza6" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-                                        <td><input class="form-control" type="text" name="numDureza7"  onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
+                                        <td><input class="form-control" type="text" name="numDureza7" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
                                         <td><input class="form-control" type="text" name="numDureza8" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-                                        <td><input class="form-control" type="text" name="numDureza9"  onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
-                                        <td><input class="form-control" type="text" name="numDureza10"  onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
+                                        <td><input class="form-control" type="text" name="numDureza9" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
+                                        <td><input class="form-control" type="text" name="numDureza10" onchange="cal()" onkeyup="cal()" step="any" size="10"></td>
                                     </tr>
                                 </table>
                                 <script>
-                                        function cal() {
-			                                try {
-			                                var a = parseFloat(document.f.numDureza1.value),
-			                                b = parseFloat(document.f.numDureza2.value),
-			                                c = parseFloat(document.f.numDureza3.value),
-			                                d = parseFloat(document.f.numDureza4.value),
-			                                e = parseFloat(document.f.numDureza5.value),
-			                                f = parseFloat(document.f.numDureza6.value),
-			                                g = parseFloat(document.f.numDureza7.value),
-			                                h = parseFloat(document.f.numDureza8.value),
-			                                i = parseFloat(document.f.numDureza9.value),
-			                                j = parseFloat(document.f.numDureza10.value);
-			                                document.f.clPromedio.value = Math.round((a+b+c+d+e+f+g+h+i+j)/10);
-			                                document.f.numDurezaBrin1.value = Math.round((a+b+c+d+e+f+g+h+i+j)/10);
-			                                } catch (e) {
-			                                }
-			                                }
-                                    </script>
+                                    function cal() {
+                                        try {
+                                            var a = parseFloat(document.f.numDureza1.value),
+                                                b = parseFloat(document.f.numDureza2.value),
+                                                c = parseFloat(document.f.numDureza3.value),
+                                                d = parseFloat(document.f.numDureza4.value),
+                                                e = parseFloat(document.f.numDureza5.value),
+                                                f = parseFloat(document.f.numDureza6.value),
+                                                g = parseFloat(document.f.numDureza7.value),
+                                                h = parseFloat(document.f.numDureza8.value),
+                                                i = parseFloat(document.f.numDureza9.value),
+                                                j = parseFloat(document.f.numDureza10.value);
+                                            document.f.clPromedio.value = Math.round((a + b + c + d + e + f + g + h + i + j) / 10);
+                                            document.f.numDurezaBrin1.value = Math.round((a + b + c + d + e + f + g + h + i + j) / 10);
+                                        } catch (e) {}
+                                    }
+                                </script>
                                 <br>
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td class="sombreado" colspan="5">DATOS DEL MATERIAL</td>   
+                                        <td class="sombreado" colspan="5">DATOS DEL MATERIAL</td>
                                     </tr>
                                     <tr class="fields">
                                         <td>DESCRIPCI&Oacute;N DEL MATERIAL</td>
@@ -337,16 +341,16 @@ if(isset($_SESSION['tecnico'])){
                                         <td><input class="form-control" type="text" name="numResTension" align="center"></td>
                                         <td><input class="form-control" type="text" name="numResCedencia"></td>
                                         <td><select class="form-control" name="clTamanoGrano" style="border: 0px;">
-	                                        <option>--</option>
-                                            <option>6.5</option>
-                                            <option>7</option>
-                                            <option>7.5</option>
-                                            <option>8</option>
-                                            <option>8.5</option>
-	                                        <option>9</option>
-	                                        <option>9.5</option>
-	                                        <option>10</option>
-                                        </select></td>
+                                                <option>--</option>
+                                                <option>6.5</option>
+                                                <option>7</option>
+                                                <option>7.5</option>
+                                                <option>8</option>
+                                                <option>8.5</option>
+                                                <option>9</option>
+                                                <option>9.5</option>
+                                                <option>10</option>
+                                            </select></td>
                                     </tr>
                                 </table>
                                 <table class="table table-bordered">
@@ -362,29 +366,30 @@ if(isset($_SESSION['tecnico'])){
                                     </tr>
                                     <tr>
                                         <td>
-											<select class="form-control" name="clNorma" id="clNorma" required>
-											<option value="" disabled selected>Normas</option>
-											<?php
+                                            <select class="form-control" name="clNorma" id="clNorma" required>
+                                                <option value="" disabled selected>Normas</option>
+                                                <?php
                                                 require 'normasDAO.php';
                                                 $normas = new Normas();
                                                 $nomRegistros = $normas->buscarNormas();
-		                                        foreach ($nomRegistros as $n){
-                                                    echo '<option value="'.$n->norma.'">'.$n->norma.'</option>';
-                                                } 
-                                            ?>
-											</select>
-										</td>
-	                                    <td  id="numDurezaBrin2"></td>
-	                                    <td id="numResTensionMin"></td>
-	                                    <td id="numResCedenciaMin"></td>
-	                                    <td id="numResTensionMax"></td>
-	                                </table>
+                                                foreach ($nomRegistros as $n) {
+                                                    echo '<option value="' . $n->norma . '">' . $n->norma . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </td>
+                                        <td id="numDurezaBrin2"></td>
+                                        <td id="numResTensionMin"></td>
+                                        <td id="numResCedenciaMin"></td>
+                                        <td id="numResTensionMax"></td>
+                                </table>
                             </div>
                             <div class="alert alert-danger" align="center">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>&iexclIMPORTANTE!</strong><div id="nota" align="center"></div>
+                                <strong>&iexclIMPORTANTE!</strong>
+                                <div id="nota" align="center"></div>
                             </div>
-                             <!--****************** ANALISI QUIMICO *************************************************-->
+                            <!--****************** ANALISI QUIMICO *************************************************-->
                             <div class="form-group col-md-12">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="clOrdenTrabajo" value="ANALISIS QUIMICO" id="sombreado" disabled>
@@ -394,17 +399,17 @@ if(isset($_SESSION['tecnico'])){
                             <div class="table-responsive" align="center">
                                 <table class="table table-bordered" borde="1" align="center">
                                     <thead>
-                                    <tr>
-                                        <td colspan="6" class="fields" height="35">DATOS DEL EQUIPO</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fields">MARCA</td>
-                                        <td><input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>"></td>
-                                        <td class="fields">MODELO</td>
-                                        <td><input class="form-control" type="text" name="deModelo2" value="<?php echo  $row->deModelo2; ?>"></td>
-                                        <td class="fields">NO.SERIE</td>
-                                        <td><input class="form-control" type="text" name="deSerie2" value="<?php echo  $row->deSerie2; ?>"></td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="6" class="fields" height="35">DATOS DEL EQUIPO</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fields">MARCA</td>
+                                            <td><input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>"></td>
+                                            <td class="fields">MODELO</td>
+                                            <td><input class="form-control" type="text" name="deModelo2" value="<?php echo  $row->deModelo2; ?>"></td>
+                                            <td class="fields">NO.SERIE</td>
+                                            <td><input class="form-control" type="text" name="deSerie2" value="<?php echo  $row->deSerie2; ?>"></td>
+                                        </tr>
                                 </table>
                             </div>
 
@@ -482,22 +487,22 @@ if(isset($_SESSION['tecnico'])){
                                     </table>
                                 </div>
                                 <div style="width:50%; background:#CCFF66; float:right;">
-                                    <table borde="1">               
+                                    <table borde="1">
                                         <tr>
                                             <td style="border-width: 0px;">
                                                 <input align="center" id="file" type="file" name="deImagen">
-	                                            <div id="resultadosImage">
-	                                            </div>
-                                            <td width="21" ></td>
+                                                <div id="resultadosImage">
+                                                </div>
+                                            <td width="21"></td>
                                             <td width="224" style="border-width: 0px;">
-	                                        <div id=""></div>
+                                                <div id=""></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <!--******************************** ANALISI QUIMICO END************************************-->  
-                            
+                            <!--******************************** ANALISI QUIMICO END************************************-->
+
                             <!--******************************** ANALISIS METALOGRAFICO star************************************-->
                             <br>
                             <div class="form-group col-md-12">
@@ -509,7 +514,7 @@ if(isset($_SESSION['tecnico'])){
                                 <table class="table table-bordered" border="1">
                                     <thead class="fields">
                                         <tr>
-                                            <td colspan="3">Numero de lija para el  desbaste</td>
+                                            <td colspan="3">Numero de lija para el desbaste</td>
                                             <td colspan="2">Material para pulido</td>
                                             <td colspan="2">Datos de ataque quimico</td>
                                             <td>Fases presentes</td>
@@ -525,8 +530,8 @@ if(isset($_SESSION['tecnico'])){
                                             <td><input class="form-control" type="text" name="dePano" maxlength="12" required></td>
                                             <td class="fields">Reactivo</td>
                                             <td><input class="form-control" type="text" name="deReactivo" maxlength="12" required></td>
-                                            <td rowspan="2"><textarea class="form-control" style="resize:none;" name="deFases" rows= "3" required></textarea></td>
-                                            <td rowspan="2"><textarea class="form-control" style="resize:none;" name="deEspecificacion" rows= "3" required></textarea></td>
+                                            <td rowspan="2"><textarea class="form-control" style="resize:none;" name="deFases" rows="3" required></textarea></td>
+                                            <td rowspan="2"><textarea class="form-control" style="resize:none;" name="deEspecificacion" rows="3" required></textarea></td>
                                         <tr>
                                             <td><input class="form-control" type="text" maxlength="4" name="numLija4" size="5" value="600" required></td>
                                             <td><input class="form-control" type="text" maxlength="4" name="numLija5" size="5" value="1000" required></td>
@@ -534,67 +539,70 @@ if(isset($_SESSION['tecnico'])){
                                             <td class="fields">Abrasivo</td>
                                             <td><input class="form-control" type="text" name="deAbrasivo" maxlength="12" required></td>
                                             <td class="fields">Tiempo</td>
-                                            <td><input class="form-control" type="text" name="deTiempo" maxlength="12"required></td>
+                                            <td><input class="form-control" type="text" name="deTiempo" maxlength="12" required></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="table-responsive" align="center">
                                 <p align="center">REGISTRO FOTOGRAFICO</p>
-                                    <br>
-                                    <div class="alert alert-warning alert-dismissable">
-                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                        <strong>&iexclAdvertencia!</strong> El rendimieto depende del peso de imagen.
-                                    </div>
-                                    <table id="fotoMetalografia" align="center">               
-                                        <tr>
-                                            <td width="264" height="264" style="border-width: 0px;">
-	                                        <input align="center"  id="afile" type="file" name="deImagen2">
-	                                        <div id="apreview">
-	                                        </div>
-                                            <td width="21" ></td>
-                                            <td width="264" style="border-width: 0px;">
-	                                        <div id="">
-	                                        <table>
-	                                            <td>
-                                                OBSERVACIONES:
-	                                            <textarea cols="63" rows="13" class="form-control" style="resize:none;" name="deObservaciones"></textarea></div></td>
-	                                            </td>
-	                                        </table>
-                                        </tr>
-                                        <tr>
-                                            <td id="imag" height="33">FOTOMICROGRAFIA A 100X</td>
-                                            <td></td>
-                                            <td id="imag"></td>
-                                        </tr>
-                                        <tr>
-                                            <td height="264" style="border-width: 0px;">
-	                                        <div id="imag" height="264" align="center">
-	                                        <img id="ver" ></di>
-	                                        </td>
-                                            <td></td>
-                                            <td style="border-width: 0px;"><input type="file" id="bfile" name="deImagen3">
-	                                        <div id="bpreview"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="imag">TAMA&Ntilde;O DE GRANO
-                                                <select onchange="document.getElementById('ver').src = this.value" name="deGrano">
-	                                                <option>--</option>
-                                                    <option align="center" value="img/granos/65.jpg">6.5</option>
-                                                    <option value="img/granos/70.jpg">7</option>
-                                                    <option value="img/granos/75.jpg">7.5</option>
-                                                    <option value="img/granos/80.jpg">8</option>
-                                                    <option value="img/granos/85.jpg">8.5</option>
-	                                                <option value="img/granos/90.jpg">9</option>
-	                                                <option value="img/granos/95.jpg">9.5</option>
-	                                                <option value="img/granos/100.jpg">10</option>
-                                                </select>COMPARATIVA ASTM E-112
-                                            </td>                 
-                                            <td></td>
-                                            <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
-                                        </tr>
-                                    </table>
+                                <br>
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>&iexclAdvertencia!</strong> El rendimieto depende del peso de imagen.
                                 </div>
+                                <table id="fotoMetalografia" align="center">
+                                    <tr>
+                                        <td width="264" height="264" style="border-width: 0px;">
+                                            <input align="center" id="afile" type="file" name="deImagen2">
+                                            <div id="apreview">
+                                            </div>
+                                        <td width="21"></td>
+                                        <td width="264" style="border-width: 0px;">
+                                            <div id="">
+                                                <table>
+                                                    <td>
+                                                        OBSERVACIONES:
+                                                        <textarea cols="63" rows="13" class="form-control" style="resize:none;" name="deObservaciones"></textarea>
+                                            </div>
+                                        </td>
+                                        </td>
+                                </table>
+                                </tr>
+                                <tr>
+                                    <td id="imag" height="33">FOTOMICROGRAFIA A 100X</td>
+                                    <td></td>
+                                    <td id="imag"></td>
+                                </tr>
+                                <tr>
+                                    <td height="264" style="border-width: 0px;">
+                                        <div id="imag" height="264" align="center">
+                                            <img id="ver"></di>
+                                    </td>
+                                    <td></td>
+                                    <td style="border-width: 0px;"><input type="file" id="bfile" name="deImagen3">
+                                        <div id="bpreview"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="imag">TAMA&Ntilde;O DE GRANO
+                                        <select onchange="document.getElementById('ver').src = this.value" name="deGrano">
+                                            <option>--</option>
+                                            <option align="center" value="img/granos/65.jpg">6.5</option>
+                                            <option value="img/granos/70.jpg">7</option>
+                                            <option value="img/granos/75.jpg">7.5</option>
+                                            <option value="img/granos/80.jpg">8</option>
+                                            <option value="img/granos/85.jpg">8.5</option>
+                                            <option value="img/granos/90.jpg">9</option>
+                                            <option value="img/granos/95.jpg">9.5</option>
+                                            <option value="img/granos/100.jpg">10</option>
+                                        </select>COMPARATIVA ASTM E-112
+                                    </td>
+                                    <td></td>
+                                    <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
+                                </tr>
+                                </table>
+                            </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Aprob&oacute;</label>
@@ -608,11 +616,11 @@ if(isset($_SESSION['tecnico'])){
                                     <input class="form-control" type="text" name="deAprueba" value="<?php echo  $row->deAprueba; ?>" required><br>
                                     <input class="form-control" type="text" name="firma2" value="Asesor&iacute;a e Inspecci&oacute;n en Construcci&oacute;n Costa Fuera, S.C" disabled>
                                 </div>
-                            </div>  
+                            </div>
                             <br>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Registrar y continuar" class="btn alazea-btn mt-15" onclick=this.form.action="validarCaracterizacion.php">          
+                                    <input type="submit" value="Registrar y continuar" class="btn alazea-btn mt-15" onclick=this.form.action="validarCaracterizacion.php">
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -665,7 +673,7 @@ if(isset($_SESSION['tecnico'])){
                                     <li><a href="#">Calificacion</a></li>
                                     <li><a href="#">Inspectores CWI</a></li>
                                     <li><a href="#">Auditorias tecnicas a proveedores</a></li>
-                                    <li><a href="#">Verificacion de maquinas de soldar</a></li>                                    
+                                    <li><a href="#">Verificacion de maquinas de soldar</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -680,7 +688,7 @@ if(isset($_SESSION['tecnico'])){
 
                             <!-- Single Best Seller Products -->
                             <div class="single-best-seller-product d-flex align-items-center">
-                                <p>www.aicosc.com</p>                               
+                                <p>www.aicosc.com</p>
                             </div>
                             <!-- Single Best Seller Products -->
                             <div class="single-best-seller-product d-flex align-items-center"></div>
@@ -701,9 +709,12 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                         </div>
                     </div>
-                </div><!--row-->
-            </div><!--container-->
-        </div><!--main footer-->
+                </div>
+                <!--row-->
+            </div>
+            <!--container-->
+        </div>
+        <!--main footer-->
         <!-- Footer Bottom Area -->
         <div class="footer-bottom-area">
             <div class="container">
@@ -715,7 +726,9 @@ if(isset($_SESSION['tecnico'])){
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
                             <p>&copy;
-                            Copyright AICO - <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados</a>
+                                Copyright AICO - <script>
+                                    document.write(new Date().getFullYear());
+                                </script> Todos los derechos reservados</a>
                             </p>
                         </div>
                     </div>
@@ -752,6 +765,7 @@ if(isset($_SESSION['tecnico'])){
     <!-- Active js -->
     <script src="js/active.js"></script>
 </body>
+
 </html>
 
 <script src="js/imagenesCaracterizacion.js"></script>

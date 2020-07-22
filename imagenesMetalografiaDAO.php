@@ -88,32 +88,6 @@ class Imagen implements IEntidad2{
         }
     }
 
-    public function modificarClave($id, $arreglo) {
-        $sql= "UPDATE tsimagenes SET ";
-        //coonstruccion de la cadena sql como UPDATE
-        foreach($arreglo as $key => $value){
-            $sql .= $key . "='" .$value."'".",";     
-		}
-        //rtrim quita la ultima coma
-        $sql2 = rtrim($sql,',');
-        $sql2 .= "WHERE id = '";
-        $sql2 .= $id."'";
-		//ECHO $sql2;
-        try{
-            $stmt = $this->db->prepare($sql2);
-            $stmt->execute();
-            if($stmt->rowCount()==1){
-               
-            return true;
-                return true;
-            }else{
-                return FALSE;     
-			}
-
-        }catch (PDOException $e){
-            echo $e->getMessage();  
-        }
-    }
     public function eliminar($x) {        
     }
 

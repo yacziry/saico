@@ -255,7 +255,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required>&Oslash;</textarea>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required>Ø</textarea>
                             </div>
                             <div class="table-responsive" align="center">
                                 <table class="table table-bordered" border="1">
@@ -345,11 +345,7 @@ if(isset($_SESSION['tecnico'])){
                                         <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
                                     </tr>
                                 </table>
-                                <br>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                </div>
-                                <br>
+                                <br><br>
                             </div><!--responsive-->
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -538,4 +534,4 @@ if(isset($_SESSION['tecnico'])){
 </body>
 </html>
 
-<script src="js/imgMetalografia.js"></script>
+<script src="/AICO/js/carga_imagen.js"></script>

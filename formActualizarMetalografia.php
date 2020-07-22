@@ -129,8 +129,7 @@ if(isset($_SESSION['tecnico'])){
                                             <li><a href="formBuscarNr.php">Numero de reporte</a></li>
                                             <li><a href="formBuscarFr.php">Fecha</a></li>
                                             <li><a href="formBuscarPcl.php">Palabra clave</a></li>
-                                            <li><a href="formBuscarCl.php">Cliente</a></li>
-                                            <li><a href="actualizarClave.php">Actualizar con clave</a></li>
+                                            <li><a href="formBuscarCl.php">Cliente</a></li>                                                                                
                                         </ul>
                                     </li>
                                 </ul>                                                                  
@@ -170,9 +169,7 @@ if(isset($_SESSION['tecnico'])){
                         $cliente = $cl->buscar($row->cacliente_clCliente);
 		                foreach ($forReportes as $row){
                     ?>
-                    <label for="ex3" >Clave para modificar</label>
-                    <input class="form-control" type="text" value="<?php echo $row->id; ?>" disabled>
-                    <BR>
+
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
@@ -375,11 +372,7 @@ if(isset($_SESSION['tecnico'])){
                                         <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
                                     </tr>
                                 </table>
-                                <br>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                </div>
-                                <br>
+                                <br><br>
                             </div><!--responsive-->
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -566,4 +559,4 @@ if(isset($_SESSION['tecnico'])){
 </body>
 </html>
 
-<script src="js/imgMetalografia.js"></script>
+<script src="js/carga_imagen.js"></script>

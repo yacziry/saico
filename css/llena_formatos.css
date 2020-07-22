@@ -253,3 +253,16 @@ p{
 #imgAnalisis2 img{
 	max-width: inherit;
 }
+
+.cabeceraForm {  
+	color: darkgoldenrod;
+	margin-bottom: 20px;
+	width: -webkit-fill-available;
+	width:100%;
+	
+   }
+hr{
+	margin-bottom: 20px!important;
+	margin-top: 20px!important;
+	
+}

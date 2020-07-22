@@ -44,7 +44,7 @@ class Cliente implements IEntidadC{
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
             foreach ($registros as $r){
                 $cliente = $r->deCliente;
-            } 
+            }
             return $cliente;
 
         }catch(Exception $e){

@@ -273,11 +273,11 @@ if(isset($_SESSION['tecnico'])){
                                     </tr>
                                     <tr>
                                         <td class="fields">MARCA</td>
-                                        <td><input class="form-control" type="text" name="deMarca1" value="PROCEQ"></td>
+                                        <td><input class="form-control" type="text" name="deMarca1" ></td>
                                         <td class="fields">MODELO</td>
-                                        <td><input class="form-control" type="text" name="deModelo1" value="UCI-540"></td>
+                                        <td><input class="form-control" type="text" name="deModelo1"></td>
                                          <td class="fields">NO.SERIE</td>
-                                        <td><input class="form-control" type="text" name="deSerie1" value="UP01-006-0857"></td>
+                                        <td><input class="form-control" type="text" name="deSerie1"></td>
                                     </tr>
                                 </table>
                                 <br>
@@ -405,11 +405,11 @@ if(isset($_SESSION['tecnico'])){
                                     </tr>
                                     <tr>
                                         <td class="fields">MARCA</td>
-                                        <td><input class="form-control" type="text" name="deMarca2" value="SPECTRO"></td>
+                                        <td><input class="form-control" type="text" name="deMarca2" ></td>
                                         <td class="fields">MODELO</td>
-                                        <td><input class="form-control" type="text" name="deModelo2" value="SPECTRO PORT"></td>
+                                        <td><input class="form-control" type="text" name="deModelo2"></td>
                                         <td class="fields">NO.SERIE</td>
-                                        <td><input class="form-control" type="text" name="deSerie2" value="18010122"></td>
+                                        <td><input class="form-control" type="text" name="deSerie2"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -596,12 +596,7 @@ if(isset($_SESSION['tecnico'])){
                                             <td id="imag">FOTOGRAF&Iacute;A ESPEC&Iacute;FICA DONDE SE MUESTRA LA ZONA A LA CUAL SE LE<br> REALIZ&Oacute; LA METALOGRAFIA</td>
                                         </tr>
                                     </table>
-                                    <br>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
                                 </div>
-                            </div>
-                            <br>   
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Aprob&oacute;</label>

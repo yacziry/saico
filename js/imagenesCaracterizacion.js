@@ -55,20 +55,5 @@ document.getElementById("bfile").onchange = function (e) {
 
         preview.innerHTML = '';
         preview.append(image);
-        var percent2 = 0;
-    timerId = setInterval(function() {
-        //increment progress bar
-        percent2 += 4;
-        $('.progress-bar').css('width', percent2+'%');
-        $('.progress-bar').attr('aria-valuenow', percent2);
-        $('.progress-bar').text(percent2+'%');
- 
-        //complete
-        if (percent2 == 100) {
-            clearInterval(timerId);
-            $('.information').show();
-        }
- 
-     }, 1000);//setInterval
     };
 }
