@@ -97,13 +97,6 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'cacliente_clCliente' => $_POST['deCliente']
                         
                 );
-                //Insertar array en bd
-                include_once 'UltrasonidoDAO.php';
-                $p = new bocaDeTubo();
-                $bocaDeTubo = $p->insertar($arraybocaDeTubo);
-                if ($bocaDeTubo) {
-                        $arrayPartResultado = array();
-                }
                 //variable de sesion reporte
                 $reporteS = $_POST['clNumReporte'];
                 $_SESSION["reporteS"] = $reporteS;
