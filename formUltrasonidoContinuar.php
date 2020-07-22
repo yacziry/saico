@@ -526,7 +526,7 @@ if (isset($_SESSION['tecnico'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn alazea-btn mt-15" id="enviar" data-dismiss="modal" onclick="validarPartFinalizar.php">Enviar</button>
+                    <button type="submit" class="btn alazea-btn mt-15" id="enviar" data-dismiss="modal" onclick="validarUltrasonidoFinalizar.php">Enviar</button>
                 </div>
             </div>
         </div>

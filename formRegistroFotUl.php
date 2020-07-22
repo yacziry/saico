@@ -175,8 +175,8 @@ if(isset($_SESSION['tecnico'])){
 						require 'clientesDAO.php';
                         $clientes = new Cliente();
                         require 'ultrasonidoDAO.php';
-                        $p = new bocaDeTubo();
-                        $registros = $p->buscar($reporteS);
+                        $bdt = new bocaDeTubo();
+                        $registros = $bdt->buscar($reporteS);
 		                foreach ($registros as $row){                        
                         }
                     ?>

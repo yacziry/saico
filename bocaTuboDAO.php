@@ -60,7 +60,7 @@ class BocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
     }
     //funcion que busca el ultimo id por nr
     public function buscarID() { 
-        $sentencia = "SELECT id FROM tsreporteliquidos ORDER BY id DESC LIMIT 1";
+        $sentencia = "SELECT id FROM tsreportebocadetubo ORDER BY id DESC LIMIT 1";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->execute();
