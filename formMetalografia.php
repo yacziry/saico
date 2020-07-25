@@ -122,8 +122,8 @@ if(isset($_SESSION['tecnico'])){
                                     </li>  
                                     <li><a href="#">Pruebas no destructivas</a>
                                         <ul class="dropdown">
-                                            <li><a href="llena_particulas.html">Particulas Magneticas</a></li>
-                                            <li><a href="llena_liquidos.html">Liquidos Penetrantes</a></li>
+                                            <li><a href="formParticulas.php">Particulas Magneticas</a></li>
+                                            <li><a href="formLiquidos.php">Liquidos Penetrantes</a></li>
                                             <li><a href="">Ultrasonido AWS D1.1</a>
                                                 <ul class="dropdown">
                                                     <li><a href="">Toma de espesores</a></li>

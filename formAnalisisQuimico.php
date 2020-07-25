@@ -413,7 +413,11 @@ if(isset($_SESSION['tecnico'])){
                                 <input class="form-control" type="text" value="VISTA GENERAL DEL ELEMENTO" id="sombreado" disabled>
                             </div>
                         </div></div>
-                        <div align="center">                           
+                        <div align="center">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                            <br>                           
 	                        <input id="afile" type="file" name="deImagen2">
 	                        <div id="imgAnalisis2" align="center"></div></td>
                         </div>

@@ -20,7 +20,7 @@ foreach ($ultimoRegistro as $row){
 }
 
 $resultadoParticulas=array('clNumReporte'=>$clNumReporte,'dePieza'=>$dePieza,'deJunta'=>$deJunta, 'deLongitud'=>$deLongitud,
-'deDiscontinuidad'=>$deDiscontinuidad, 'deEvaluacion'=>$deEvaluacion, 'deObservaciones'=>$deObservaciones, 'tsReporteParticulas_id'=>$id);
+'deDiscontinuidad'=>$deDiscontinuidad, 'deEvaluacion'=>$deEvaluacion, 'deObservaciones'=>$deObservaciones, 'id'=>$id);
 //var_dump($resultadoParticulas);
 
 $resultado = new ResultadoParticulas();

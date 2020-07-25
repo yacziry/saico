@@ -18,20 +18,7 @@ $(document).ready(function () {
         //alert(count);
         }
     });
-    //inserta renglon combinado dinamico
-    $("#").on('click', function () {
-        count++;
-        var nuevaFila = "<tr>";
-        for (var i = 0; i < 1; i++) {
-            // añadimos las columnas
-            nuevaFila += "<td colspan='5' class='pieza'><input name='pieza[]' size='120' value='pieza: '></td>";
-        }
-        nuevaFila += "<td>";
-        nuevaFila += "</tr>";
-        if(count <= 12){
-        $("#tablaReportes").append(nuevaFila);
-        }
-    });
+    
 
     $('#insertarPieza').on('click', function () {
         var pieza = $('#pieza').val();

@@ -83,7 +83,7 @@ if(isset($_SESSION['tecnico'])){
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand LOGO-->
-                        <a href="http://www.aicosc.com" class="nav-brand"><img src="img/core-img/AICOT.png" alt=""></a>
+                        <a href="http://www.aicosc.com" class="nav-brand"><img src="img/core-img/IC.png" alt=""></a>
 
                         <!-- Nav Brand -->
                         <a href="index.html" class="nav-brand"><img src="" alt=""></a>
@@ -294,6 +294,11 @@ if(isset($_SESSION['tecnico'])){
                                     </td></table>
                                 </tr>
                             </table>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                            <br>
                         </div><!--DIV encabezado-->
                         <fieldset>
                             <legend align="center">FIRMAS</legend>
@@ -330,11 +335,11 @@ if(isset($_SESSION['tecnico'])){
                                     <input type="submit" value="Finalizar" class="btn alazea-btn mt-15" onclick=this.form.action="validarRegistroFotPart.php">          
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
+                            <!--div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="submit" value="Agregar otro registro" class="btn alazea-btn mt-15" onclick=this.form.action="validarRegistroFotPart2.php">
                                 </div>
-                            </div>
+                            </div-->
                         </div>
                         <br>
                     </form>
