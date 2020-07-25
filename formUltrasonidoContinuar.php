@@ -406,7 +406,7 @@ if (isset($_SESSION['tecnico'])) {
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
                                             </div>
                                         </div>
-                                    <button type="submit" class="btn alazea-btn mt-15" id="finalizar" data-dismiss="modal" onclick=this.form.action="./validarUltrasonidoFinalizar.php">Enviar</button>
+                                    <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
                                     </div>
 
 

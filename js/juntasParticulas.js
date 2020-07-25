@@ -18,33 +18,6 @@ $(document).ready(function () {
                //alert(count);
           }
      });
-     //inserta renglon combinado dinamico
-     $("#").on('click', function () {
-          count++;
-          var nuevaFila = "<tr>";
-          for (var i = 0; i < 1; i++) {
-               // añadimos las columnas
-               nuevaFila += "<td colspan='5' class='pieza'><input name='pieza[]' size='120' value='pieza: '></td>";
-          }
-          nuevaFila += "<td>";
-          nuevaFila += "</tr>";
-          if (count <= 12) {
-               $("#tablaReportes").append(nuevaFila);
-          }
-     });
-
-        nuevaFila += "<td class='junta'>" + "<input name='junta[]'>" + "</td>";
-        nuevaFila += "<td class='longitud'>" + "<input name='longitud[]'>" + "</td>";
-        nuevaFila += "<td class='discontinuidad'>" + "<input name='discontinuidad[]' value='Ninguna'>" + "</td>";
-        nuevaFila += "<td class='evaluacion'>" + "<input name='evaluacion[]' value='Aceptado'>" + "</td>";
-        nuevaFila += "<td class='observaciones'>" + "<input name='observaciones[]' value='---'>" + "</td>";
-        //}
-        nuevaFila += "</tr>";
-        if(count <= 12){
-        $("#tablaReportes").append(nuevaFila);
-        //alert(count);
-        }
-    });
     
      $('#insertarPieza').on('click', function () {
           var pieza = $('#pieza').val();
