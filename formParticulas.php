@@ -24,7 +24,7 @@ if(isset($_SESSION['tecnico'])){
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
-	<!--script src="js/juntasParticulas.js"></!--script>
+	<!--script src="js/juntasParticulas.js"></script-->
     <script src="js/ultimoReportePa.js"></script>
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -424,7 +424,7 @@ if(isset($_SESSION['tecnico'])){
                                 <div class="form-group">
                                     <input type="submit" value="Hacer otro registro" id="prueba" class="btn alazea-btn mt-15" onclick=this.form.action="validarParticulas.php">
                                 </div>
-                            </!--div>
+                            </div-->
                         </div>
                         <br>
                     </form>

@@ -33,6 +33,19 @@ $(document).ready(function () {
           }
      });
 
+        nuevaFila += "<td class='junta'>" + "<input name='junta[]'>" + "</td>";
+        nuevaFila += "<td class='longitud'>" + "<input name='longitud[]'>" + "</td>";
+        nuevaFila += "<td class='discontinuidad'>" + "<input name='discontinuidad[]' value='Ninguna'>" + "</td>";
+        nuevaFila += "<td class='evaluacion'>" + "<input name='evaluacion[]' value='Aceptado'>" + "</td>";
+        nuevaFila += "<td class='observaciones'>" + "<input name='observaciones[]' value='---'>" + "</td>";
+        //}
+        nuevaFila += "</tr>";
+        if(count <= 12){
+        $("#tablaReportes").append(nuevaFila);
+        //alert(count);
+        }
+    });
+    
      $('#insertarPieza').on('click', function () {
           var pieza = $('#pieza').val();
           $('.junta input').each(function () {

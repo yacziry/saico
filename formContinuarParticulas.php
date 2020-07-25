@@ -371,7 +371,7 @@ if(isset($_SESSION['tecnico'])){
                                 </tbody>
                             </table>
                         </div>
-                        <div class="form-row" align="center" id="botonesDim">
+                        <div class="form-row" align="center" id="">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">          

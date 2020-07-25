@@ -25,10 +25,10 @@ class ResultadoParticulas implements IEntidadR{
 
             $sql = "INSERT INTO tsresultadosparticulas (clNumReporte, dePieza, deJunta, "
                     . " deLongitud, deDiscontinuidad, deEvaluacion, "
-                    . " deObservaciones, tsReporteParticulas_id ) "
+                    . " deObservaciones, id ) "
                     . " VALUES (:clNumReporte, :dePieza, :deJunta,"
                     . " :deLongitud, :deDiscontinuidad, :deEvaluacion, "
-                    . " :deObservaciones,:tsReporteParticulas_id )";
+                    . " :deObservaciones,:id )";
 
             $stmt = $this->db->prepare($sql);
 
@@ -39,7 +39,7 @@ class ResultadoParticulas implements IEntidadR{
             $stmt->bindParam(':deDiscontinuidad', $deDiscontinuidad);
             $stmt->bindParam(':deEvaluacion', $deEvaluacion);
             $stmt->bindParam(':deObservaciones', $deObservaciones);
-            $stmt->bindParam(':tsReporteParticulas_id', $tsReporteParticulas_id);
+            $stmt->bindParam(':id', $id);
 
             for ($index = 0; $index < count($arreglo['deJunta']); $index++) {
                 $dePieza = $arreglo['dePieza'];
@@ -50,7 +50,7 @@ class ResultadoParticulas implements IEntidadR{
                 echo $arreglo['deDiscontinuidad'][$index] . "<br>";
                 $deEvaluacion = $arreglo['deEvaluacion'][$index];
                 $deObservaciones = $arreglo['deObservaciones'][$index];
-                $tsReporteParticulas_id = $arreglo['tsReporteParticulas_id'];
+                $id = $arreglo['id'];
                 $stmt->execute();
             }
             echo "A todo dar... <br>";

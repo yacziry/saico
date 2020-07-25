@@ -93,6 +93,22 @@ class Particulas implements IEntidadP{
     //IMPORTANTE, ESTA PENDIENTE UN JOIN PARA TABLA RESULTADOS
     public function buscarReporte($clNumReporte) { 
         $sentencia = "SELECT * from tsreporteparticulas rp join tsimgparticulas using(id) WHERE rp.clNumReporte = :clNumReporte";
+        //$sentencia = "SELECT * from tsreporteparticulas rp JOIN tsresultadosparticulas using(id) join tsimgparticulas WHERE rp.clNumReporte = :clNumReporte";
+        try{
+            $stm = $this->db->prepare ($sentencia);
+            $stm->bindValue(':clNumReporte', $clNumReporte);
+            $stm->execute();
+            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
+
+            return $registros;
+
+        }catch(Exception $e){
+            echo "$e->getMessage()";
+        }
+    }
+    public function buscarReporteResultado($clNumReporte) { 
+        $sentencia = "SELECT * from tsresultadosparticulas rp WHERE rp.clNumReporte = :clNumReporte";
+        //$sentencia = "SELECT * from tsreporteparticulas rp JOIN tsresultadosparticulas using(id) join tsimgparticulas WHERE rp.clNumReporte = :clNumReporte";
         try{
             $stm = $this->db->prepare ($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);

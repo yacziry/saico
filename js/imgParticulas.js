@@ -6,7 +6,7 @@ document.getElementById("file").onchange = function(e) {
   // Leemos el archivo subido y se lo pasamos a nuestro fileReader
   reader.readAsDataURL(e.target.files[0]);
 
-  // Le decimos que cuando este listo ejecute el código interno
+  // Le decimos que cuando este listo ejecute el cï¿½digo interno
   reader.onload = function(){
     let preview = document.getElementById('preview'),
         image = document.createElement('img');
@@ -25,7 +25,7 @@ document.getElementById("afile").onchange = function(e) {
   // Leemos el archivo subido y se lo pasamos a nuestro fileReader
   areader.readAsDataURL(e.target.files[0]);
 
-  // Le decimos que cuando este listo ejecute el código interno
+  // Le decimos que cuando este listo ejecute el cï¿½digo interno
   areader.onload = function(){
     let apreview = document.getElementById('apreview'),
         image = document.createElement('img');
@@ -44,7 +44,7 @@ document.getElementById("bfile").onchange = function(e) {
   // Leemos el archivo subido y se lo pasamos a nuestro fileReader
   breader.readAsDataURL(e.target.files[0]);
 
-  // Le decimos que cuando este listo ejecute el código interno
+  // Le decimos que cuando este listo ejecute el cï¿½digo interno
   breader.onload = function(){
     let bpreview = document.getElementById('bpreview'),
         image = document.createElement('img');
@@ -64,7 +64,7 @@ document.getElementById("cfile").onchange = function(e) {
   // Leemos el archivo subido y se lo pasamos a nuestro fileReader
   creader.readAsDataURL(e.target.files[0]);
 
-  // Le decimos que cuando este listo ejecute el código interno
+  // Le decimos que cuando este listo ejecute el cï¿½digo interno
   creader.onload = function(){
     let cpreview = document.getElementById('cpreview'),
         image = document.createElement('img');
@@ -73,5 +73,20 @@ document.getElementById("cfile").onchange = function(e) {
 
     cpreview.innerHTML = '';
     cpreview.append(image);
+    var percent2 = 0;
+    timerId = setInterval(function() {
+        //increment progress bar
+        percent2 += 2;
+        $('.progress-bar').css('width', percent2+'%');
+        $('.progress-bar').attr('aria-valuenow', percent2);
+        $('.progress-bar').text(percent2+'%');
+ 
+        //complete
+        if (percent2 == 100) {
+            clearInterval(timerId);
+            $('.information').show();
+        }
+ 
+     }, 1000);//setInterval
   };
 }
