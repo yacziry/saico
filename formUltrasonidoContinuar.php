@@ -27,6 +27,7 @@ if (isset($_SESSION['tecnico'])) {
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
     <script src="js/normaReferencia.js"></script>
     <script src="js/ultimoReporteUl.js"></script>
+    <script src="js/juntasUltrasonido.js"></script>
 
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -659,7 +660,7 @@ if (isset($_SESSION['tecnico'])) {
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    <script src="js/juntasUltrasonido.js"></script>
+    
 </body>
 
 </html>
