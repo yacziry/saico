@@ -15,7 +15,7 @@ if (isset($_SESSION['tecnico'])) {
 }
 ?>
 <?php
-require 'ultrasonidoDAO.php';
+require 'bocaTuboDAO.php';
 $bdt = new bocaDeTubo();
 //$forReportes = $bdt->buscarReporte("tt");
 $forReportes = $bdt->buscarReporte($clNumReporte);
@@ -225,10 +225,10 @@ foreach ($forReportes as $row) {
 		<!--saltopagina-->
 		<br>
 		<!--*********************Segunda hojaaaa*********************************-->
-		<div class="saltopaginas">
+		<div style='page-break-after:always' class="saltopaginas">
 			<br>
 			<div id="center" align="center">
-								<table width="970" border="3">
+				<table width="970" border="3">
 					<tr>
 						<td align="center">REGISTRO FOTOGRAFICO</td>
 					</tr>
