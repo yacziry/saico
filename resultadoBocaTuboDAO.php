@@ -40,8 +40,8 @@ class ResultadoBocaTubo implements IEntidadR
 
             $stmt = $this->db->prepare($sql);
 
-            $stmt->bindParam(':deElemento', $deElemento);
             $stmt->bindParam(':clID', $clID);
+            $stmt->bindParam(':deElemento', $deElemento);
             $stmt->bindParam(':clAceptacion', $clAceptacion);
             $stmt->bindParam(':clSerie', $clSerie);
             $stmt->bindParam(':clColada', $clColada);
@@ -58,8 +58,8 @@ class ResultadoBocaTubo implements IEntidadR
             $stmt->bindParam(':tsreportebocadetubo_id', $tsreportebocadetubo_id);
 
             for ($index = 0; $index < count($arreglo['deElemento']); $index++) {
-                $deElemento = $arreglo['deElemento'][$index];
                 $clID = $arreglo['clID'][$index];
+                $deElemento = $arreglo['deElemento'][$index];
                 $clAceptacion = $arreglo['clAceptacion'][$index];
                 $clSerie = $arreglo['clSerie'][$index];
                 $clColada = $arreglo['clColada'][$index];
@@ -73,10 +73,10 @@ class ResultadoBocaTubo implements IEntidadR
                 $deEspesorMinimo = $arreglo['deEspesorMinimo'][$index];
                 $deBarrido = $arreglo['deBarrido'][$index];
                 $deResultado = $arreglo['deResultado'][$index];
-                $tsreportebocadetubo_id = $arreglo['tsreportebocadetubo_id'][$index];
+                $tsreportebocadetubo_id = $arreglo['tsreportebocadetubo_id'];
                 $stmt->execute();
             }
-            echo "A todo dar... <br>";
+            echo "Datos guardados!<br>";
 
             return TRUE;
         } catch (PDOException $e) {

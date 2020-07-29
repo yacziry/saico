@@ -523,7 +523,7 @@ if (isset($_SESSION['tecnico'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn alazea-btn mt-15" id="guardarBocaTubo" data-dismiss="modal" onclick=this.form.action="./validarUltrasonidoFinalizar.php">Enviar</button>
+                    <button type="submit" class="btn alazea-btn mt-15" id="guardarBocaTubo" data-dismiss="modal" >Enviar</button>
                 </div>
             </div>
         </div>

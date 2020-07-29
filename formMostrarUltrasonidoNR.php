@@ -307,7 +307,7 @@ foreach ($forReportes as $row) {
 	<form class="float" action="" method="post">
 		<div style="display:none;">
 			<input type="text" name="fileContents" id="fileContents" value='' />
-			<input type="text" name="fileName" id="fileName" value='ReporteLíquidos.pdf' />
+			<input type="text" name="fileName" id="fileName" value='ReporteBocaTubo.pdf' />
 			<input type="text" name="css" value='./pdf.css' />
 		</div>
 		<input type="image" class="" onclick=this.form.action="descargarpdf.php" src="./img/pdf.png" id="createPdf" />
