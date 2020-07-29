@@ -1,4 +1,6 @@
 
 .vscode/settings.json
-.vs/
-.gitignore
+vs/
+gitignore
+img/bocaTubo/
+
