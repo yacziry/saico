@@ -5,8 +5,8 @@ session_start();
 /* 
  valida registro fotografico 
  */
-include_once 'imgUltrasonidoDAO.php';
-include_once 'ultrasonidoDAO.php';
+include_once 'imgBocaTuboDAO.php';
+include_once 'bocaTuboDAO.php';
 if (isset($_SESSION['tecnico']) && isset($_POST)) {
 
     $reporteS = $_SESSION['reporteS'];
@@ -49,10 +49,11 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 'feRegistro' => $fecha
             );
             $imagen->insertar($arreglo);
+            header("Location: formBocaTuboMostrar.php");
         } else {
             echo "error, no se movio";
         }
         //SINO HUBU NINGUN ERROR
     }
-    //header("location:formLiquidosMostrar.php");
+    //header("formMostrarUltrasonidoNR.php");
 }//ultimoIF
