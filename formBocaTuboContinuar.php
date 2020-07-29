@@ -258,7 +258,7 @@ if (isset($_SESSION['tecnico'])) {
                             </div>
                             <hr width="1280">
                             <h2 class="cabeceraForm">Transductor</h2>
-                            <br>
+                            
                             <div class="form-group col-md-4">
                                 <label for="deMarca2">Marca</label>
                                 <input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>" disabled>
@@ -276,8 +276,11 @@ if (isset($_SESSION['tecnico'])) {
                                 <input class="form-control" type="text" name="deFrec" value="<?php echo  $row->deFrec; ?>" disabled>
                             </div>
                             <hr width="1280">
-                            <h2 class="cabeceraForm">Acoplante</h2>
-                            <br>
+                            <div class="form-group col-md-4">
+                                <label style="color: darkgoldenrod; font-size: 20px; margin-bottom: 2px;" for="deAcoplante">Acoplante<span class="ml-2 badge badge-secondary">BLOQUE</span></label>
+                               
+                                <input class="form-control" type="text" name="deAcoplante" value="<?php echo  $row->deAcoplante; ?>" disabled>
+                            </div>
                             <div class="form-group col-md-4">
                                 <label for="deTipoAcoplante">Tipo</label>
                                 <input class="form-control" type="text" name="deTipoAcoplante" value="<?php echo  $row->deTipoAcoplante; ?>" disabled>
@@ -322,12 +325,12 @@ if (isset($_SESSION['tecnico'])) {
                                     <label>Rechazo:</label>
                                     <div class="ml-4 form-check form-check-inline">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="deRechazo" value="ON" checked> ON
+                                            <input class="form-check-input" type="radio" name="deRechazo" value="ON" checked disabled> ON
                                         </label>
                                     </div>
                                     <div class="ml-4 form-check form-check-inline">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="deRechazo" value="OFF"> OFF
+                                            <input class="form-check-input" type="radio" name="deRechazo" value="OFF" disabled> OFF
                                         </label>
                                     <?php
                                 }
@@ -337,12 +340,12 @@ if (isset($_SESSION['tecnico'])) {
                                             <label>Rechazo:</label>
                                             <div class="ml-4 form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="deRechazo" value="ON"> ON
+                                                    <input class="form-check-input" type="radio" name="deRechazo" value="ON" disabled> ON
                                                 </label>
                                             </div>
                                             <div class="ml-4 form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="deRechazo" value="OFF" checked> OFF
+                                                    <input class="form-check-input" type="radio" name="deRechazo" value="OFF" disabled checked> OFF
                                                 </label>
                                             </div>
                                         </div>
@@ -378,6 +381,86 @@ if (isset($_SESSION['tecnico'])) {
                                                 </tr>
                                             </thead>
                                             <tbody id="tablaReportes">
+                                            </tbody>
+                                        </table>
+
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr class="fields" style="font-size: small; height: 37px;">
+                                                    <th style="height: 37px; width: 50px; text-align: center;" colspan="7">DATOS DEL MATERIAL</th>
+                                                    <th style="height: 37px; width: 72px; text-align: center;" colspan="5">DATOS DE LA DISCONTINUIDAD&nbsp;</th>
+                                                    <th style="height: 37px; width: 110px; text-align: center;" colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N&nbsp;</th>
+                                                </tr>
+                                                <tr class="fields" style="font-size: small; height: 26px;">
+                                                    <th style="height: 26px; width: 50px; text-align: center;">ID</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Elemento / Trazabilidad</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Di&aacute;metro IN</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Aceptaci&oacute;n</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Serie</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; Colada</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor Nominal</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Indicaci&oacute;n</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Largo</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Ancho</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "X"</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "Y"</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&aacute;ximo Detectado</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&iacute;nimo Detectado</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">&Aacute;rea de Barrido</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Resultado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-sm-1">
+                                                        <input class="col-sm-1" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-4" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-2" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-3" />
+                                                    </td>
+                                                    <td class="col-sm-3">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-4" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-2" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-3" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-1" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-4" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-2" />
+                                                    </td>
+                                                    <td class="col-sm-2">
+                                                        <input class="col-sm-12" placeholder="col-sm-3" />
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

@@ -57,8 +57,6 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 header("location:formBocaTubo.php?msgC=Tipo Equipo no puedo estar vacio");
         } elseif (empty($_POST['deNivelDac'])) {
                 header("location:formBocaTubo.php?msgC=Rango Equipo no puedo estar vacio");
-        } elseif (empty($_POST['voltaje'])) {
-                header("location:formBocaTubo.php?msgC=Voltaje no puedo estar vacio");
                 // FALTA AGREGAR CAMPOS DE FIRMAS Y EMPRESA
         } else {
                 $usuario = $_SESSION['tecnico'];
@@ -80,6 +78,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deModelo2' => $_POST['deModelo2'],
                         'deNs2' => $_POST['deNs2'], 
                         'deFrec' => $_POST['deFrec'], 
+                        'deAcoplante' => $_POST['deAcoplante'], 
                         'deTipoAcoplante' => $_POST['deTipoAcoplante'], 
                         'deNs3' => $_POST['deNs3'],
                         'deGanancia' => $_POST['deGanancia'], 
