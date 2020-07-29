@@ -241,8 +241,6 @@ if (isset($_SESSION['tecnico'])) {
                                 <label for="ex3">Material</label>
                                 <input class="form-control" type="text" name="deMaterial" required>
                             </div>
-
-                            <hr width="9999">
                             <h2 class="cabeceraForm">Equipo</h2>
                             <br>
                             <div class="form-group col-md-4">
@@ -277,8 +275,11 @@ if (isset($_SESSION['tecnico'])) {
                                 <input class="form-control" type="text" name="deFrec" required>
                             </div>
                             <hr width="1280">
-                            <h2 class="cabeceraForm">Acoplante</h2>
-                            <br>
+                            <div class="form-group col-md-4">
+                                <label style="color: darkgoldenrod; font-size: 20px; margin-bottom: 2px;" for="deAcoplante">Acoplante<span class="ml-2 badge badge-secondary">BLOQUE</span></label>
+                               
+                                <input class="form-control" type="text" name="deAcoplante" required>
+                            </div>
                             <div class="form-group col-md-4">
                                 <label for="deTipoAcoplante">Tipo</label>
                                 <input class="form-control" type="text" name="deTipoAcoplante" required>
