@@ -1,14 +1,14 @@
 <?php
 //Desactivar toda las notificaci�nes del PHP xd
 error_reporting(0);
-ini_set("session.cookie_lifetime","14400");
-ini_set("session.gc_maxlifetime","14400");
+ini_set("session.cookie_lifetime", "14400");
+ini_set("session.gc_maxlifetime", "14400");
 // Comienzo de la sesi�n
 session_start();
 
-if(isset($_SESSION['tecnico'])){
+if (isset($_SESSION['tecnico'])) {
     $tec = $_SESSION['tecnico'];
-}else{
+} else {
     header("location:notFound.html");
     die();
 }
@@ -55,10 +55,8 @@ if(isset($_SESSION['tecnico'])){
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o"
-                                        aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone"
-                                        aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
                             </div>
 
                             <!-- Top Header Content -->
@@ -159,8 +157,7 @@ if(isset($_SESSION['tecnico'])){
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
-            style="background-image: url(img/bg-img/4.jpg);">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/4.jpg);">
             <h2>REPORTE DE ULTRASONIDO</h2>
         </div>
         <div class="container">
@@ -182,19 +179,29 @@ if(isset($_SESSION['tecnico'])){
                     </div>
                     <form action="" method="POST" enctype="multipart/form-data" name="f">
                         <div class="form-row">
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group">
+                                    <label>Fecha</label>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo date("Y-m-d"); ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="ex3">Lugar</label>
+                                <input class="form-control" type="text" name="deLugar" required>
+                            </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Cliente</label>
                                     <select class="form-control" name="deCliente" id="cliente" required>
                                         <option value="">Seleccione una opcion</option>
                                         <?php
-                                                require 'clientesDAO.php';
-                                                $c = new Cliente();
-                                                $registros = $c->buscarClientes();
-		                                        foreach ($registros as $row){
-                                                    echo '<option value="'.$row->clCliente.'">'.$row->deCliente.'</option>';
-                                                } 
-                                            ?>
+                                        require 'clientesDAO.php';
+                                        $c = new Cliente();
+                                        $registros = $c->buscarClientes();
+                                        foreach ($registros as $row) {
+                                            echo '<option value="' . $row->clCliente . '">' . $row->deCliente . '</option>';
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -210,27 +217,21 @@ if(isset($_SESSION['tecnico'])){
                                     <input class="form-control" type="text" name="deProyecto" required>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group">
-                                    <label>No. de plano</label>
-                                    <input class="form-control" type="text" name="clPlano" required>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
+                            <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
                                     <input class="form-control" type="text" name="clNumReporte" required>
                                 </div>
                             </div>
-                            <div class="form-group col-md-12">
-                                <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar" required>
-                            </div>
-                            <div class="col-12 col-sm-4">
+                            <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico" required>
+                                    <label>No. de plano</label>
+                                    <input class="form-control" type="text" name="clPlano" required>
                                 </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="comment">Descripcion del trabajo y notas:</label>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required> &Oslash;</textarea>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
@@ -240,11 +241,7 @@ if(isset($_SESSION['tecnico'])){
                                 <label for="ex3">Material</label>
                                 <input class="form-control" type="text" name="deMaterial" required>
                             </div>
-                            <div class="form-group col-md-12">
-                                <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;"
-                                    required> &Oslash;</textarea>
-                            </div>
+
                             <hr width="9999">
                             <h2 class="cabeceraForm">Equipo</h2>
                             <br>
@@ -310,100 +307,39 @@ if(isset($_SESSION['tecnico'])){
                                 <label for="deRango">Rango</label>
                                 <input class="form-control" type="text" name="deRango" required>
                             </div>
-                            <div class="form-group col-md-3">
-                                <label for="deModo">Modo</label>
-                                <input class="form-control" type="text" name="deModo"  disabled>
-                            </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
                                 <input class="form-control" type="text" name="deNivelDac" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRetraso">Retraso</label>
-                                <input class="form-control" type="text" name="deRetraso"  disabled>
+                                <input class="form-control" type="text" name="deRetraso">
                             </div>
                             <div class="form-group col-md-12">
                                 <label>Rechazo:</label>
                                 <div class="ml-4 form-check form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="deRechazo"
-                                            value="ON" > ON
+                                        <input class="form-check-input" type="radio" name="deRechazo" value="ON"> ON
                                     </label>
                                 </div>
                                 <div class="ml-4 form-check form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="deRechazo"
-                                            value="OFF"  checked> OFF
+                                        <input class="form-check-input" type="radio" name="deRechazo" value="OFF" checked> OFF
                                     </label>
                                 </div>
 
                             </div>
-
-                            <div class="form-group col-md-4">
-                                <label for="deHazRecto">Haz Recto</label>
-                                <input class="form-control" type="text" name="deHazRecto"  disabled>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="deHazAng">Haz Ang.</label>
-                                <input class="form-control" type="text" name="deHazAng"  disabled>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="voltaje">Voltaje</label>
-                                <input class="form-control" type="text" name="voltaje" value="Alto" required>
-                            </div>
-                            <!-- <div class="form-group"> Posible necesidad de uso
-                                <label for="sel1">Select list:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div> -->
                         </div>
-                        <!--div class="table-responsive" align="center">
-                            <table border="1" align="center" id="resultado">
-                                <thead>
-                                    <tr style="font-size: small" class="fields">
-                                        <th>ID</th>
-                                        <th>Elemento</th>
-                                        <th>N° de Aceptación</th>
-                                        <th>N° de Serie</th>
-                                        <th>N° Colada</th>                     
-                                        <th>Profundidad</th>                     
-                                        <th>Espesor</th>                     
-                                        <th>Longitud</th>                     
-                                        <th>Desde "X"</th>                     
-                                        <th>Desde "Y"</th>                     
-                                        <th>Espesor Máximo Detectado</th>                     
-                                        <th>Espesor Mínimo Detectado</th>                     
-                                        <th>Área de Barrido</th>                     
-                                        <th>Resultado</th>                     
-                                    </tr>
-                                </thead>
-                                <!-- <tbody id="tablaReportes">
-                                </tbody>
-                            </table>
-                        </div-->
                         <div class="form-row" align="center">
-                            <!--div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">          
-                                </div>
-                            </div-->
-                            <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal"
-                            onclick=this.form.action="validarBocaTuboContinuar.php">Registrar juntas</button>
-                            <!-- <div class="col-12 col-sm-6">
-                                <div class="form-group">
-                                    <input type="button" value="Insertar fila combinada" id="combinar" class="btn alazea-btn mt-15">
-                                </div>
-                            </div> -->
+
+                            <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal" onclick=this.form.action="validarBocaTuboContinuar.php">Registrar juntas</button>
+
                         </div>
 
 
                         <!-- Comienza Tabla Dinámica -->
 
-                            <!-- <div class="form-group"> Posible necesidad de uso
+                        <!-- <div class="form-group"> Posible necesidad de uso
                                 <label for="sel1">Select list:</label>
                                 <select class="form-control" id="sel1">
                                     <option>1</option>
@@ -412,21 +348,21 @@ if(isset($_SESSION['tecnico'])){
                                     <option>4</option>
                                 </select>
                             </div> -->
-                        </div>
-
-
-
-
-
                 </div>
-                </form>
+
+
+
+
+
             </div>
+            </form>
         </div>
+    </div>
     </div>
     </div>
     <br>
     <!-- ##### Breadcrumb Area End ##### -->
-    
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
         <!-- Main Footer Area -->

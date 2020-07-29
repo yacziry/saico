@@ -184,6 +184,16 @@ if (isset($_SESSION['tecnico'])) {
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
+                                    <label>Fecha</label>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ex3">Lugar</label>
+                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <div class="form-group">
                                     <label for="ex3">Cliente</label>
                                     <select class="form-control" name="deCliente" disabled>
                                         <?php
@@ -195,7 +205,7 @@ if (isset($_SESSION['tecnico'])) {
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
+                            <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label for="ex3">Contrato</label>
                                     <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" disabled>
@@ -207,27 +217,21 @@ if (isset($_SESSION['tecnico'])) {
                                     <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" disabled>
                                 </div>
                             </div>
+                            <div class="col-12 col-sm-8">
+                                <div class="form-group">
+                                    <label>Numero de reporte</label>
+                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
+                                </div>
+                            </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>No. de plano</label>
                                     <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" disabled>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group">
-                                    <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
-                                </div>
-                            </div>
                             <div class="form-group col-md-12">
-                                <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group">
-                                    <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
-                                </div>
+                                <label for="comment">Descripcion del trabajo y notas:</label>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" disabled> <?php echo  $row->deDescripcion; ?></textarea>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
@@ -236,10 +240,6 @@ if (isset($_SESSION['tecnico'])) {
                             <div class="form-group col-md-4">
                                 <label for="ex3">Material</label>
                                 <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" disabled>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" disabled> <?php echo  $row->deDescripcion; ?></textarea>
                             </div>
                             <hr width="9999">
                             <h2 class="cabeceraForm">Equipo</h2>
@@ -306,10 +306,6 @@ if (isset($_SESSION['tecnico'])) {
                                 <label for="deRango">Rango</label>
                                 <input class="form-control" type="text" name="deRango" value="<?php echo  $row->deRango; ?>" disabled>
                             </div>
-                            <div class="form-group col-md-3">
-                                <label for="deModo">Modo</label>
-                                <input class="form-control" type="text" name="deModo" value="X" disabled>
-                            </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
                                 <input class="form-control" type="text" name="deNivelDac" value="<?php echo  $row->deNivelDac; ?>" disabled>
@@ -353,47 +349,32 @@ if (isset($_SESSION['tecnico'])) {
                                     <?php
                                 }
                                     ?>
-                                    <div class="form-group col-md-4">
-                                        <label for="deHazRecto">Haz Recto</label>
-                                        <input class="form-control" type="text" name="deHazRecto" value="X" disabled>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="deHazAng">Haz Ang.</label>
-                                        <input class="form-control" type="text" name="deHazAng" value="X" disabled>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="voltaje">Voltaje</label>
-                                        <input class="form-control" type="text" name="voltaje" value="<?php echo  $row->voltaje; ?>" disabled>
-                                    </div>
-                                    <!-- <div class="form-group"> Posible necesidad de uso
-                                <label for="sel1">Select list:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div> -->
                                     </div>
                                     <div class="table-responsive" align="center">
                                         <table border="1" align="center" id="resultado">
                                             <thead>
-                                                <tr style="font-size: small" class="fields">
-                                                    <th>ID</th>
-                                                    <th>Elemento</th>
-                                                    <th>N° de Aceptación</th>
-                                                    <th>N° de Serie</th>
-                                                    <th>N° Colada</th>
-                                                    <th>N° de Indicación</th>
-                                                    <th>Profundidad</th>
-                                                    <th>Espesor</th>
-                                                    <th>Longitud</th>
-                                                    <th>Desde "X"</th>
-                                                    <th>Desde "Y"</th>
-                                                    <th>Espesor Máximo Detectado</th>
-                                                    <th>Espesor Mínimo Detectado</th>
-                                                    <th>Área de Barrido</th>
-                                                    <th>Resultado</th>
+                                                <tr class="fields" style="font-size: small; height: 37px;">
+                                                    <th style="height: 37px; width: 50px; text-align: center;" colspan="7">DATOS DEL MATERIAL</th>
+                                                    <th style="height: 37px; width: 72px; text-align: center;" colspan="5">DATOS DE LA DISCONTINUIDAD&nbsp;</th>
+                                                    <th style="height: 37px; width: 110px; text-align: center;" colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N&nbsp;</th>
+                                                </tr>
+                                                <tr class="fields" style="font-size: small; height: 26px;">
+                                                    <th style="height: 26px; width: 50px; text-align: center;">ID</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Elemento / Trazabilidad</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Di&aacute;metro IN</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Aceptaci&oacute;n</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Serie</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; Colada</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor Nominal</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Indicaci&oacute;n</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Largo</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Ancho</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "X"</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "Y"</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&aacute;ximo Detectado</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&iacute;nimo Detectado</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">&Aacute;rea de Barrido</th>
+                                                    <th style="height: 26px; width: 50px; text-align: center;">Resultado</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="tablaReportes">
@@ -406,7 +387,7 @@ if (isset($_SESSION['tecnico'])) {
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
                                             </div>
                                         </div>
-                                    <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
+                                        <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
                                     </div>
 
 
@@ -523,7 +504,7 @@ if (isset($_SESSION['tecnico'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn alazea-btn mt-15" id="guardarBocaTubo" data-dismiss="modal" >Enviar</button>
+                    <button type="submit" class="btn alazea-btn mt-15" id="guardarBocaTubo" data-dismiss="modal">Enviar</button>
                 </div>
             </div>
         </div>
@@ -656,8 +637,6 @@ if (isset($_SESSION['tecnico'])) {
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-
-    <script src="js/juntasBocaTubo.js"></script>
 
 </body>
 

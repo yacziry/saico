@@ -6,24 +6,25 @@ $(document).ready(function () {
           count++;
           var nuevaFila = "<tr>";
 
-          nuevaFila += "<td class='id'>" + "<input name='id[]' " + "</td>";
-          nuevaFila += "<td class='elemento'>" + "<input name='elemento[]'  " + "</td>";
-          nuevaFila += "<td class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' " + "</td>";
-          nuevaFila += "<td class='noDeSerie'>" + "<input name='noDeSerie[]' " + "</td>";
-          nuevaFila += "<td class='noDeColada'>" + "<input name='noDeColada[]' " + "</td>";
-          nuevaFila += "<td class='indicacion'>" + "<input name='indicacion[]' " + "</td>";
-          nuevaFila += "<td class='profundidad'>" + "<input name='profundidad[]' " + "</td>";
-          nuevaFila += "<td class='espesor'>" + "<input name='espesor[]' " + "</td>";
-          nuevaFila += "<td class='longitud'>" + "<input name='longitud[]' " + "</td>";
-          nuevaFila += "<td class='desdeX'>" + "<input name='desdeX[]' " + "</td>";
-          nuevaFila += "<td class='desdeY'>" + "<input name='desdeY[]' " + "</td>";
-          nuevaFila += "<td class='espesorMax'>" + "<input name='espesorMax[]' " + "</td>";
-          nuevaFila += "<td class='espesorMin'>" + "<input name='espesorMin[]' " + "</td>";
-          nuevaFila += "<td class='areaBarrido'>" + "<input name='areaBarrido[]' " + "</td>";
-          nuevaFila += "<td class='resultado'>" + "<input name='resultado[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='id'>" + "<input name='id[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='elemento'>" + "<input name='elemento[]'  " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='diametro'>" + "<input name='diametro[]'  " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='noDeSerie'>" + "<input name='noDeSerie[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='noDeColada'>" + "<input name='noDeColada[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='espesorNominal'>" + "<input name='espesorNominal[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='indicacion'>" + "<input name='indicacion[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='largo'>" + "<input name='largo[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='ancho'>" + "<input name='ancho[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='desdeX'>" + "<input name='desdeX[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='desdeY'>" + "<input name='desdeY[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='espesorMax'>" + "<input name='espesorMax[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='espesorMin'>" + "<input name='espesorMin[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='areaBarrido'>" + "<input name='areaBarrido[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px; width: 50px;' class='resultado'>" + "<input name='resultado[]' " + "</td>";
           //}
           nuevaFila += "</tr>";
-          if (count <= 15) {
+          if (count <= 20) {
                $("#tablaReportes").append(nuevaFila);
                //alert(count);
           }
@@ -38,6 +39,10 @@ $(document).ready(function () {
                var elemento = $(this).val();
                //alert(elemento);
           });
+          $('.diametro input').each(function () {
+               var diametro = $(this).val();
+               //alert(diametro);
+          });
           $('.noDeAceptacion input').each(function () {
                var noDeAceptacion = $(this).val();
                //alert(noDeAceptacion);
@@ -50,21 +55,21 @@ $(document).ready(function () {
                var noDeColada = $(this).val();
                //alert(noDeColada);
           });
+          $('.espesorNominal input').each(function () {
+               var espesorNominal = $(this).val();
+               //alert(espesorNominal);
+          });
           $('.indicacion input').each(function () {
                var indicacion = $(this).val();
                //alert(indicacion);
           });
-          $('.profundidad input').each(function () {
-               var profundidad = $(this).val();
-               //alert(profundidad);
+          $('.largo input').each(function () {
+               var largo = $(this).val();
+               //alert(largo);
           });
-          $('.espesor input').each(function () {
-               var espesor = $(this).val();
-               //alert(espesor);
-          });
-          $('.longitud input').each(function () {
-               var longitud = $(this).val();
-               //alert(longitud);
+          $('.ancho input').each(function () {
+               var ancho = $(this).val();
+               //alert(ancho);
           });
           $('.desdeX input').each(function () {
                var desdeX = $(this).val();
@@ -112,6 +117,10 @@ $(document).ready(function () {
                var elemento = $(this).val();
                //alert(elemento);
           });
+          $('.diametro input').each(function () {
+               var diametro = $(this).val();
+               //alert(diametro);
+          });
           $('.noDeAceptacion input').each(function () {
                var noDeAceptacion = $(this).val();
                //alert(noDeAceptacion);
@@ -124,21 +133,21 @@ $(document).ready(function () {
                var noDeColada = $(this).val();
                //alert(noDeColada);
           });
+          $('.espesorNominal input').each(function () {
+               var espesorNominal = $(this).val();
+               //alert(espesorNominal);
+          });
           $('.indicacion input').each(function () {
                var indicacion = $(this).val();
                //alert(indicacion);
           });
-          $('.profundidad input').each(function () {
-               var profundidad = $(this).val();
-               //alert(profundidad);
+          $('.largo input').each(function () {
+               var largo = $(this).val();
+               //alert(largo);
           });
-          $('.espesor input').each(function () {
-               var espesor = $(this).val();
-               //alert(espesor);
-          });
-          $('.longitud input').each(function () {
-               var longitud = $(this).val();
-               //alert(longitud);
+          $('.ancho input').each(function () {
+               var ancho = $(this).val();
+               //alert(ancho);
           });
           $('.desdeX input').each(function () {
                var desdeX = $(this).val();
