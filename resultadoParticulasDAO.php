@@ -1,34 +1,38 @@
 <?php
 
 require_once 'conexion_mvc.php';
-interface IEntidadR{
-    public function insertar($x); 
-    public function buscar($x); 
-    public function modificar(); 
-    public function eliminar($x);    
-}//interface
+interface IEntidadR
+{
+    public function insertar($x);
+    public function buscar($x);
+    public function modificar();
+    public function eliminar($x);
+} //interface
 
-class ResultadoParticulas implements IEntidadR{
+class ResultadoParticulas implements IEntidadR
+{
     private  $db;
-    public function __construct() {
-        $this->db=ConexionDB::getConexion();
-        if($this->db === false){
+    public function __construct()
+    {
+        $this->db = ConexionDB::getConexion();
+        if ($this->db === false) {
             //echo 'No se conecto';
-        }else {
+        } else {
             //echo "Se conecto a base de datos<br>";                      
         }
-    }//__construct
+    } //__construct
 
     //funcion que inserta un array y devuelve un lastid
-    public function insertar($arreglo) {
+    public function insertar($arreglo)
+    {
         try {
 
             $sql = "INSERT INTO tsresultadosparticulas (clNumReporte, dePieza, deJunta, "
-                    . " deLongitud, deDiscontinuidad, deEvaluacion, "
-                    . " deObservaciones, id ) "
-                    . " VALUES (:clNumReporte, :dePieza, :deJunta,"
-                    . " :deLongitud, :deDiscontinuidad, :deEvaluacion, "
-                    . " :deObservaciones,:id )";
+                . " deLongitud, deDiscontinuidad, deEvaluacion, "
+                . " deObservaciones, id ) "
+                . " VALUES (:clNumReporte, :dePieza, :deJunta,"
+                . " :deLongitud, :deDiscontinuidad, :deEvaluacion, "
+                . " :deObservaciones,:id )";
 
             $stmt = $this->db->prepare($sql);
 
@@ -64,93 +68,96 @@ class ResultadoParticulas implements IEntidadR{
     }
 
     //funcion que busca todos los ultimos registros insertados por nr
-    public function buscar($clNumReporte) { 
+    public function buscar($clNumReporte)
+    {
         $sentencia = "SELECT * FROM tsreporteparticulas WHERE clNumReporte = :clNumReporte ORDER BY id DESC LIMIT 1";
-        try{
-            $stm = $this->db->prepare ($sentencia);
+        try {
+            $stm = $this->db->prepare($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
 
             return $registros;
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
     //funcion que devuelve el ultimo id de tsreporteparticulas iinsertado
-    public function buscarID() { 
+    public function buscarID()
+    {
         $sentencia = "SELECT id, cl FROM tsreporteparticulas ORDER BY id DESC LIMIT 1";
-        try{
-            $stm = $this->db->prepare ($sentencia);
+        try {
+            $stm = $this->db->prepare($sentencia);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-            foreach ($registros as $r){
+            foreach ($registros as $r) {
                 $id = $r->id;
-            } 
+            }
             return $id;
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
 
     //funcion que devuelve el ultimo id y clave para tabla resultados
-    public function ultimoID() { 
+    public function ultimoID()
+    {
         $sentencia = "SELECT id, clNumReporte FROM tsreporteparticulas ORDER BY id DESC LIMIT 1";
-        try{
-            $stm = $this->db->prepare ($sentencia);
+        try {
+            $stm = $this->db->prepare($sentencia);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-            
-            return $registros;
 
-        }catch(Exception $e){
+            return $registros;
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
 
     //funcion que busca todos los registros insertados por noReporte
     //IMPORTANTE, ESTA PENDIENTE UN JOIN PARA TABLA RESULTADOS
-    public function buscarReporte($clNumReporte) { 
+    public function buscarReporte($clNumReporte)
+    {
         $sentencia = "SELECT * from tsreporteparticulas rp join tsimgparticulas using(id) WHERE rp.clNumReporte = :clNumReporte";
-        try{
-            $stm = $this->db->prepare ($sentencia);
+        try {
+            $stm = $this->db->prepare($sentencia);
             $stm->bindValue(':clNumReporte', $clNumReporte);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
 
             return $registros;
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo "$e->getMessage()";
         }
     }
     //funcion que busca el ultimo clNumReporte por cliente
-    public function cliente($cliente) { 
+    public function cliente($cliente)
+    {
         $sentencia = "SELECT clNumReporte from tsreporteparticulas WHERE cacliente_clCliente = :cliente ORDER BY id DESC LIMIT 1";
-        try{
-            $stm = $this->db->prepare ($sentencia);
+        try {
+            $stm = $this->db->prepare($sentencia);
             $stm->bindValue(':cliente', $cliente);
             $stm->execute();
             $registros = $stm->fetchAll(PDO::FETCH_OBJ);
 
             return $registros;
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo "$e->getMessage()";
         }
     }
-    public function modificar() {        
+    public function modificar()
+    {
     }
 
-    public function eliminar($x) {        
+    public function eliminar($x)
+    {
     }
 
-    public function __destruct() {
+    public function __destruct()
+    {
         //echo "cerrando bd";
         $this->db = null;
-    }//__destruct
+    } //__destruct
 
 }// classMetalografia
 
