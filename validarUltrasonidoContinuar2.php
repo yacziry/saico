@@ -98,7 +98,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         
                 );
                 //Insertar array en bd
-                include_once 'UltrasonidoDAO.php';
+                include_once 'bocaTuboDAO.php';
                 $p = new bocaDeTubo();
                 $bocaDeTubo = $p->insertar($arraybocaDeTubo);
                 if ($bocaDeTubo) {

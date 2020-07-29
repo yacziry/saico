@@ -7,7 +7,7 @@ session_start();
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//echo "validadUltrasonidoFinalizar.php";
 if (isset($_SESSION['tecnico']) && isset($_POST)) {
 
         if (empty($_POST['deCliente'])) {
@@ -55,7 +55,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 $_SESSION["reporteS"] = $reporteS;
         } //sino hubo errores 
         //registro que muestra registro fotografico
-        //header("location:formRegistroFotUl.php");
+        header("location:formRegistroFotUl.php");
 } else {
         header("location:notFound.html");
         die();
