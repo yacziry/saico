@@ -174,7 +174,7 @@ $(document).ready(function () {
                     $("#resultado").load(" #resultado");
                     //mostrar lo que recibimos
                     console.log(data);
-                    window.location.href = '../validarUltrasonidoFinalizar.php';
+                    window.location.href = '../validarBocaTuboFinalizar.php';
                }
           });
      });

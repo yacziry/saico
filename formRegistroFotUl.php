@@ -313,7 +313,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Agregar otro registro" class="btn alazea-btn mt-15" onclick=this.form.action="formUltrasonido.php">
+                                    <input type="submit" value="Agregar otro registro" class="btn alazea-btn mt-15" onclick=this.form.action="formBocaTubo.php">
                                 </div>
                             </div>
                         </div>

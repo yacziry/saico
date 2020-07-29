@@ -392,7 +392,7 @@ if(isset($_SESSION['tecnico'])){
                                 </div>
                             </div-->
                             <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal"
-                            onclick=this.form.action="validarUltrasonidoContinuar.php">Registrar juntas</button>
+                            onclick=this.form.action="validarBocaTuboContinuar.php">Registrar juntas</button>
                             <!-- <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <input type="button" value="Insertar fila combinada" id="combinar" class="btn alazea-btn mt-15">
@@ -555,7 +555,7 @@ if(isset($_SESSION['tecnico'])){
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    <script src="js/juntasUltrasonido.js"></script>
+    <script src="js/juntasBocaTubo.js"></script>
 </body>
 
 </html>

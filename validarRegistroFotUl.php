@@ -55,5 +55,4 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
         }
         //SINO HUBU NINGUN ERROR
     }
-    //header("formMostrarUltrasonidoNR.php");
 }//ultimoIF
