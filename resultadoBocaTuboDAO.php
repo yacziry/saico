@@ -42,13 +42,14 @@ class ResultadoBocaTubo implements IEntidadR
 
             $stmt->bindParam(':clID', $clID);
             $stmt->bindParam(':deElemento', $deElemento);
+            $stmt->bindParam(':deDiametro', $deDiametro);
             $stmt->bindParam(':clAceptacion', $clAceptacion);
             $stmt->bindParam(':clSerie', $clSerie);
             $stmt->bindParam(':clColada', $clColada);
+            $stmt->bindParam(':deEspesorNominal', $deEspesorNominal);
             $stmt->bindParam(':clIndicacion', $clIndicacion);
-            $stmt->bindParam(':deProfundidad', $deProfundidad);
-            $stmt->bindParam(':deEspesor', $deEspesor);
-            $stmt->bindParam(':deLongitud', $deLongitud);
+            $stmt->bindParam(':deLargo', $deLargo);
+            $stmt->bindParam(':deAncho', $deAncho);
             $stmt->bindParam(':deX', $deX);
             $stmt->bindParam(':deY', $deY);
             $stmt->bindParam(':deEspesorMaximo', $deEspesorMaximo);
@@ -63,10 +64,10 @@ class ResultadoBocaTubo implements IEntidadR
                 $clAceptacion = $arreglo['clAceptacion'][$index];
                 $clSerie = $arreglo['clSerie'][$index];
                 $clColada = $arreglo['clColada'][$index];
+                $deEspesorNominal = $arreglo['deEspesorNominal'][$index];
                 $clIndicacion = $arreglo['clIndicacion'][$index];
-                $deProfundidad = $arreglo['deProfundidad'][$index];
-                $deEspesor = $arreglo['deEspesor'][$index];
-                $deLongitud = $arreglo['deLongitud'][$index];
+                $deLargo = $arreglo['deLargo'][$index];
+                $deAncho = $arreglo['deAncho'][$index];
                 $deX = $arreglo['deX'][$index];
                 $deY = $arreglo['deY'][$index];
                 $deEspesorMaximo = $arreglo['deEspesorMaximo'][$index];
