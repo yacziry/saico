@@ -7,7 +7,6 @@ session_start();
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//echo "validadUltrasonidoFinalizar.php";
 if (isset($_SESSION['tecnico']) && isset($_POST)) {
 
         if (empty($_POST['deCliente'])) {
@@ -32,6 +31,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deModelo2' => $_POST['deModelo2'],
                         'deNs2' => $_POST['deNs2'],
                         'deFrec' => $_POST['deFrec'],
+                        'deAcoplante' => $_POST['deAcoplante'],
                         'deTipoAcoplante' => $_POST['deTipoAcoplante'],
                         'deNs3' => $_POST['deNs3'],
                         'deGanancia' => $_POST['deGanancia'],

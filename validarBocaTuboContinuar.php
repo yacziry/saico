@@ -57,8 +57,6 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 header("location:formBocaTubo.php?msgC=Tipo Equipo no puedo estar vacio");
         } elseif (empty($_POST['deNivelDac'])) {
                 header("location:formBocaTubo.php?msgC=Rango Equipo no puedo estar vacio");
-        } elseif (empty($_POST['voltaje'])) {
-                header("location:formBocaTubo.php?msgC=Voltaje no puedo estar vacio");
                 // FALTA AGREGAR CAMPOS DE FIRMAS Y EMPRESA
         } else {
                 $usuario = $_SESSION['tecnico'];
@@ -80,6 +78,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deModelo2' => $_POST['deModelo2'],
                         'deNs2' => $_POST['deNs2'], 
                         'deFrec' => $_POST['deFrec'], 
+                        'deAcoplante' => $_POST['deAcoplante'], 
                         'deTipoAcoplante' => $_POST['deTipoAcoplante'], 
                         'deNs3' => $_POST['deNs3'],
                         'deGanancia' => $_POST['deGanancia'], 
@@ -87,14 +86,13 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deRango' => $_POST['deRango'], 
                         'deNivelDac' => $_POST['deNivelDac'],
                         'deRechazo' => $_POST['deRechazo'], 
-                        'voltaje' => $_POST['voltaje'], 
                         'feRegistro'=>$fecha,
                         'clUsuario'=>$usuario,
-                        'deFirma1' => $_POST['voltaje'], 
-                        'deFirma2' => $_POST['voltaje'], 
-                        'deEmpresa1' => $_POST['voltaje'],
-                        'deEmpresa2' => $_POST['voltaje'], // CORREGIR LAS VARIABLES 
-                        'deEmpresa3' => $_POST['voltaje'],
+                        'deFirma1' => $_POST['deMarca2'], 
+                        'deFirma2' => $_POST['deMarca2'], 
+                        'deEmpresa1' => $_POST['deMarca2'],
+                        'deEmpresa2' => $_POST['deMarca2'], // CORREGIR LAS VARIABLES 
+                        'deEmpresa3' => $_POST['deMarca2'],
                         'cacliente_clCliente' => $_POST['deCliente']
                         
                 );
@@ -108,7 +106,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 $_SESSION["reporteS"] = $reporteS;
         } //sino hubo errores 
         //registro que muestra registro fotografico
-        header("location:formUltrasonidoContinuar.php");
+        header("location:formBocaTuboContinuar.php");
 } else {
         header("location:notFound.html");
         die();

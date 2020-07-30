@@ -6,12 +6,13 @@ require 'resultadoBocaTuboDAO.php';
 $clID = $_POST['id'];
 $deElemento = $_POST['elemento'];
 $clAceptacion = $_POST['noDeAceptacion'];
+$deDiametro = $_POST['diametro'];
 $clSerie = $_POST['noDeSerie'];
 $clColada = $_POST['noDeColada'];
 $clIndicacion = $_POST['indicacion'];
-$deProfundidad = $_POST['profundidad'];
-$deEspesor = $_POST['espesor'];
-$deLongitud = $_POST['longitud'];
+$deEspesorNominal = $_POST['espesorNominal'];
+$deLargo = $_POST['largo'];
+$deAncho = $_POST['ancho'];;
 $deX = $_POST['desdeX'];
 $deY = $_POST['desdeY'];
 $deEspesorMaximo = $_POST['espesorMax'];
@@ -28,14 +29,14 @@ foreach ($ultimoRegistro as $row) {
 }
 
 $resultadoBocaDeTubo = array(
-	'clID' => $clID, 'deElemento' => $deElemento, 'clAceptacion' => $clAceptacion, 'clSerie' => $clSerie,
-	'clColada' => $clColada, 'clIndicacion' => $clIndicacion, 'deProfundidad' => $deProfundidad,
-	'deEspesor' => $deEspesor, 'deLongitud' => $deLongitud, 'deX' => $deX,
+	'clID' => $clID, 'deElemento' => $deElemento, 'deDiametro' => $deDiametro, 'clAceptacion' => $clAceptacion, 
+	'clSerie' => $clSerie,
+	'clColada' => $clColada, 'deEspesorNominal' => $deEspesorNominal, 'clIndicacion' => $clIndicacion,
+	'deLargo' => $deLargo, 'deAncho' => $deAncho, 'deX' => $deX,
 	'deY' => $deY, 'deEspesorMaximo' => $deEspesorMaximo, 'deEspesorMinimo' => $deEspesorMinimo,
 	'deBarrido' => $deBarrido, 'deResultado' => $deResultado, 'tsreportebocadetubo_id' => $id
 );
 //var_dump($resultadoBocaDeTubo);
-
 $resultado = new ResultadoBocaTubo();
 $enviado = $resultado->insertar($resultadoBocaDeTubo);
 if ($enviado) {
