@@ -332,6 +332,35 @@ if (isset($_SESSION['tecnico'])) {
 
                             </div>
                         </div>
+                        <fieldset class="mt-5 mb-5">
+                            <legend align="center">FIRMAS</legend>
+                            <div class="form-row">
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group">                                   
+                                        <input class="form-control" type="text" name="deFirma1" placeholder="Nombre..." required>
+                                        <br>
+                                        <label>Nombre de la empresa</label>
+                                        <textarea class="form-control" type="text" name="deEmpresa1" style="resize:none;" rows="3">T&eacute;cnico N I/II SNT-TC-1A Asesor&iacute;a e Inspecci&oacute;n en Construcci&oacute;n Costa Fuera, S.C</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group">                                   
+                                        <input class="form-control" type="text" name="deFirma2" placeholder="Nombre..." required>
+                                        <br>
+                                        <label>Nombre de la empresa</label>
+                                        <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3">Coordinador de control de calidad Propetrol</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group">                                    
+                                        <input class="form-control" type="text" name="deFirma3" placeholder="Nombre..." required>
+                                        <br>
+                                        <label>Nombre de la empresa</label>
+                                        <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3">Ingeniero de campo Propetrol</textarea>
+                                    </div>
+                                </div>
+                            </div><!--form-row-->
+                        </fieldset>
                         <div class="form-row" align="center">
 
                             <button type="submit" class="btn alazea-btn mt-15" id="prueba" data-dismiss="modal" onclick=this.form.action="validarBocaTuboContinuar.php">Registrar juntas</button>
