@@ -4,6 +4,7 @@ error_reporting(0);
 ini_set("session.cookie_lifetime", "14400");
 ini_set("session.gc_maxlifetime", "14400");
 // Comienzo de la sesi�n
+date_default_timezone_set('America/Mexico_City');
 session_start();
 
 if (isset($_SESSION['tecnico'])) {
