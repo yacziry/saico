@@ -32,7 +32,7 @@ class ResultadoBocaTubo implements IEntidadR
                 . " deLargo, deAncho, deX, deY,  "
                 . " deEspesorMaximo, deEspesorMinimo, "
                 . " deBarrido, deResultado, tsreportebocadetubo_id)"
-                . " VALUES (:clID, :deElemento, deDiametro, :clAceptacion,"
+                . " VALUES (:clID, :deElemento, :deDiametro, :clAceptacion,"
                 . " :clSerie, :clColada, :deEspesorNominal, :clIndicacion, "
                 . " :deLargo, :deAncho, :deX, :deY,  "
                 . " :deEspesorMaximo, :deEspesorMinimo, "
