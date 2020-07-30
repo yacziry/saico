@@ -59,7 +59,47 @@ $(document).ready(function () {
     });//onChange
     //insertar datos del modal  a DB
     $("#enviar").click(function () {
+        //$('#clNorma').find('option').remove();
         norma = $("#norma").val();
+        deBrinell_Max = $("#deBrinell_Max_modal").val();
+        deKsi_Min = $("#deKsi_Min_modal").val();
+        deCedencia = $("#deCedencia").val();
+        deKsi_Max = $("#deKsi_Max").val();
+        c = $("#c_modal").val();
+        mn = $("#mn").val();
+        p = $("#p").val();
+        s = $("#s").val();
+        si = $("#si").val();
+        cu = $("#cu").val();
+        ni = $("#ni").val();
+        cr = $("#cr").val();
+        mo = $("#mo").val();
+        v = $("#v").val();
+        nb = $("#nb").val();
+        n = $("#n").val();
+        deNotas = $("#deNotas").val();
+        enviaNorma();
+    });//click
+
+    function enviaNorma(){
+        $.ajax({
+            url: 'formObtenerTablasNormas.php',
+            type: 'POST',         
+            data: {norma, deBrinell_Max, deKsi_Min, deCedencia, deKsi_Max, c,
+            mn, p, s, si, cu, ni, cr, mo, v, nb, n, deNotas},
+            //dataType: 'Json',
+            success: function(respuesta){
+                //alert("nicee");
+                for (i = 0; i < respuesta.length; i++) {
+                    $('#clNorma').append('<option value="' + respuesta[i]['norma'] + '">' + respuesta[i]['norma']+'</option>');
+                    console.log(respuesta);
+                }
+
+                
+            }
+        })
+    }
+        /*norma = $("#norma").val();
         deBrinell_Max = $("#deBrinell_Max_modal").val();
         deKsi_Min = $("#deKsi_Min_modal").val();
         deCedencia = $("#deCedencia").val();
@@ -106,6 +146,6 @@ $(document).ready(function () {
                      $("#prueba3").html(pq);
                }
         });//post
-    });//click
+    });//click*/
     
 });//ready

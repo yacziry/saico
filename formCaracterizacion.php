@@ -1,9 +1,9 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciï¿½nes del PHP xd
 error_reporting(0);
 ini_set("session.cookie_lifetime","14400");
 ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+// Comienzo de la sesiï¿½n
 session_start();
 
 if(isset($_SESSION['tecnico'])){
@@ -712,7 +712,7 @@ if(isset($_SESSION['tecnico'])){
                         </div>
                         <div class="form-group">
                             <label>Notas</label>
-                            <input type="text" class="form-control" id="deNotas" placeholder="Escribir aqui"/>
+                            <textarea class="form-control" id="deNotas" placeholder="Escribir aqui"></textarea>
                         </div>
                     </form>
                 </div>
