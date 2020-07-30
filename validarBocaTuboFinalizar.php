@@ -31,6 +31,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deModelo2' => $_POST['deModelo2'],
                         'deNs2' => $_POST['deNs2'],
                         'deFrec' => $_POST['deFrec'],
+                        'deAcoplante' => $_POST['deAcoplante'],
                         'deTipoAcoplante' => $_POST['deTipoAcoplante'],
                         'deNs3' => $_POST['deNs3'],
                         'deGanancia' => $_POST['deGanancia'],
