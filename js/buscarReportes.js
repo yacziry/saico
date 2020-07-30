@@ -76,7 +76,7 @@ $(document).ready(function () {
 
                 if(cTecnica == "Dureza") {
                     for (i = 0; i < aJSON.length; i++) {
-                         cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='formMostrarDurezaNR.php'><p id='link'>Ver<p/></button></td><td><a href='formActualizarDureza.php'><p id='link'>Actualizar</p></a></td></tr>";
+                         cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='formBocaTuboMostrar.php'><p id='link'>Ver<p/></button></td><td><a href='formActualizarDureza.php'><p id='link'>Actualizar</p></a></td></tr>";
                     }
                 }//ifliq
                 $("#sinRegistros").css("display", "none");
