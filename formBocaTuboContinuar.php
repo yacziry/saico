@@ -23,6 +23,8 @@ if (isset($_SESSION['tecnico'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/index.css">
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
     <script src="js/normaReferencia.js"></script>
@@ -37,8 +39,7 @@ if (isset($_SESSION['tecnico'])) {
     <!-- Favicon -->
     <link rel="icon" href="">
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+
 
 </head>
 
@@ -258,7 +259,7 @@ if (isset($_SESSION['tecnico'])) {
                             </div>
                             <hr width="1280">
                             <h2 class="cabeceraForm">Transductor</h2>
-                            
+
                             <div class="form-group col-md-4">
                                 <label for="deMarca2">Marca</label>
                                 <input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>" disabled>
@@ -278,7 +279,7 @@ if (isset($_SESSION['tecnico'])) {
                             <hr width="1280">
                             <div class="form-group col-md-4">
                                 <label style="color: darkgoldenrod; font-size: 20px; margin-bottom: 2px;" for="deAcoplante">Acoplante<span class="ml-2 badge badge-secondary">BLOQUE</span></label>
-                               
+
                                 <input class="form-control" type="text" name="deAcoplante" value="<?php echo  $row->deAcoplante; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
@@ -354,7 +355,7 @@ if (isset($_SESSION['tecnico'])) {
                                     ?>
                                     </div>
                                     <div class="table-responsive" align="center">
-                                        <table border="1" align="center" id="resultado">
+                                        <!-- <table border="1" align="center" id="resultado">
                                             <thead>
                                                 <tr class="fields" style="font-size: small; height: 37px;">
                                                     <th style="height: 37px; width: 50px; text-align: center;" colspan="7">DATOS DEL MATERIAL</th>
@@ -382,87 +383,42 @@ if (isset($_SESSION['tecnico'])) {
                                             </thead>
                                             <tbody id="tablaReportes">
                                             </tbody>
-                                        </table>
+                                        </table> -->
 
-                                        <table class="table table-bordered">
-                                            <thead>
-                                            <tr class="fields" style="font-size: small; height: 37px;">
-                                                    <th style="height: 37px; width: 50px; text-align: center;" colspan="7">DATOS DEL MATERIAL</th>
-                                                    <th style="height: 37px; width: 72px; text-align: center;" colspan="5">DATOS DE LA DISCONTINUIDAD&nbsp;</th>
-                                                    <th style="height: 37px; width: 110px; text-align: center;" colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N&nbsp;</th>
-                                                </tr>
-                                                <tr class="fields" style="font-size: small; height: 26px;">
-                                                    <th style="height: 26px; width: 50px; text-align: center;">ID</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Elemento / Trazabilidad</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Di&aacute;metro IN</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Aceptaci&oacute;n</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Serie</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; Colada</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor Nominal</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Indicaci&oacute;n</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Largo</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Ancho</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "X"</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "Y"</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&aacute;ximo Detectado</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&iacute;nimo Detectado</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">&Aacute;rea de Barrido</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Resultado</th>
+
+                                        <table class="dataTable">
+                                            <thead class="colspanHead">
+                                                <tr>
+                                                    <th colspan="7">DATOS DEL MATERIAL</th>
+                                                    <th colspan="5">DATOS DE LA DISCONTINUIDAD</th>
+                                                    <th colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <thead class="dataHead">
                                                 <tr>
-                                                    <td class="col-sm-1">
-                                                        <input class="col-sm-1" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-4" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-2" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-3" />
-                                                    </td>
-                                                    <td class="col-sm-3">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-4" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-2" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-3" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-1" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-4" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-2" />
-                                                    </td>
-                                                    <td class="col-sm-2">
-                                                        <input class="col-sm-12" placeholder="col-sm-3" />
-                                                    </td>
+                                                    <th>ID</th>
+                                                    <th>Elemento / Trazabilidad</th>
+                                                    <th>Di&aacute;metro IN</th>
+                                                    <th>No. Aceptaci&oacute;n</th>
+                                                    <th>No. Serie</th>
+                                                    <th>No. Colada</th>
+                                                    <th>Espesor nominal</th>
+                                                    <th>No. De indicaci&oacute;n</th>
+                                                    <th>Largo</th>
+                                                    <th>Ancho</th>
+                                                    <th>Desde "X"</th>
+                                                    <th>Desde "Y"</th>
+                                                    <th>Espesor Maximo Detectado</th>
+                                                    <th>Espesor Minimo Detectado</th>
+                                                    <th>Area de Barrido</th>
+                                                    <th>Resultado</th>
                                                 </tr>
+                                            </thead>
+                                                                                        
+                                            <tbody id="tablaReportes">
                                             </tbody>
                                         </table>
+
                                     </div>
                                     <div class="form-row" align="center" id="botonesDim">
                                         <div class="col-12 col-sm-6">
