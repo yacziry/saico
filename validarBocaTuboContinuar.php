@@ -90,6 +90,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'clUsuario'=>$usuario,
                         'deFirma1' => $_POST['deFirma1'], 
                         'deFirma2' => $_POST['deFirma2'], 
+                        'deFirma3' => $_POST['deFirma3'], 
                         'deEmpresa1' => $_POST['deEmpresa1'],
                         'deEmpresa2' => $_POST['deEmpresa2'],
                         'deEmpresa3' => $_POST['deEmpresa3'],
