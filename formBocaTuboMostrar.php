@@ -150,7 +150,8 @@ foreach ($forReportes as $row) {
 							<tr style="height: 33px;">
 								<th style="width: 361px; height: 33px; background-color: antiquewhite;" colspan="2">EQUIPO</th>
 								<th style="width: 538px; height: 33px; background-color: antiquewhite;" colspan="4">TRANSDUCTOR</th>
-								<th style="width: 389px; height: 33px; background-color: antiquewhite;" colspan="2">ACOPLANTE</th>
+								<th style="width: 389px; height: 33px; background-color: antiquewhite;" colspan="1">ACOPLANTE</th>
+								<th style="width: 389px; height: 33px;" colspan="1"><?php echo $row->deAcoplante; ?></th>
 							</tr>
 						</thead>
 						<tbody>
