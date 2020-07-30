@@ -238,7 +238,7 @@ if(isset($_SESSION['tecnico'])){
                                 <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" required>
                             </div>
                         </div><!--form-row-->
-                        <div class="encabezado" align="center">
+                        <div class="encabezado mt-5 mb-5" align="center">
                             <table width="970" border="3">
                                 <tr>
                                     <td align="center">REGISTRO FOTOGRAFICO</td>
@@ -276,7 +276,7 @@ if(isset($_SESSION['tecnico'])){
                                 </tr>
                             </table>
                         </div><!--DIV encabezado-->
-                        <fieldset>
+                        <fieldset class="mt-5">
                             <legend align="center">FIRMAS</legend>
                             <div class="form-row">
                                 <div class="col-12 col-sm-4">

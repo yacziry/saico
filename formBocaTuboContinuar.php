@@ -23,8 +23,8 @@ if (isset($_SESSION['tecnico'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/index.css">
-        <!-- Core Stylesheet -->
-        <link rel="stylesheet" href="style.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/llena_formatos.css" type="text/css">
     <script src="js/jquery/jquery-2.1.1.min.js"></script>
     <script src="js/normaReferencia.js"></script>
@@ -354,6 +354,38 @@ if (isset($_SESSION['tecnico'])) {
                                 }
                                     ?>
                                     </div>
+
+                                    <fieldset class="mt-5 mb-5">
+                                        <legend align="center">FIRMAS</legend>
+                                        <div class="form-row">
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma1" value="<?php echo  $row->deFirma1; ?>" disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa1" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa1; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma2" value="<?php echo  $row->deFirma2; ?>" disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa2; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma3" value="<?php echo  $row->deFirma3; ?> " disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa3; ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--form-row-->
+                                    </fieldset>
+
                                     <div class="table-responsive" align="center">
                                         <!-- <table border="1" align="center" id="resultado">
                                             <thead>
@@ -414,7 +446,7 @@ if (isset($_SESSION['tecnico'])) {
                                                     <th>Resultado</th>
                                                 </tr>
                                             </thead>
-                                                                                        
+
                                             <tbody id="tablaReportes">
                                             </tbody>
                                         </table>

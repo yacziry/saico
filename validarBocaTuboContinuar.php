@@ -88,11 +88,12 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                         'deRechazo' => $_POST['deRechazo'], 
                         'feRegistro'=>$fecha,
                         'clUsuario'=>$usuario,
-                        'deFirma1' => $_POST['deMarca2'], 
-                        'deFirma2' => $_POST['deMarca2'], 
-                        'deEmpresa1' => $_POST['deMarca2'],
-                        'deEmpresa2' => $_POST['deMarca2'], // CORREGIR LAS VARIABLES 
-                        'deEmpresa3' => $_POST['deMarca2'],
+                        'deFirma1' => $_POST['deFirma1'], 
+                        'deFirma2' => $_POST['deFirma2'], 
+                        'deFirma3' => $_POST['deFirma3'], 
+                        'deEmpresa1' => $_POST['deEmpresa1'],
+                        'deEmpresa2' => $_POST['deEmpresa2'],
+                        'deEmpresa3' => $_POST['deEmpresa3'],
                         'cacliente_clCliente' => $_POST['deCliente']
                         
                 );
