@@ -29,15 +29,14 @@ foreach ($ultimoRegistro as $row) {
 }
 
 $resultadoBocaDeTubo = array(
-	'clID' => $clID, 'deElemento' => $deElemento, 'clAceptacion' => $clAceptacion, 'deDiametro' => $deDiametro,
+	'clID' => $clID, 'deElemento' => $deElemento, 'deDiametro' => $deDiametro, 'clAceptacion' => $clAceptacion, 
 	'clSerie' => $clSerie,
-	'clColada' => $clColada, 'clIndicacion' => $clIndicacion, 'deEspesorNominal' => $deEspesorNominal,
+	'clColada' => $clColada, 'deEspesorNominal' => $deEspesorNominal, 'clIndicacion' => $clIndicacion,
 	'deLargo' => $deLargo, 'deAncho' => $deAncho, 'deX' => $deX,
 	'deY' => $deY, 'deEspesorMaximo' => $deEspesorMaximo, 'deEspesorMinimo' => $deEspesorMinimo,
 	'deBarrido' => $deBarrido, 'deResultado' => $deResultado, 'tsreportebocadetubo_id' => $id
 );
 //var_dump($resultadoBocaDeTubo);
-
 $resultado = new ResultadoBocaTubo();
 $enviado = $resultado->insertar($resultadoBocaDeTubo);
 if ($enviado) {

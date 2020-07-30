@@ -27,19 +27,19 @@ class ResultadoBocaTubo implements IEntidadR
     {
         try {
 
-            $sql = "INSERT INTO tsresultadosbocadetubo (clID, deElemento, clAceptacion, "
-                . " clSerie, clColada, clIndicacion, deProfundidad, "
-                . " deEspesor, deLongitud, deX, deY,  "
+            $sql = "INSERT INTO tsresultadosbocadetubo (clID, deElemento, deDiametro, clAceptacion, "
+                . " clSerie, clColada, deEspesorNominal, clIndicacion, "
+                . " deLargo, deAncho, deX, deY,  "
                 . " deEspesorMaximo, deEspesorMinimo, "
                 . " deBarrido, deResultado, tsreportebocadetubo_id)"
-                . " VALUES (:clID, :deElemento, :clAceptacion,"
-                . " :clSerie, :clColada, :clIndicacion, :deProfundidad, "
-                . " :deEspesor, :deLongitud, :deX, :deY,  "
+                . " VALUES (:clID, :deElemento, deDiametro, :clAceptacion,"
+                . " :clSerie, :clColada, :deEspesorNominal, :clIndicacion, "
+                . " :deLargo, :deAncho, :deX, :deY,  "
                 . " :deEspesorMaximo, :deEspesorMinimo, "
                 . " :deBarrido, :deResultado, :tsreportebocadetubo_id)";
 
             $stmt = $this->db->prepare($sql);
-
+            
             $stmt->bindParam(':clID', $clID);
             $stmt->bindParam(':deElemento', $deElemento);
             $stmt->bindParam(':deDiametro', $deDiametro);
@@ -58,9 +58,12 @@ class ResultadoBocaTubo implements IEntidadR
             $stmt->bindParam(':deResultado', $deResultado);
             $stmt->bindParam(':tsreportebocadetubo_id', $tsreportebocadetubo_id);
 
-            for ($index = 0; $index < count($arreglo['deElemento']); $index++) {
+            
+
+            for ($index = 0; $index < count($arreglo['clID']); $index++) {
                 $clID = $arreglo['clID'][$index];
                 $deElemento = $arreglo['deElemento'][$index];
+                $deDiametro = $arreglo['deDiametro'][$index];
                 $clAceptacion = $arreglo['clAceptacion'][$index];
                 $clSerie = $arreglo['clSerie'][$index];
                 $clColada = $arreglo['clColada'][$index];
