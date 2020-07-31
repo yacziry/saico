@@ -2,11 +2,11 @@
 </div>
 <div id="ocultar">
     <?php
-    //Desactivar toda las notificaciónes del PHP xd
+    //Desactivar toda las notificaciï¿½nes del PHP xd
     error_reporting(0);
     ini_set("session.cookie_lifetime","14400");
     ini_set("session.gc_maxlifetime","14400");
-    // Comienzo de la sesión
+    // Comienzo de la sesiï¿½n
     session_start();
 
     if(isset($_SESSION['tecnico'])){
@@ -165,7 +165,7 @@
                                             <option>Particulas</option>
                                             <option>Liquidos</option>
                                             <option>Termografia</option>
-                                            <option>Ultrasonido</option>
+                                            <option>Boca de tubo</option>
                                         </select>
                                     </div>
                                 </div>

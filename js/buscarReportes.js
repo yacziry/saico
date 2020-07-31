@@ -82,7 +82,7 @@ $(document).ready(function () {
                 $("#sinRegistros").css("display", "none");
                 $("#tablaReportes").html(cad);
 
-                if(cTecnica == "Ultrasonido") {
+                if(cTecnica == "Boca de tubo") {
                     for (i = 0; i < aJSON.length; i++) {
                          cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='formBocaTuboMostrar.php'><p id='link'>Ver<p/></button></td><td><a href='formActualizarBocaTubo.php'><p id='link'>Actualizar</p></a></td></tr>";
                     }
@@ -141,6 +141,13 @@ $(document).ready(function () {
                         }
                     $("#tablaReportes").html(cad);
                     }//Metalografiaif
+
+                    if(cTecnica == "Boca de tubo") {
+                        for (i = 0; i < aJSON.length; i++) {
+                            cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar</p></a></td></tr>";
+                        }
+                    $("#tablaReportes").html(cad);
+                    }//Metalografiaif
         });//post
     });//click
     //JQuery para cliente 
@@ -189,6 +196,14 @@ $(document).ready(function () {
                 }//Caracterizacion
 
                 if(cTecnica == "Liquidos") {
+                    for (i = 0; i < aJSON.length; i++) {
+                    cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar<p></a></td></tr>";
+                }
+                $("#tablaReportes").html(cad);
+                $("#sinRegistros").hide();
+                }//Caracterizacion
+
+                if(cTecnica == "Boca de tubo") {
                     for (i = 0; i < aJSON.length; i++) {
                     cad += "<tr><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clContrato + "</td><td>" + aJSON[i].clNumReporte + "</td><td>" + aJSON[i].feTecnico + "</td><td><a href='#'><p id='link'>Ver</p></a></td><td><a href='#'><p id='link'>Actualizar<p></a></td></tr>";
                 }

@@ -90,6 +90,21 @@ class BocaDeTubo implements IEntidadUl{ //Nombre de entidad sin cofirmar
             echo "$e->getMessage()";
         }
     }
+    //metodo para buscar en tabla resultado 
+    public function buscarReporteResultado($clNumReporte) { 
+        $sentencia = "SELECT * from tsresultadosbocadetubo rp WHERE rp.clNumReporte = :clNumReporte";
+        try{
+            $stm = $this->db->prepare ($sentencia);
+            $stm->bindValue(':clNumReporte', $clNumReporte);
+            $stm->execute();
+            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
+
+            return $registros;
+
+        }catch(Exception $e){
+            echo "$e->getMessage()";
+        }
+    }
     //funcion que busca el ultimo clNumReporte por cliente
     public function cliente($cliente) { 
         $sentencia = "SELECT clNumReporte from tsreportebocadetubo WHERE cacliente_clCliente = :cliente ORDER BY id DESC LIMIT 1";
