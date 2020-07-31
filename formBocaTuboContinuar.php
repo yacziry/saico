@@ -386,49 +386,67 @@ if (isset($_SESSION['tecnico'])) {
                                         <!--form-row-->
                                     </fieldset>
 
-                                    <div class="table-responsive" align="center">
-                                        <table class="dataTable">
+                                    <div style="overflow-x: auto;" class="table-responsive" align="center">
+                                        <table class="table table-condensed table-bordered">
                                             <thead class="colspanHead">
-                                                <tr>
-                                                    <th colspan="7">DATOS DEL MATERIAL</th>
-                                                    <th colspan="5">DATOS DE LA DISCONTINUIDAD</th>
-                                                    <th colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N</th>
+                                                <tr style="text-align: center;">
+                                                    <th style="background-color: #f2f4f5;" colspan="7">DATOS DEL MATERIAL</th>
+                                                    <th style="background-color: #b85f1730;"colspan="5">DATOS DE LA DISCONTINUIDAD</th>
+                                                    <th style="background-color: #21abb630;"colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N</th>
                                                 </tr>
                                             </thead>
                                             <thead class="dataHead">
                                                 <tr style="text-align: center;">
-                                                    <th>ID</th>
-                                                    <th>Elemento / Trazabilidad</th>
-                                                    <th>Di&aacute;metro IN</th>
-                                                    <th>No. Aceptaci&oacute;n</th>
-                                                    <th>No. Serie</th>
-                                                    <th>No. Colada</th>
-                                                    <th>Espesor nominal</th>
-                                                    <th>No. De indicaci&oacute;n</th>
-                                                    <th>Largo</th>
-                                                    <th>Ancho</th>
-                                                    <th>Desde "X"</th>
-                                                    <th>Desde "Y"</th>
-                                                    <th>Espesor Maximo Detectado</th>
-                                                    <th>Espesor Minimo Detectado</th>
-                                                    <th>Area de Barrido</th>
-                                                    <th>Resultado</th>
+                                                    <th style="background-color: #f2f4f5;">ID</th>
+                                                    <th style="background-color: #f2f4f5;">Elemento / Trazabilidad</th>
+                                                    <th style="background-color: #f2f4f5;">Di&aacute;metro IN</th>
+                                                    <th style="background-color: #f2f4f5;">No. Aceptaci&oacute;n</th>
+                                                    <th style="background-color: #f2f4f5;">No. Serie</th>
+                                                    <th style="background-color: #f2f4f5;">No. Colada</th>
+                                                    <th style="background-color: #f2f4f5;">Espesor nominal</th>
+                                                    <th style="background-color: #b85f1730;">No. De indicaci&oacute;n</th>
+                                                    <th style="background-color: #b85f1730;">Largo</th>
+                                                    <th style="background-color: #b85f1730;">Ancho</th>
+                                                    <th style="background-color: #b85f1730;">Desde "X"</th>
+                                                    <th style="background-color: #b85f1730;">Desde "Y"</th>
+                                                    <th style="background-color: #21abb630;">Espesor Maximo Detectado</th>
+                                                    <th style="background-color: #21abb630;">Espesor Minimo Detectado</th>
+                                                    <th style="background-color: #21abb630;">Area de Barrido</th>
+                                                    <th style="background-color: #21abb630;">Resultado</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody id="tablaReportes">
+                                                <tr>
+                                                <td style='height: 26px;' class='id'><input name='id[]' style='width: 40px;' required></td>
+                                                <td style='height: 26px;' class='elemento'><input name='elemento[]' </td>
+                                                <td style='height: 26px;' class='diametro'><input name='diametro[]' style='width: 125px;' required></td>
+                                                <td style='height: 26px;' class='noDeAceptacion'><input name='noDeAceptacion[]' style='width: 125px;' required></td>
+                                                <td style='height: 26px;' class='noDeSerie'><input name='noDeSerie[]' style='width: 100px;' required></td>
+                                                <td style='height: 26px;' class='noDeColada'><input name='noDeColada[]' style='width: 100px;' required></td>
+                                                <td style='height: 26px;' class='espesorNominal'><input name='espesorNominal[]' style='width: 150px;' required></td>
+                                                <td style='height: 26px;' class='indicacion'><input name='indicacion[]' style='width: 80px;' required></td>
+                                                <td style='height: 26px;' class='largo'><input name='largo[]' style='width: 60px;' required></td>
+                                                <td style='height: 26px;' class='ancho'><input name='ancho[]' style='width: 60px;' required></td>
+                                                <td style='height: 26px;' class='desdeX'><input name='desdeX[]' style='width: 60px;' required></td>
+                                                <td style='height: 26px;' class='desdeY'><input name='desdeY[]' style='width: 60px;' required></td>
+                                                <td style='height: 26px;' class='espesorMax'><input name='espesorMax[]' style='width: 80px;' required></td>
+                                                <td style='height: 26px;' class='espesorMin'><input name='espesorMin[]' style='width: 80px;' required></td>
+                                                <td style='height: 26px;' class='areaBarrido'><input name='areaBarrido[]' style='width: 80px;' required></td>
+                                                <td style='height: 26px;' class='resultado'><input name='resultado[]' style='width: 80px;' required></td>
+                                                </tr>
                                             </tbody>
                                         </table>
 
                                     </div>
-                                   
+
                                     <div class="form-row mt-5" align="center" id="botonesDim">
                                         <div class="col-12 col-sm-6">
                                             <div class="form-group">
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
                                             </div>
                                         </div>
-                                        <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
+                                        <button type="submit" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
                                     </div>
 
                                     <div class="mt-5">
@@ -449,23 +467,15 @@ if (isset($_SESSION['tecnico'])) {
                                                     <strong>ZI:</strong> Zona de Inclusiones no Metálicas
                                                 </li>
                                                 <li class="mt-1">
-                                                    <strong>NPIR:</strong> No Presenta Indicaciones Relevantes             
+                                                    <strong>NPIR:</strong> No Presenta Indicaciones Relevantes
                                                 </li>
                                                 <li class="mt-1">
-                                                    <strong>LE:</strong> Laminación Escalonada  
+                                                    <strong>LE:</strong> Laminación Escalonada
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
 
-                                    </div>
-                                    <div class="form-row mt-5" align="center" id="botonesDim">
-                                        <div class="col-12 col-sm-6">
-                                            <div class="form-group">
-                                                <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
                                     </div>
                                 </div>
                         </div>
@@ -476,7 +486,7 @@ if (isset($_SESSION['tecnico'])) {
     </div>
     <br>
     <!-- ##### Breadcrumb Area End ##### -->
-    
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
         <!-- Main Footer Area -->
