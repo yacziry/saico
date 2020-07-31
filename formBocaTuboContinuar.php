@@ -423,27 +423,28 @@ if (isset($_SESSION['tecnico'])) {
                                     </div>
                                     <div class="mt-5">
                                         <div style="width: 391px;" class="alert alert-warning" role="alert">
-                                            <h2 class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</h2>
+                                            <span class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</span>
                                             <hr>
                                             <ul>
                                                 <li>
                                                     <strong>CI:</strong> Corrosión Interna
                                                 </li>
-                                                <li>
+                                                <li class="mt-1">
                                                     <strong>I:</strong> Inclusión no Metálica
                                                 </li>
-                                                <li>
+                                                <li class="mt-1">
                                                     <strong>L:</strong> Laminación
                                                 </li>
-                                                <li>
+                                                <li class="mt-1">
                                                     <strong>ZI:</strong> Zona de Inclusiones no Metálicas
                                                 </li>
-                                                <li>
+                                                <li class="mt-1">
                                                     <strong>NPIR:</strong> No Presenta Indicaciones Relevantes             
                                                 </li>
-                                                <li>
+                                                <li class="mt-1">
                                                     <strong>LE:</strong> Laminación Escalonada  
                                                 </li>
+                                                
                                             </ul>
                                         </div>
 
