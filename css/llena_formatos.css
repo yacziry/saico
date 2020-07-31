@@ -266,3 +266,10 @@ hr{
 	margin-top: 20px!important;
 	
 }
+
+
+table {
+	border-collapse: unset;
+	border-spacing: 1px;
+}
+

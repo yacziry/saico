@@ -374,7 +374,11 @@ select {
 
 @media print { @page { size: auto; } }
 
-.imgTablaCentrada{
+.imagenTablaCentrada{
 	text-align: center!important;
 }
 
+.table td, .table th {
+	vertical-align: middle!important;
+	padding: .15rem!important;
+}

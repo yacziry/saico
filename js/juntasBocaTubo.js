@@ -6,22 +6,22 @@ $(document).ready(function () {
           count++;
           var nuevaFila = "<tr>";
 
-          nuevaFila += "<td style='height: 26px;' class='id'>" + "<input name='id[]' required> " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='elemento'>" + "<input name='elemento[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='diametro'>" + "<input name='diametro[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeSerie'>" + "<input name='noDeSerie[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeColada'>" + "<input name='noDeColada[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorNominal'>" + "<input name='espesorNominal[]' required> " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='indicacion'>" + "<input name='indicacion[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='largo'>" + "<input name='largo[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='ancho'>" + "<input name='ancho[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='desdeX'>" + "<input name='desdeX[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='desdeY'>" + "<input name='desdeY[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorMax'>" + "<input name='espesorMax[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorMin'>" + "<input name='espesorMin[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='areaBarrido'>" + "<input name='areaBarrido[]' required>" + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='resultado'>" + "<input name='resultado[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='id'>" + "<input name='id[]' style='width: 40px;' required " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='elemento'>" + "<input name='elemento[]'  required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='diametro'>" + "<input name='diametro[]' required style='width: 125px;' " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' required style='width: 125px;' " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeSerie'>" + "<input name='noDeSerie[]' required style='width: 100px;'" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeColada'>" + "<input name='noDeColada[]' required style='width: 100px;'" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorNominal'>" + "<input name='espesorNominal[]' style='width: 150px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='indicacion'>" + "<input name='indicacion[]' style='width: 80px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='largo'>" + "<input name='largo[]' style='width: 60px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='ancho'>" + "<input name='ancho[]'style='width: 60px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='desdeX'>" + "<input name='desdeX[]' style='width: 60px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='desdeY'>" + "<input name='desdeY[]' style='width: 60px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorMax'>" + "<input name='espesorMax[]' style='width: 80px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorMin'>" + "<input name='espesorMin[]' style='width: 80px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='areaBarrido'>" + "<input name='areaBarrido[]' style='width: 80px;' required" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='resultado'>" + "<input name='resultado[]' style='width: 80px;' required" + "</td>";
           //}
           nuevaFila += "</tr>";
           if (count <= 20) {
