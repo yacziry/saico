@@ -9,6 +9,8 @@ session_start();
 if (isset($_SESSION['tecnico'])) {
 	$tec = $_SESSION['tecnico'];
 	$clNumReporte = $_SESSION['clNumReporte'];
+	$sessionID = !isset($_SESSION['tecnico']) ? $_COOKIE['tecnico'] : $_SESSION['tecnico'];
+	$galletita = $_COOKIE['PHPSESSID'];
 } else {
 	header("location:notFound.html");
 	die();
@@ -37,7 +39,9 @@ foreach ($forReportes as $row) {
 		<title>Informe de Liquidos</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/for_metalografia.css" type="text/css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" type="text/css">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 		<script>
 			$(function() {
 				$('#fileContents').val(document.documentElement.innerHTML);
@@ -47,7 +51,7 @@ foreach ($forReportes as $row) {
 	</head>
 
 	<body>
-		<div class="saltopaginas">
+		<div class="mt-5">
 			<div id="center" align="center">
 				<div class="encabezado">
 					<table width="981" height="80" border="1">
@@ -148,18 +152,19 @@ foreach ($forReportes as $row) {
 					<table style="max-width: 981px; min-width: 700px" border="1">
 						<thead>
 							<tr style="height: 33px;">
-								<th style="width: 361px; height: 33px; background-color: antiquewhite;" colspan="2">EQUIPO</th>
-								<th style="width: 538px; height: 33px; background-color: antiquewhite;" colspan="4">TRANSDUCTOR</th>
-								<th style="width: 389px; height: 33px; background-color: antiquewhite;" colspan="2">ACOPLANTE</th>
+								<th style="width: 361px; height: 33px; text-align: center; background-color: antiquewhite;" colspan="2">EQUIPO</th>
+								<th style="width: 538px; height: 33px; text-align: center; background-color: antiquewhite;" colspan="4">TRANSDUCTOR</th>
+								<th style="width: 389px; height: 33px; text-align: right; background-color: antiquewhite;" colspan="1">ACOPLANTE:</th>
+								<th style="width: 389px; height: 33px; text-align: center;" colspan="1"><?php echo $row->deAcoplante; ?></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr style="height: 27px;">
-								<td style="background-color: darkgray; height: 27px; ">MARCA:</td>
+								<td style="background-color: darkgray;  height: 27px; ">MARCA:</td>
 								<td style="width: 297px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center" value="<?php echo $row->deMarca; ?>"></td>
 								<td style="background-color: darkgray; height: 27px;">MARCA:</td>
 								<td style="width: 490px; height: 27px; text-align: center;" colspan="3"><input class="sinborde" style="text-align: center" type="text" value="<?php echo $row->deMarca2; ?>"></td>
-								<th style=" height: 27px;" colspan="2">BLOQUE</th>
+								<th style=" height: 27px; text-align: center;" colspan="2">BLOQUE</th>
 							</tr>
 							<tr style="height: 27px; ">
 								<td style="background-color: darkgray; height: 27px;">MODELO:</td>
@@ -184,134 +189,116 @@ foreach ($forReportes as $row) {
 				</div>
 				<br>
 				<br>
-				<div style="overflow-x:auto;" class="cuerpo flip-scroll">
-					<table border="1" class="cf" style="height: 50px; max-width: 981px; min-width: 700px;">
+				<div style="overflow-x:auto;" class="cuerpo">
+					<table border="1" style="height: 50px; min-width: 700otpx; width: 981px;">
 						<tbody>
 							<tr style="height: 33px;">
 								<th style=" text-align: center; height: 27px; background-color: antiquewhite;" colspan="11">Ajuste del Equipo</th>
 							</tr>
 							<tr style="height: 27px;">
-								<td style="background-color: darkgray;">GANANCIA:</td>
-								<td style="width: 190px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deGanancia; ?>"></td>
-								<td style="background-color: darkgray;">TIPO:</td>
-								<td style="width: 190px; text-align: center;" colspan="2"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deTipo; ?>"></td>
-								<td style="background-color: darkgray;">RANGO:</td>
-								<td style="width: 190px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deRango; ?>"></td>
-								<td style="background-color: darkgray;">MODO:</td>
-								<td style="width: 190px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="N/A"></td>
-								<td style="background-color: darkgray;">NIVEL DAC:</td>
-								<td style="width: 190px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deNivelDac; ?>"></td>
+								<td style="text-align: center; background-color: darkgray; width:8%;">GANANCIA:</td>
+								<td style="text-align: center;"><span><?php echo $row->deGanancia; ?></span>
+								<td style="text-align: center; background-color: darkgray; width:8%;">TIPO:</td>
+								<td style="text-align: center;" colspan="2"><span><?php echo $row->deTipo; ?></span>
+								<td style="text-align: center; background-color: darkgray;width:9%;">NIVEL DAC:</td>
+								<td style="text-align: center;"><span><?php echo $row->deNivelDac; ?></span>
+								<td style="text-align: center; background-color: darkgray;">RANGO:</td>
+								<td style="text-align: center;"><span><?php echo $row->deRango; ?></span>
+								<td style="text-align: center; background-color: darkgray;">RECHAZO:</td>
+								<td style="text-align: center;"><span><?php echo $row->deGanancia; ?></span>
 							</tr>
 							<tr style="height: 27px;">
-								<td style="width: 190px;background-color: darkgray;">RETRASO:</td>
-								<td style="text-align: center;">N/A</td>
-								<td style="width: 190px;background-color: darkgray;">RECHAZO:</td>
-								<td style="text-align: center;" colspan="2"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deRechazo; ?>"></td>
-								<td style="width: 190px;background-color: darkgray;">HAZ RECTO:</td>
-								<td style="text-align: center;">N/A</td>
-								<td style="width: 190px;background-color: darkgray;">HAZ ANGULAR:</td>
-								<td style="text-align: center;">N/A</td>
-								<td style="width: 190px;background-color: darkgray;">VOLTAJE:</td>
-								<td style="text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->voltaje; ?>"></td>
+
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<br>
-		</div>
-		<!--center-->
-		</div>
-		<!--saltopagina-->
-		<br>
-		<!--*********************Segunda hojaaaa*********************************-->
-		<div style='page-break-after:always' class="saltopaginas">
-			<br>
-			<div id="center" align="center">
-				<table width="970" border="3">
-					<tr>
-						<td align="center">REGISTRO FOTOGRAFICO</td>
-					</tr>
-					<tr>
-						<td>
-							<table width="970" border="0">
-					</tr>
-					<td width="470" height="300">
-						<div id="preview"> <img src="./img/bocaTubo/<?php echo  $row->deImagen1; ?>"> </div>
-					</td>
-					<td width="470" height="300">
-						<div id="apreview"> <img src="./img/bocaTubo/<?php echo  $row->deImagen2; ?>"></div>
-					</td>
-					</tr>
-					<tr>
-						<td align="center"><input size="50" class="sinborde" value="<?php echo  $row->deDescripcion1; ?>"></td>
-						<td align="center"><input size="50" class="sinborde" value="<?php echo  $row->deDescripcion2; ?>"></td>
-					</tr>
-					<tr>
-						<td width="470" height="300">
-							<div id="bpreview"> <img src="./img/bocaTubo/<?php echo  $row->deImagen3; ?>"></div>
-						</td>
-						<td width="470" height="300">
-							<div id="cpreview"> <img src="./img/bocaTubo/<?php echo  $row->deImagen4; ?>"></div>
-						</td>
-					</tr>
-					<tr>
-						<td align="center"><input size="50" class="sinborde" value="<?php echo  $row->deDescripcion3; ?>"></td>
-						<td align="center"><input size="50" class="sinborde" value="<?php echo  $row->deDescripcion4; ?>"></td>
-					</tr>
+			<!--*********************Segunda hojaaaa*********************************-->
+			<div style='page-break-after:always; text-align: -webkit-center;' class="saltopaginas">
+				<br>
+				<table border="1" style="max-width: 981px; box-shadow: 0px 0px 5px grey; " class="table mb-5 table-condensed table-bordered">
+					<tbody>
+						<tr>
+							<td style="text-align: center;" colspan="2">RESULTADO FOTOGR&Aacute;FICO&nbsp;&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="imgTablaCentrada">
+								<figure class="figure">
+									<img src="./img/bocaTubo/<?php echo  $row->deImagen1; ?>" width="250" height="250" class="figure-img img-fluid rounded" alt="<?php echo  $row->deDescripcion1; ?>">
+									<figcaption class="figure-caption text-center"><?php echo  $row->deDescripcion1; ?></figcaption>
+								</figure>
+							</td>
+							<td class="imgTablaCentrada">
+								<figure class="figure">
+									<img src="./img/bocaTubo/<?php echo  $row->deImagen2; ?>" width="250" height="250" class="figure-img img-fluid rounded" alt="<?php echo  $row->deDescripcion2; ?>">
+									<figcaption class="figure-caption text-center"><?php echo  $row->deDescripcion2 ?></figcaption>
+								</figure>
+							</td>
+						</tr>
+						<tr>
+							<td class="imgTablaCentrada">
+								<figure class="figure">
+									<img src="./img/bocaTubo/<?php echo  $row->deImagen3; ?>" width="250" height="250" class="figure-img img-fluid rounded" alt="<?php echo  $row->deDescripcion3; ?>">
+									<figcaption class="figure-caption text-center"><?php echo  $row->deDescripcion3; ?></figcaption>
+								</figure>
+							</td>
+							<td class="imgTablaCentrada ">
+								<figure class="figure">
+									<img src="./img/bocaTubo/<?php echo  $row->deImagen4; ?>" width="250" height="250" class="figure-img img-fluid rounded" alt="<?php echo  $row->deDescripcion4; ?>">
+									<figcaption class="figure-caption text-center"><?php echo  $row->deDescripcion4; ?></figcaption>
+								</figure>
+							</td>
+						</tr>
+					</tbody>
 				</table>
-				</td>
-				</tr>
-				</table>
-			</div>
-			<!--DIV encabezado-->
-		</div>
-		<!--borde-->
-		</div>
-		<!--borde-->
-		<div class="footerParticulas">
-			<table width="981" border="0" align="center">
-				<tr>
-					<td class="borde" align="center"><input type="text"></td>
-					<td class="borde" align="center"><input type="text"></td>
-					<td class="borde" align="center"><input type="text"></td>
-				</tr>
-				<!--tr>
+				<!--DIV encabezado-->
+				<!--borde-->
+				<div class="footerParticulas mt-5">
+					<table width="981" border="0" align="center">
+						<tr>
+							<td class="borde" align="center"><input type="text"></td>
+							<td class="borde" align="center"><input type="text"></td>
+							<td class="borde" align="center"><input type="text"></td>
+						</tr>
+						<!--tr>
 					<td><input type="text" placeholder="Nombre y firma" class="sinborde" size="30"></td>
 					<td><input type="text" placeholder="Nombre y firma" class="sinborde" size="30"></td>
 					<td><input type="text" placeholder="Nombre y firma" class="sinborde" size="30"></td>
 				</tr-->
-				<tr>
-					<td>
-						<input class="inputfinales" type="text" size="46" value="<?php echo  $row->deFirma1; ?>">
-						<br>
-						<textarea class="inputfinales2" id="textA2" cols="300px" rows="3" style="max-width:300px;" style="font-weight: bold;"><?php echo  $row->deEmpresa1; ?></textarea>
-					<td>
-						<input class="inputfinales" type="text" size="46" value="<?php echo  $row->deFirma2; ?>">
-						<br>
-						<textarea class="inputfinales2" id="textA2" rows="3" cols="300px" style="max-width:300px;" style="font-weight: bold;"><?php echo  $row->deEmpresa2; ?></textarea>
-					<td>
-						<input class="inputfinales" type="text" size="46" value="<?php echo  $row->deFirma3; ?>">
-						<br>
-						<textarea class="inputfinales2" id="textA2" rows="3" cols="300px" style="max-width:300px;" style="font-weight: bold;"><?php echo  $row->deEmpresa3; ?></textarea>
-				</tr>
-			</table>
-		</div>
-		</div>
-		<!--center-->
-		</div>
-		<!--saltopag-->
-	<?php
-}
-	?>
-	<form class="float" action="" method="post">
-		<div style="display:none;">
-			<input type="text" name="fileContents" id="fileContents" value='' />
-			<input type="text" name="fileName" id="fileName" value='ReporteBocaTubo.pdf' />
-			<input type="text" name="css" value='./pdf.css' />
-		</div>
-		<input type="image" class="" onclick=this.form.action="descargarpdf.php" src="./img/pdf.png" id="createPdf" />
-	</form>
+						<tr>
+							<td align="center">
+								<span class="inputfinales" size="46"><?php echo  $row->deFirma1; ?></span>
+								<br>
+								<span class="inputfinales2" size="46"><?php echo  $row->deEmpresa1; ?></span>
+							<td align="center">
+								<span class="inputfinales" size="46"><?php echo  $row->deFirma2; ?></span>
+								<br>
+								<span class="inputfinales2" size="46"><?php echo  $row->deEmpresa2; ?></span>
+							<td align="center">
+								<span class="inputfinales" size="46"><?php echo  $row->deFirma3; ?></span>
+								<br>
+								<span class="inputfinales2" size="46"><?php echo  $row->deEmpresa3; ?></span>
+						</tr>
+					</table>
+				</div>
+
+				<!--center-->
+				<!--saltopag-->
+			<?php
+		}
+			?>
+			<form class="float" action="./sub.php" method="post" accept-charset="utf-8">
+				<input type="text" name="fileName" id="fileName" value='formMostrarBocaTuboNR.php'>
+				<input type="text" name="galletita" value="<?php echo $galletita ?>">
+        		<input type="submit" value="Decargar PDF">
+			</form>
+
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 	</body>
 
