@@ -387,7 +387,6 @@ if (isset($_SESSION['tecnico'])) {
                                     </fieldset>
 
                                     <div class="table-responsive" align="center">
-<<<<<<< HEAD
                                         <!-- <table border="1" align="center" id="resultado">
                                             <thead>
                                                 <tr class="fields" style="font-size: small; height: 37px;">
@@ -421,10 +420,6 @@ if (isset($_SESSION['tecnico'])) {
 
                                         <table class="dataTable" border="2">
                                             <thead class="colspanHead" align="center">
-=======
-                                        <table class="dataTable">
-                                            <thead class="colspanHead">
->>>>>>> 18ec280bc5ddc96b572bf5f3e9f2946346ededb3
                                                 <tr>
                                                     <th colspan="7">DATOS DEL MATERIAL</th>
                                                     <th colspan="5">DATOS DE LA DISCONTINUIDAD</th>
