@@ -396,7 +396,7 @@ if (isset($_SESSION['tecnico'])) {
                                                 </tr>
                                             </thead>
                                             <thead class="dataHead">
-                                                <tr>
+                                                <tr style="text-align: center;">
                                                     <th>ID</th>
                                                     <th>Elemento / Trazabilidad</th>
                                                     <th>Di&aacute;metro IN</th>
@@ -421,6 +421,16 @@ if (isset($_SESSION['tecnico'])) {
                                         </table>
 
                                     </div>
+                                   
+                                    <div class="form-row mt-5" align="center" id="botonesDim">
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
+                                    </div>
+
                                     <div class="mt-5">
                                         <div style="width: 391px;" class="alert alert-warning" role="alert">
                                             <span class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</span>
@@ -448,14 +458,6 @@ if (isset($_SESSION['tecnico'])) {
                                             </ul>
                                         </div>
 
-                                    </div>
-                                    <div class="form-row mt-5" align="center" id="botonesDim">
-                                        <div class="col-12 col-sm-6">
-                                            <div class="form-group">
-                                                <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
                                     </div>
                                 </div>
                         </div>
