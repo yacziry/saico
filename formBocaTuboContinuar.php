@@ -387,37 +387,6 @@ if (isset($_SESSION['tecnico'])) {
                                     </fieldset>
 
                                     <div class="table-responsive" align="center">
-                                        <!-- <table border="1" align="center" id="resultado">
-                                            <thead>
-                                                <tr class="fields" style="font-size: small; height: 37px;">
-                                                    <th style="height: 37px; width: 50px; text-align: center;" colspan="7">DATOS DEL MATERIAL</th>
-                                                    <th style="height: 37px; width: 72px; text-align: center;" colspan="5">DATOS DE LA DISCONTINUIDAD&nbsp;</th>
-                                                    <th style="height: 37px; width: 110px; text-align: center;" colspan="4">RESULTADOS DE LA INSPECCI&Oacute;N&nbsp;</th>
-                                                </tr>
-                                                <tr class="fields" style="font-size: small; height: 26px;">
-                                                    <th style="height: 26px; width: 50px; text-align: center;">ID</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Elemento / Trazabilidad</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Di&aacute;metro IN</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Aceptaci&oacute;n</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Serie</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; Colada</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor Nominal</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">N&deg; de Indicaci&oacute;n</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Largo</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Ancho</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "X"</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Desde "Y"</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&aacute;ximo Detectado</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Espesor M&iacute;nimo Detectado</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">&Aacute;rea de Barrido</th>
-                                                    <th style="height: 26px; width: 50px; text-align: center;">Resultado</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tablaReportes">
-                                            </tbody>
-                                        </table> -->
-
-
                                         <table class="dataTable">
                                             <thead class="colspanHead">
                                                 <tr>
@@ -452,7 +421,34 @@ if (isset($_SESSION['tecnico'])) {
                                         </table>
 
                                     </div>
-                                    <div class="form-row" align="center" id="botonesDim">
+                                    <div class="mt-5">
+                                        <div style="width: 391px;" class="alert alert-warning" role="alert">
+                                            <h2 class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</h2>
+                                            <hr>
+                                            <ul>
+                                                <li>
+                                                    <strong>CI:</strong> Corrosión Interna
+                                                </li>
+                                                <li>
+                                                    <strong>I:</strong> Inclusión no Metálica
+                                                </li>
+                                                <li>
+                                                    <strong>L:</strong> Laminación
+                                                </li>
+                                                <li>
+                                                    <strong>ZI:</strong> Zona de Inclusiones no Metálicas
+                                                </li>
+                                                <li>
+                                                    <strong>NPIR:</strong> No Presenta Indicaciones Relevantes             
+                                                </li>
+                                                <li>
+                                                    <strong>LE:</strong> Laminación Escalonada  
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row mt-5" align="center" id="botonesDim">
                                         <div class="col-12 col-sm-6">
                                             <div class="form-group">
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
@@ -460,25 +456,7 @@ if (isset($_SESSION['tecnico'])) {
                                         </div>
                                         <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
                                     </div>
-
-
-                                    <!-- Comienza Tabla Dinámica -->
-
-                                    <!-- <div class="form-group"> Posible necesidad de uso
-                                <label for="sel1">Select list:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div> -->
                                 </div>
-
-
-
-
-
                         </div>
                     </form>
                 </div>
