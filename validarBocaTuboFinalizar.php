@@ -55,7 +55,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 $_SESSION["reporteS"] = $reporteS;
         } //sino hubo errores 
         //registro que muestra registro fotografico
-        header("location:formRegistroFotUl.php");
+        header("location:formRegistroFotBT.php");
 } else {
         header("location:notFound.html");
         die();

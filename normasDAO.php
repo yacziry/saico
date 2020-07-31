@@ -81,9 +81,9 @@ class Normas implements IEntidadN{
         try{
             $stmt= $this->db->prepare($sql);
             $stmt->execute();
-            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
-            //$foranea = $this->db->lastInsertId();
-            if($registros->rowCount()==1){
+            $foranea = $this->db->lastInsertId();
+            $registros = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($stmt->rowCount()==1){
                 return $registros;
             }else{
                 return FALSE;     
@@ -106,4 +106,9 @@ class Normas implements IEntidadN{
     }//__destruct
 }
  
-
+$a = new Normas();
+$norma = array('norma'=>"yac3323", 'c'=>"yyy", 'mn'=>"hola", 'p'=>"hi",'s'=>"si",'cu'=>"ni",'cr'=>"hi",'mo'=>"hi",
+'v'=>"nb",'nb'=>"n",'n'=>"hi",'deKsi_Max'=>"hi",'deKsi_Min'=>"hi",'deCedencia'=>"hi",'deBrinell_Max'=>"hi",
+'deNotas'=>"hi");
+$e = $a->insertar($norma);
+var_dump($e);

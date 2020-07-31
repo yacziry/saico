@@ -198,44 +198,44 @@ if(isset($_SESSION['tecnico'])){
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="ex3">Contrato</label>
-                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" required>
+                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="ex3">Proyecto</label>
-                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" required>
+                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>No. de plano</label>
-                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" required>
+                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" required>
+                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" required>
+                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" required>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
-                                <input class="form-control" type="text" name="clCodigo" value="<?php echo  $row->clCodigo; ?>" required>
+                                <input class="form-control" type="text" name="clCodigo" value="<?php echo  $row->clCodigo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Material</label>
-                                <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" required>
+                                <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" disabled>
                             </div>
                         </div><!--form-row-->
                         <div class="encabezado mt-5 mb-5" align="center">
@@ -249,10 +249,10 @@ if(isset($_SESSION['tecnico'])){
                                 <tr>
                                     <td><table width="970" border="0">                                   
                                             <tr>
-                                                <td width="470" height="300"><input id="file" type="file" name="deImagen1">
+                                                <td width="470" height="300"><input id="file" type="file" name="deImagen1" required>
 	                                            <div id="preview"></div>
                                                 </td>
-                                                <td width="470" height="300"><input  id="afile" type="file" name="deImagen2">
+                                                <td width="470" height="300"><input  id="afile" type="file" name="deImagen2" required>
 	                                            <div id="apreview"></div>
                                                 </td>
                                             </tr>
@@ -261,10 +261,10 @@ if(isset($_SESSION['tecnico'])){
 	                                            <td align="center"><input size="50" placeholder="Descripcion" name="deDescripcion2" class="sinborde"></td>
                                             </tr>
                                             <tr>
-                                                <td width="470" height="300"><input id="bfile" type="file" name="deImagen3">
+                                                <td width="470" height="300"><input id="bfile" type="file" name="deImagen3" required>
 	                                            <div id="bpreview">
 	                                            </div></td>
-                                                <td width="470" height="300"><input id="cfile" type="file" name="deImagen4">
+                                                <td width="470" height="300"><input id="cfile" type="file" name="deImagen4" required>
 	                                            <div id="cpreview">
 	                                            </div></td>
                                             </tr>
