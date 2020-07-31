@@ -387,6 +387,7 @@ if (isset($_SESSION['tecnico'])) {
                                     </fieldset>
 
                                     <div class="table-responsive" align="center">
+<<<<<<< HEAD
                                         <!-- <table border="1" align="center" id="resultado">
                                             <thead>
                                                 <tr class="fields" style="font-size: small; height: 37px;">
@@ -420,6 +421,10 @@ if (isset($_SESSION['tecnico'])) {
 
                                         <table class="dataTable" border="2">
                                             <thead class="colspanHead" align="center">
+=======
+                                        <table class="dataTable">
+                                            <thead class="colspanHead">
+>>>>>>> 18ec280bc5ddc96b572bf5f3e9f2946346ededb3
                                                 <tr>
                                                     <th colspan="7">DATOS DEL MATERIAL</th>
                                                     <th colspan="5">DATOS DE LA DISCONTINUIDAD</th>
@@ -452,7 +457,35 @@ if (isset($_SESSION['tecnico'])) {
                                         </table>
 
                                     </div>
-                                    <div class="form-row" align="center" id="botonesDim">
+                                    <div class="mt-5">
+                                        <div style="width: 391px;" class="alert alert-warning" role="alert">
+                                            <span class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</span>
+                                            <hr>
+                                            <ul>
+                                                <li>
+                                                    <strong>CI:</strong> Corrosión Interna
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>I:</strong> Inclusión no Metálica
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>L:</strong> Laminación
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>ZI:</strong> Zona de Inclusiones no Metálicas
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>NPIR:</strong> No Presenta Indicaciones Relevantes             
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>LE:</strong> Laminación Escalonada  
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row mt-5" align="center" id="botonesDim">
                                         <div class="col-12 col-sm-6">
                                             <div class="form-group">
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
@@ -460,25 +493,7 @@ if (isset($_SESSION['tecnico'])) {
                                         </div>
                                         <button type="submit" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
                                     </div>
-
-
-                                    <!-- Comienza Tabla Dinámica -->
-
-                                    <!-- <div class="form-group"> Posible necesidad de uso
-                                <label for="sel1">Select list:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div> -->
                                 </div>
-
-
-
-
-
                         </div>
                     </form>
                 </div>
