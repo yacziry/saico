@@ -371,3 +371,10 @@ select {
 .my-float {
 	margin-top: 22px;
 }
+
+@media print { @page { size: auto; } }
+
+.imgTablaCentrada{
+	text-align: center!important;
+}
+
