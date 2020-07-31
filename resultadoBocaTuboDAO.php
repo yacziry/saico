@@ -27,19 +27,21 @@ class ResultadoBocaTubo implements IEntidadR
     {
         try {
 
-            $sql = "INSERT INTO tsresultadosbocadetubo (clID, deElemento, deDiametro, clAceptacion, "
+            $sql = "INSERT INTO tsresultadosbocadetubo (clNumReporte, clID, deElemento, deDiametro, clAceptacion, "
                 . " clSerie, clColada, deEspesorNominal, clIndicacion, "
                 . " deLargo, deAncho, deX, deY,  "
                 . " deEspesorMaximo, deEspesorMinimo, "
                 . " deBarrido, deResultado, tsreportebocadetubo_id)"
-                . " VALUES (:clID, :deElemento, :deDiametro, :clAceptacion,"
+                
+                . " VALUES (:clNumReporte, :clID, :deElemento, :deDiametro, :clAceptacion,"
                 . " :clSerie, :clColada, :deEspesorNominal, :clIndicacion, "
                 . " :deLargo, :deAncho, :deX, :deY,  "
                 . " :deEspesorMaximo, :deEspesorMinimo, "
                 . " :deBarrido, :deResultado, :tsreportebocadetubo_id)";
 
             $stmt = $this->db->prepare($sql);
-            
+
+            $stmt->bindParam(':clNumReporte', $clNumReporte);
             $stmt->bindParam(':clID', $clID);
             $stmt->bindParam(':deElemento', $deElemento);
             $stmt->bindParam(':deDiametro', $deDiametro);
@@ -61,6 +63,7 @@ class ResultadoBocaTubo implements IEntidadR
             
 
             for ($index = 0; $index < count($arreglo['clID']); $index++) {
+                $clNumReporte = $arreglo['clNumReporte'];
                 $clID = $arreglo['clID'][$index];
                 $deElemento = $arreglo['deElemento'][$index];
                 $deDiametro = $arreglo['deDiametro'][$index];

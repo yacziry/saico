@@ -179,7 +179,6 @@ $(document).ready(function () {
                data: jQuery('#tablaResultado').serialize(),
                cache: false,
                success: function (data) {
-                    //$("#resultado").load('formParticulas.php');
                     $("#resultado").load(" #resultado");
                     //mostrar lo que recibimos
                     console.log(data);

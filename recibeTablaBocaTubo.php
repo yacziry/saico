@@ -29,8 +29,8 @@ foreach ($ultimoRegistro as $row) {
 }
 
 $resultadoBocaDeTubo = array(
-	'clID' => $clID, 'deElemento' => $deElemento, 'deDiametro' => $deDiametro, 'clAceptacion' => $clAceptacion, 
-	'clSerie' => $clSerie,
+	'clNumReporte' => $clNumReporte,'clID' => $clID, 'deElemento' => $deElemento, 'deDiametro' => $deDiametro, 
+	'clAceptacion' => $clAceptacion, 'clSerie' => $clSerie,
 	'clColada' => $clColada, 'deEspesorNominal' => $deEspesorNominal, 'clIndicacion' => $clIndicacion,
 	'deLargo' => $deLargo, 'deAncho' => $deAncho, 'deX' => $deX,
 	'deY' => $deY, 'deEspesorMaximo' => $deEspesorMaximo, 'deEspesorMinimo' => $deEspesorMinimo,
