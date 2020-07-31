@@ -181,7 +181,7 @@ if (isset($_SESSION['tecnico'])) {
                     foreach ($registros as $row) {
                     }
                     ?>
-                    <form action="" id="tablaResultado" method="POST" enctype="multipart/form-data">
+                    <form action="" id="tablaResultado" method="POST">
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
@@ -418,8 +418,8 @@ if (isset($_SESSION['tecnico'])) {
                                         </table> -->
 
 
-                                        <table class="dataTable">
-                                            <thead class="colspanHead">
+                                        <table class="dataTable" border="2">
+                                            <thead class="colspanHead" align="center">
                                                 <tr>
                                                     <th colspan="7">DATOS DEL MATERIAL</th>
                                                     <th colspan="5">DATOS DE LA DISCONTINUIDAD</th>
@@ -458,7 +458,7 @@ if (isset($_SESSION['tecnico'])) {
                                                 <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
                                             </div>
                                         </div>
-                                        <button type="button" class="btn alazea-btn mt-15" id="finalizar">Enviar</button>
+                                        <button type="submit" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
                                     </div>
 
 

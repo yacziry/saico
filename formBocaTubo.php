@@ -311,7 +311,7 @@ if (isset($_SESSION['tecnico'])) {
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
-                                <input class="form-control" type="text" name="deNivelDac" required>
+                                <input class="form-control" type="text" name="deNivelDac" value="%" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRetraso">Retraso</label>
@@ -348,7 +348,7 @@ if (isset($_SESSION['tecnico'])) {
                                         <input class="form-control" type="text" name="deFirma2" placeholder="Nombre..." required>
                                         <br>
                                         <label>Nombre de la empresa</label>
-                                        <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3">Coordinador de control de calidad Propetrol</textarea>
+                                        <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3">Superintendente Patio de Fabricación </textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
@@ -356,7 +356,7 @@ if (isset($_SESSION['tecnico'])) {
                                         <input class="form-control" type="text" name="deFirma3" placeholder="Nombre..." required>
                                         <br>
                                         <label>Nombre de la empresa</label>
-                                        <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3">Ingeniero de campo Propetrol</textarea>
+                                        <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3">Coordinador de Control de Calidad</textarea>
                                     </div>
                                 </div>
                             </div><!--form-row-->

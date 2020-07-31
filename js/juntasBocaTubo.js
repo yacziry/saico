@@ -6,22 +6,22 @@ $(document).ready(function () {
           count++;
           var nuevaFila = "<tr>";
 
-          nuevaFila += "<td style='height: 26px;' class='id'>" + "<input name='id[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='elemento'>" + "<input name='elemento[]'  " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='diametro'>" + "<input name='diametro[]'  " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeSerie'>" + "<input name='noDeSerie[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='noDeColada'>" + "<input name='noDeColada[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorNominal'>" + "<input name='espesorNominal[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='indicacion'>" + "<input name='indicacion[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='largo'>" + "<input name='largo[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='ancho'>" + "<input name='ancho[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='desdeX'>" + "<input name='desdeX[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='desdeY'>" + "<input name='desdeY[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorMax'>" + "<input name='espesorMax[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='espesorMin'>" + "<input name='espesorMin[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='areaBarrido'>" + "<input name='areaBarrido[]' " + "</td>";
-          nuevaFila += "<td style='height: 26px;' class='resultado'>" + "<input name='resultado[]' " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='id'>" + "<input name='id[]' required> " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='elemento'>" + "<input name='elemento[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='diametro'>" + "<input name='diametro[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeAceptacion'>" + "<input name='noDeAceptacion[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeSerie'>" + "<input name='noDeSerie[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='noDeColada'>" + "<input name='noDeColada[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorNominal'>" + "<input name='espesorNominal[]' required> " + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='indicacion'>" + "<input name='indicacion[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='largo'>" + "<input name='largo[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='ancho'>" + "<input name='ancho[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='desdeX'>" + "<input name='desdeX[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='desdeY'>" + "<input name='desdeY[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorMax'>" + "<input name='espesorMax[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='espesorMin'>" + "<input name='espesorMin[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='areaBarrido'>" + "<input name='areaBarrido[]' required>" + "</td>";
+          nuevaFila += "<td style='height: 26px;' class='resultado'>" + "<input name='resultado[]' required>" + "</td>";
           //}
           nuevaFila += "</tr>";
           if (count <= 20) {
@@ -183,7 +183,7 @@ $(document).ready(function () {
                     $("#resultado").load(" #resultado");
                     //mostrar lo que recibimos
                     console.log(data);
-                    window.location.href = '../validarBocaTuboFinalizar.php';
+                    //window.location.href = '../validarBocaTuboFinalizar.php';
                }
           });
      });
