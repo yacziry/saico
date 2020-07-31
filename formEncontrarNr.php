@@ -32,9 +32,9 @@ switch ($cTecnica){
         $m  = new  BuscarNR();
         $m->BuscarDureza($cTecnica, $clNumReporte);
     break;
-     case "Ultrasonido": //Si la variable consulta vale ...
+     case "Boca de tubo": //Si la variable consulta vale ...
         $m  = new  BuscarNR();
-        $m->BuscarUltrasonido($cTecnica, $clNumReporte);
+        $m->BuscarUBT($cTecnica, $clNumReporte);
     break;
 }
 class BuscarNR{
@@ -90,7 +90,7 @@ class BuscarNR{
 	    }
     }
 
-    function BuscarUltrasonido($cTecnica, $clNumReporte){
+    function BuscarUBT($cTecnica, $clNumReporte){
         $x  = new  BuscarFormatos();
         $arreglo = $x->buscarNumReporte($cTecnica, $clNumReporte);
         if($arreglo){

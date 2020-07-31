@@ -137,6 +137,22 @@ class BuscarFormatos implements IEntidadbuscar{
             }catch(Exception $e){
                 echo $e->getMessage();
             }//catch
+        }//if
+        
+        if($tecnica == "Boca de tubo"){
+		    $sentencia = "SELECT DISTINCT clContrato, clNumReporte,feTecnico, cacliente_clCliente from tsreportebocadetubo WHERE feTecnico BETWEEN  :feInicio  AND  :feFin";
+            try{
+                $stm = $this->db->prepare ($sentencia);
+                $stm->bindValue(':feInicio', $feInicio);
+			    $stm->bindValue(':feFin', $feFin);
+                $stm->execute();
+                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+                return $registros;
+
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }//catch
 		}//if
 
     }//buscarFeReporte
@@ -212,7 +228,22 @@ class BuscarFormatos implements IEntidadbuscar{
             }catch(Exception $e){
                 echo $e->getMessage();
             }//catch
-        }//if		
+        }//if
+        
+        if($tecnica == "Boca de tubo"){
+		    $sentencia = "SELECT DISTINCT clContrato, clNumReporte,feTecnico, cacliente_clCliente from tsreportebocadetubo WHERE cacliente_clCliente = :claveCL";
+            try{
+                $stm = $this->db->prepare ($sentencia);
+			    $stm->bindValue(':claveCL', $claveCL);
+                $stm->execute();
+                $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+                return $registros;
+
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }//catch
+        }//if	
 	}
 
     public function buscarNumReporte($tecnica, $clNumReporte) {
@@ -291,7 +322,7 @@ class BuscarFormatos implements IEntidadbuscar{
                 echo $e->getMessage();
             }//catch
         }
-        if ($tecnica == "Ultrasonido"){
+        if ($tecnica == "Boca de tubo"){
 		    $sentencia = "SELECT * from tsreportebocadetubo WHERE clNumReporte = :clNumReporte ORDER by id ASC LIMIT 1";
             try{
                 $stm = $this->db->prepare ($sentencia);
