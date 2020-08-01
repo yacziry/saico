@@ -151,7 +151,7 @@ if(isset($_SESSION['tecnico'])){
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/4.jpg);">
-            <h2>REPORTE DE DUREZA</h2>
+            <h2>REPORTE DE ULTRASONIDO, HAZ ANGULAR</h2>
         </div>
         <div class="container">
             <div class="row">
