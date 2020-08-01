@@ -1,9 +1,9 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciï¿½nes del PHP xd
 error_reporting(0);
 ini_set("session.cookie_lifetime","14400");
 ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+// Comienzo de la sesiï¿½n
 session_start();
 
 if(isset($_SESSION['tecnico'])){
@@ -107,7 +107,7 @@ if(isset($_SESSION['tecnico'])){
                                             <li><a href="formMetalografia.php">Metalografia</a></li>
                                             <li><a href="formAnalisisQuimico.php">Analisis Quimico</a></li>
                                             <li><a href="">Ensayo de tension</a></li>
-                                            <li><a href="llena_caracterizacion.php">Caracterizacion</a></li>
+                                            <li><a href="formCaraterizacion.php">Caracterizacion</a></li>
                                             <li><a href="">Dureza</a>
                                                 <ul class="dropdown">
                                                     <li><a href="formDureza.php">Dureza</a></li>
@@ -118,12 +118,12 @@ if(isset($_SESSION['tecnico'])){
                                     </li>  
                                     <li><a href="#">Pruebas no destructivas</a>
                                         <ul class="dropdown">
-                                            <li><a href="llena_particulas.html">Particulas Magneticas</a></li>
-                                            <li><a href="llena_liquidos.html">Liquidos Penetrantes</a></li>
-                                            <li><a href="">Ultrasonido AWS D1.1</a>
+                                            <li><a href="formParticulas.php">Particulas Magneticas</a></li>
+                                            <li><a href="formLiquidos.php">Liquidos Penetrantes</a></li>
+                                            <li><a href="">Ultrasonido</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="">Toma de espesores</a></li>
-                                                    <li><a href="">Haz Angular</a></li>
+                                                    <li><a href="formBocaTubo.php">Boca de tubo</a></li>
+                                                    <li><a href="formHazAngular.php">Haz Angular</a></li>
                                                     <li><a href="">Clase X y R</a></li>
                                                 </ul>
                                             </li>                                            
@@ -255,7 +255,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required>Ø</textarea>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" required>ï¿½</textarea>
                             </div>
                             <div class="table-responsive" align="center">
                                 <table class="table table-bordered" border="1">
@@ -352,7 +352,7 @@ if(isset($_SESSION['tecnico'])){
                                     <label for="ex3">Nombre de quien elabor&oacute;</label>
                                     <input class="form-control" type="text" name="deElabora" value="<?php echo  $row->deElabora; ?>" required><br>
                                     <input class="form-control" type="text" name="deAprobacion" value="Asesor&iacute;a e Inspecci&oacute;n en Construcci&oacute;n Costa Fuera, S.C" disabled>
-                                    <!--textarea id="byetext" class="form-control" name="deAprobacion" style="max-width:500px; resize:none;" rows="3">Asesoría e Inspección en Construcción Costa Fuera, S.C</textarea disabled-->
+                                    <!--textarea id="byetext" class="form-control" name="deAprobacion" style="max-width:500px; resize:none;" rows="3">Asesorï¿½a e Inspecciï¿½n en Construcciï¿½n Costa Fuera, S.C</textarea disabled-->
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -360,7 +360,7 @@ if(isset($_SESSION['tecnico'])){
                                     <label for="ex3">Nombre de quien aprob&oacute;</label>
                                     <input class="form-control" type="text" name="deAprueba" value="<?php echo  $row->deAprueba; ?>" required><br>
                                     <input class="form-control" type="text" value="Asesor&iacute;a e Inspecci&oacute;n en Construcci&oacute;n Costa Fuera, S.C" disabled>
-                                    <!--textarea id="byetext" class="form-control" name="empresa1" style="max-width:500px; resize:none;" rows="3">Asesoría e Inspección en Construcción Costa Fuera, S.C</textarea-->
+                                    <!--textarea id="byetext" class="form-control" name="empresa1" style="max-width:500px; resize:none;" rows="3">Asesorï¿½a e Inspecciï¿½n en Construcciï¿½n Costa Fuera, S.C</textarea-->
                                 </div>                                    
                             </div>
                             <br>

@@ -121,8 +121,8 @@ if (isset($_SESSION['tecnico'])) {
                                             <li><a href="llena_liquidos.html">Liquidos Penetrantes</a></li>
                                             <li><a href="">Ultrasonido AWS D1.1</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="">Toma de espesores</a></li>
-                                                    <li><a href="">Haz Angular</a></li>
+                                                    <li><a href="formBocaTubo.php">Boca de tubo</a></li>
+                                                    <li><a href="formHazAngular.php">Haz Angular</a></li>
                                                     <li><a href="">Clase X y R</a></li>
                                                 </ul>
                                             </li>

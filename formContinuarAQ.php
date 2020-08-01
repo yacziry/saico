@@ -1,9 +1,9 @@
 <?php
-//Desactivar toda las notificaciónes del PHP xd
+//Desactivar toda las notificaciï¿½nes del PHP xd
 //error_reporting(0);
 ini_set("session.cookie_lifetime","14400");
 ini_set("session.gc_maxlifetime","14400");
-// Comienzo de la sesión
+// Comienzo de la sesiï¿½n
 session_start();
 
 if(isset($_SESSION['tecnico'])){
@@ -120,10 +120,10 @@ if(isset($_SESSION['tecnico'])){
                                         <ul class="dropdown">
                                             <li><a href="formParticulas.php">Particulas Magneticas</a></li>
                                             <li><a href="formLiquidos.php">Liquidos Penetrantes</a></li>
-                                            <li><a href="">Ultrasonido AWS D1.1</a>
+                                            <li><a href="">Ultrasonido</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="">Toma de espesores</a></li>
-                                                    <li><a href="">Haz Angular</a></li>
+                                                    <li><a href="formBocaTubo.php">Boca de tubo</a></li>
+                                                    <li><a href="formHazAngular.php">Haz Angular</a></li>
                                                     <li><a href="">Clase X y R</a></li>
                                                 </ul>
                                             </li>                                            
