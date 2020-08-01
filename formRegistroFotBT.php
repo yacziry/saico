@@ -82,7 +82,7 @@ if(isset($_SESSION['tecnico'])){
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand LOGO-->
-                        <a href="http://www.aicosc.com" class="nav-brand"><img src="img/core-img/AICOT.png" alt=""></a>
+                        <a href="http://www.aicosc.com" class="nav-brand"><img src="img/core-img/IC.png" alt=""></a>
 
                         <!-- Nav Brand -->
                         <a href="index.html" class="nav-brand"><img src="" alt=""></a>
@@ -308,12 +308,12 @@ if(isset($_SESSION['tecnico'])){
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Finalizar" class="btn alazea-btn mt-15" onclick=this.form.action="validarRegistroFotUl.php">          
+                                    <input type="submit" value="Finalizar" class="btn alazea-btn mt-15" onclick=this.form.action="validarRegistroFotBT.php">          
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <input type="submit" value="Agregar otro registro" class="btn alazea-btn mt-15" onclick=this.form.action="formBocaTubo.php">
+                                    <input type="submit" value="Agregar más fotos" class="btn alazea-btn mt-15" onclick=this.form.action="validarFotoContBT.php">
                                 </div>
                             </div>
                         </div>

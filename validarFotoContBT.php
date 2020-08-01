@@ -16,9 +16,7 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
 
     $ruta = "img/bocaTubo/";
     $size = $_FILES['deImagen1']['size'];
-    if ($size > 350000) {
-        exit("El archivo es muy grande");
-    } else {
+    
         //mueve las imagenes a la carpeta asignada
         if (move_uploaded_file($_FILES['deImagen1']['tmp_name'], $ruta . $_FILES['deImagen1']['name']) && move_uploaded_file($_FILES['deImagen2']['tmp_name'], $ruta . $_FILES['deImagen2']['name']) && move_uploaded_file($_FILES['deImagen3']['tmp_name'], $ruta . $_FILES['deImagen3']['name']) && move_uploaded_file($_FILES['deImagen4']['tmp_name'], $ruta . $_FILES['deImagen4']['name'])) {
             $extension = "." . pathinfo($ruta . $_FILES['deImagen1']['name'], PATHINFO_EXTENSION);
@@ -49,10 +47,9 @@ if (isset($_SESSION['tecnico']) && isset($_POST)) {
                 'feRegistro' => $fecha
             );
             $imagen->insertar($arreglo);
-            header("Location: formBocaTuboMostrar.php");
+            header("Location: formRegistroFotBT.php");
         } else {
             echo "error, no se movio";
         }
         //SINO HUBU NINGUN ERROR
-    }
 }//ultimoIF
