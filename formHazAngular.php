@@ -170,7 +170,7 @@ if(isset($_SESSION['tecnico'])){
                             </div>
                         </div>
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data" name="f">
+                    <form action="" method="POST" >
                         <div class="form-row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">

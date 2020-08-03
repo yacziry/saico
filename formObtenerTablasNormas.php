@@ -9,7 +9,9 @@ $arrayNorma=array('norma'=>$_POST['norma'],'deBrinell_Max'=>$_POST['deBrinell_Ma
 'n'=>$_POST['n'],'deNotas'=>$_POST['deNotas']);
 
 $x  = new  Normas();
-$arreglo = $x->insertar($arrayNorma);
+$x->insertar($arrayNorma);
+$arreglo = $x->buscarNormas2();
+
 if($arreglo){
 	echo json_encode($arreglo);
 }else{

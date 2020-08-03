@@ -33,6 +33,20 @@ class Normas implements IEntidadN{
         }catch(Exception $e){
             echo "$e->getMessage()";
         }
+    }
+    public function buscarNormas2() {   
+        $sentencia = "SELECT norma FROM canorma";
+        try{
+            $stm = $this->db->prepare ($sentencia);
+            //$stm->bindValue(':deUsuario', $deUsuario);
+            $stm->execute();
+            $registros = $stm->fetchAll(PDO::FETCH_OBJ);
+
+            return $registros;
+
+        }catch(Exception $e){
+            echo "$e->getMessage()";
+        }
 	}
     //busca la norma exacta que se envia
     public function buscarNormaSelected2($norma) {   
@@ -82,7 +96,7 @@ class Normas implements IEntidadN{
             $stmt= $this->db->prepare($sql);
             $stmt->execute();
             $foranea = $this->db->lastInsertId();
-            $registros = $stmt->fetch(PDO::FETCH_ASSOC);
+            $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if($stmt->rowCount()==1){
                 return $registros;
             }else{
@@ -105,10 +119,10 @@ class Normas implements IEntidadN{
         $this->db = null;
     }//__destruct
 }
- 
-$a = new Normas();
-$norma = array('norma'=>"yac3323", 'c'=>"yyy", 'mn'=>"hola", 'p'=>"hi",'s'=>"si",'cu'=>"ni",'cr'=>"hi",'mo'=>"hi",
+ /*$a = new Normas();
+$norma = array('norma'=>"yachhH", 'c'=>"yyy", 'mn'=>"hola", 'p'=>"hi",'s'=>"si",'cu'=>"ni",'cr'=>"hi",'mo'=>"hi",
 'v'=>"nb",'nb'=>"n",'n'=>"hi",'deKsi_Max'=>"hi",'deKsi_Min'=>"hi",'deCedencia'=>"hi",'deBrinell_Max'=>"hi",
 'deNotas'=>"hi");
 $e = $a->insertar($norma);
 var_dump($e);
+*/

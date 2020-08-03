@@ -59,7 +59,7 @@ $(document).ready(function () {
     });//onChange
     //insertar datos del modal  a DB
     $("#enviar").click(function () {
-        //$('#clNorma').find('option').remove();
+        $('#clNorma').find('option').remove();
         norma = $("#norma").val();
         deBrinell_Max = $("#deBrinell_Max_modal").val();
         deKsi_Min = $("#deKsi_Min_modal").val();
@@ -80,7 +80,20 @@ $(document).ready(function () {
         deNotas = $("#deNotas").val();
         enviaNorma();
     });//click
-
+    function llenaCombo(){
+        $.ajax({
+            url: 'llamarCombo.php',
+            type: 'GET',
+            dataType: 'Json',
+            success: function(respuesta){
+                for (i = 0; i < respuesta.length; i++) {
+                    $('#clNorma').append('<option value="' + respuesta[i]['norma'] + '">' + respuesta[i]['norma']+'</option>');
+                }
+                    console.log(respuesta);
+            }
+        })
+    }
+    
     function enviaNorma(){
         $.ajax({
             url: 'formObtenerTablasNormas.php',
@@ -90,12 +103,7 @@ $(document).ready(function () {
             //dataType: 'Json',
             success: function(respuesta){
                 //alert("nicee");
-                for (i = 0; i < respuesta.length; i++) {
-                    $('#clNorma').append('<option value="' + respuesta[i]['norma'] + '">' + respuesta[i]['norma']+'</option>');
-                    console.log(respuesta);
-                }
-
-                
+                llenaCombo();               
             }
         })
     }
