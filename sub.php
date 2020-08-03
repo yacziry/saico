@@ -2,10 +2,8 @@
 <?php
 
 $galletita = $_POST['galletita'];
-$fileName = $_POST['fileName'];
 
-
-$cmd = 'wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie "PHPSESSID" "dm1a5m98dd35c90n9rakommpbe"  -O landscape --dpi 55  --header-html E:\Users\david\Downloads\SAICO\saico\tablaDatos.php http://localhost:8080/saico/formMostrarBocaTubo.php E:\Users\david\Downloads\SAICO\ReporteBocaTubo.pdf';
+$cmd = "wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie 'PHPSESSID' '" . $galletita . "'   -O landscape --dpi 55 --footer-center [page]/[topage] 'http://localhost/saico/formBocaTuboMostrar.php' 'E:\Users\david\Downloads\SAICO\ReporteBocaTubo.pdf'";
 $output = shell_exec($cmd);
 
 $filename = "E:\Users\david\Downloads\SAICO\ReporteBocaTubo.pdf";

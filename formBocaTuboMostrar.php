@@ -8,7 +8,7 @@ session_start();
 
 if (isset($_SESSION['tecnico'])) {
 	$tec = $_SESSION['tecnico'];
-    $reporteS = $_SESSION['reporteS'];
+	$reporteS = $_SESSION['reporteS'];
 	$sessionID = !isset($_SESSION['tecnico']) ? $_COOKIE['tecnico'] : $_SESSION['tecnico'];
 	$galletita = $_COOKIE['PHPSESSID'];
 } else {
@@ -423,9 +423,8 @@ foreach ($forReportes as $row) {
 		}
 			?>
 			<form class="float" action="./sub.php" method="post" accept-charset="utf-8">
-				<input type="text" name="fileName" id="fileName" value='formMostrarBocaTuboNR.php'>
-				<input type="text" name="galletita" value="<?php echo $galletita ?>">
-				<input type="submit" value="Decargar PDF">
+				<input style="display: block; " type="text" name="galletita" value="<?php echo $galletita ?>">
+				<input type="image" src="./img/pdf.png" alt="Decargar PDF" width="48" height="48">
 			</form>
 
 			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
