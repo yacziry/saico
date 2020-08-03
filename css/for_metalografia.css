@@ -382,3 +382,20 @@ select {
 	vertical-align: middle!important;
 	padding: .15rem!important;
 }
+
+@media screen {
+	.print-header {
+		display: none;
+	}
+}
+
+@media print {
+	.print-header {
+		position: fixed;
+	}
+}
+
+
+thead { display: table-header-group; }
+tfoot { display: table-row-group; }
+tr { page-break-inside: avoid; }
