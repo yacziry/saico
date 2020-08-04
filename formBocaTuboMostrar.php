@@ -423,7 +423,8 @@ foreach ($forReportes as $row) {
 		}
 			?>
 			<form class="float" action="./sub.php" method="post" accept-charset="utf-8">
-				<input style="display: none; " type="text" name="galletita" value="<?php echo $galletita ?>">
+				<input style="display: none;" type="text" name="link" value="<?php echo $link ?>">
+				<input style="display: none;" type="text" name="galletita" value="<?php echo $galletita ?>">
 				<input type="image" src="./img/pdf.png" alt="Decargar PDF" width="48" height="48">
 			</form>
 
