@@ -58,10 +58,8 @@ if (isset($_SESSION['tecnico'])) {
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o"
-                                        aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone"
-                                        aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: especialista@aicosc.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: 938- 197- 8820</span></a>
                             </div>
 
                             <!-- Top Header Content -->
@@ -127,11 +125,11 @@ if (isset($_SESSION['tecnico'])) {
                                             <li><a href="formParticulas.php">Particulas Magneticas</a></li>
                                             <li><a href="formLiquidos.php">Liquidos Penetrantes</a></li>
                                             <li><a href="">Ultrasonido/a>
-                                                <ul class="dropdown">
-                                                    <li><a href="formBocaTubo.php">Boca de tubo</a></li>
-                                                    <li><a href="formHazAngular.php">Haz Angular</a></li>
-                                                    <li><a href="">Clase X y R</a></li>
-                                                </ul>
+                                                    <ul class="dropdown">
+                                                        <li><a href="formBocaTubo.php">Boca de tubo</a></li>
+                                                        <li><a href="formHazAngular.php">Haz Angular</a></li>
+                                                        <li><a href="">Clase X y R</a></li>
+                                                    </ul>
                                             </li>
                                         </ul>
                                     </li>
@@ -162,8 +160,7 @@ if (isset($_SESSION['tecnico'])) {
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
-            style="background-image: url(img/bg-img/4.jpg);">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/4.jpg);">
             <h2>REPORTE DE ULTRASONIDO</h2>
         </div>
         <div class="container">
@@ -189,14 +186,12 @@ if (isset($_SESSION['tecnico'])) {
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Fecha</label>
-                                    <input class="form-control" type="date" name="feTecnico"
-                                        value="<?php echo  $row->feTecnico; ?>" disabled>
+                                    <input class="form-control" type="date" name="feTecnico" value="<?php echo  $row->feTecnico; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="ex3">Lugar</label>
-                                <input class="form-control" type="text" name="deLugar"
-                                    value="<?php echo  $row->deLugar; ?>" disabled>
+                                <input class="form-control" type="text" name="deLugar" value="<?php echo  $row->deLugar; ?>" disabled>
                             </div>
                             <div class="col-12 col-sm-8">
                                 <div class="form-group">
@@ -214,105 +209,86 @@ if (isset($_SESSION['tecnico'])) {
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label for="ex3">Contrato</label>
-                                    <input class="form-control" type="text" name="clContrato"
-                                        value="<?php echo  $row->clContrato; ?>" disabled>
+                                    <input class="form-control" type="text" name="clContrato" value="<?php echo  $row->clContrato; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="ex3">Proyecto</label>
-                                    <input class="form-control" type="text" name="deProyecto"
-                                        value="<?php echo  $row->deProyecto; ?>" disabled>
+                                    <input class="form-control" type="text" name="deProyecto" value="<?php echo  $row->deProyecto; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-8">
                                 <div class="form-group">
                                     <label>Numero de reporte</label>
-                                    <input class="form-control" type="text" name="clNumReporte"
-                                        value="<?php echo  $row->clNumReporte; ?>" disabled>
+                                    <input class="form-control" type="text" name="clNumReporte" value="<?php echo  $row->clNumReporte; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group">
                                     <label>No. de plano</label>
-                                    <input class="form-control" type="text" name="clPlano"
-                                        value="<?php echo  $row->clPlano; ?>" disabled>
+                                    <input class="form-control" type="text" name="clPlano" value="<?php echo  $row->clPlano; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="comment">Descripcion del trabajo y notas:</label>
-                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;"
-                                    disabled> <?php echo  $row->deDescripcion; ?></textarea>
+                                <textarea class="form-control" rows="5" name="deDescripcion" style="resize:none;" disabled> <?php echo  $row->deDescripcion; ?></textarea>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="ex3">Código utilizado</label>
-                                <input class="form-control" type="text" name="clCodigo"
-                                    value="<?php echo  $row->clCodigo; ?>" disabled>
+                                <input class="form-control" type="text" name="clCodigo" value="<?php echo  $row->clCodigo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="ex3">Material</label>
-                                <input class="form-control" type="text" name="deMaterial"
-                                    value="<?php echo  $row->deMaterial; ?>" disabled>
+                                <input class="form-control" type="text" name="deMaterial" value="<?php echo  $row->deMaterial; ?>" disabled>
                             </div>
                             <hr width="9999">
                             <h2 class="cabeceraForm">Equipo</h2>
                             <br>
                             <div class="form-group col-md-4">
                                 <label for="deMarca">Marca</label>
-                                <input class="form-control" type="text" name="deMarca"
-                                    value="<?php echo  $row->deMarca; ?>" disabled>
+                                <input class="form-control" type="text" name="deMarca" value="<?php echo  $row->deMarca; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deModelo">Modelo</label>
-                                <input class="form-control" type="text" name="deModelo"
-                                    value="<?php echo  $row->deModelo; ?>" disabled>
+                                <input class="form-control" type="text" name="deModelo" value="<?php echo  $row->deModelo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs" value="<?php echo  $row->deNs; ?>"
-                                    disabled>
+                                <input class="form-control" type="text" name="deNs" value="<?php echo  $row->deNs; ?>" disabled>
                             </div>
                             <hr width="1280">
                             <h2 class="cabeceraForm">Transductor</h2>
 
                             <div class="form-group col-md-4">
                                 <label for="deMarca2">Marca</label>
-                                <input class="form-control" type="text" name="deMarca2"
-                                    value="<?php echo  $row->deMarca2; ?>" disabled>
+                                <input class="form-control" type="text" name="deMarca2" value="<?php echo  $row->deMarca2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deModelo2">Modelo</label>
-                                <input class="form-control" type="text" name="deModelo2"
-                                    value="<?php echo  $row->deModelo2; ?>" disabled>
+                                <input class="form-control" type="text" name="deModelo2" value="<?php echo  $row->deModelo2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs2">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs2" value="<?php echo  $row->deNs2; ?>"
-                                    disabled>
+                                <input class="form-control" type="text" name="deNs2" value="<?php echo  $row->deNs2; ?>" disabled>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="deFrec">FREC</label>
-                                <input class="form-control" type="text" name="deFrec"
-                                    value="<?php echo  $row->deFrec; ?>" disabled>
+                                <input class="form-control" type="text" name="deFrec" value="<?php echo  $row->deFrec; ?>" disabled>
                             </div>
                             <hr width="1280">
                             <div class="form-group col-md-4">
-                                <label style="color: darkgoldenrod; font-size: 20px; margin-bottom: 2px;"
-                                    for="deAcoplante">Acoplante<span
-                                        class="ml-2 badge badge-secondary">BLOQUE</span></label>
+                                <label style="color: darkgoldenrod; font-size: 20px; margin-bottom: 2px;" for="deAcoplante">Acoplante<span class="ml-2 badge badge-secondary">BLOQUE</span></label>
 
-                                <input class="form-control" type="text" name="deAcoplante"
-                                    value="<?php echo  $row->deAcoplante; ?>" disabled>
+                                <input class="form-control" type="text" name="deAcoplante" value="<?php echo  $row->deAcoplante; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deTipoAcoplante">Tipo</label>
-                                <input class="form-control" type="text" name="deTipoAcoplante"
-                                    value="<?php echo  $row->deTipoAcoplante; ?>" disabled>
+                                <input class="form-control" type="text" name="deTipoAcoplante" value="<?php echo  $row->deTipoAcoplante; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deNs3">N° de Serie</label>
-                                <input class="form-control" type="text" name="deNs3" value="<?php echo  $row->deNs3; ?>"
-                                    disabled>
+                                <input class="form-control" type="text" name="deNs3" value="<?php echo  $row->deNs3; ?>" disabled>
                             </div>
 
                         </div>
@@ -324,23 +300,19 @@ if (isset($_SESSION['tecnico'])) {
                             <br>
                             <div class="form-group col-md-3">
                                 <label for="deGanancia">Ganancia</label>
-                                <input class="form-control" type="text" name="deGanancia"
-                                    value="<?php echo  $row->deGanancia; ?>" disabled>
+                                <input class="form-control" type="text" name="deGanancia" value="<?php echo  $row->deGanancia; ?>" disabled>
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deTipo">Tipo</label>
-                                <input class="form-control" type="text" name="deTipo"
-                                    value="<?php echo  $row->deTipo; ?>" disabled>
+                                <input class="form-control" type="text" name="deTipo" value="<?php echo  $row->deTipo; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRango">Rango</label>
-                                <input class="form-control" type="text" name="deRango"
-                                    value="<?php echo  $row->deRango; ?>" disabled>
+                                <input class="form-control" type="text" name="deRango" value="<?php echo  $row->deRango; ?>" disabled>
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="deNivelDac">Nivel DAC</label>
-                                <input class="form-control" type="text" name="deNivelDac"
-                                    value="<?php echo  $row->deNivelDac; ?>" disabled>
+                                <input class="form-control" type="text" name="deNivelDac" value="<?php echo  $row->deNivelDac; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="deRetraso">Retraso</label>
@@ -350,195 +322,167 @@ if (isset($_SESSION['tecnico'])) {
                             $x = $row->deRechazo;
                             if ($x == "ON") {
                             ?>
-                            <div class="form-group col-md-12">
-                                <label>Rechazo:</label>
-                                <div class="ml-4 form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="deRechazo" value="ON" checked
-                                            disabled> ON
-                                    </label>
-                                </div>
-                                <div class="ml-4 form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="deRechazo" value="OFF"
-                                            disabled> OFF
-                                    </label>
+                                <div class="form-group col-md-12">
+                                    <label>Rechazo:</label>
+                                    <div class="ml-4 form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="deRechazo" value="ON" checked disabled> ON
+                                        </label>
+                                    </div>
+                                    <div class="ml-4 form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="deRechazo" value="OFF" disabled> OFF
+                                        </label>
                                     <?php
                                 }
                                 if ($x == "OFF") {
                                     ?>
-                                    <div class="form-group col-md-12">
-                                        <label>Rechazo:</label>
-                                        <div class="ml-4 form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="deRechazo" value="ON"
-                                                    disabled> ON
-                                            </label>
+                                        <div class="form-group col-md-12">
+                                            <label>Rechazo:</label>
+                                            <div class="ml-4 form-check form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="deRechazo" value="ON" disabled> ON
+                                                </label>
+                                            </div>
+                                            <div class="ml-4 form-check form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="deRechazo" value="OFF" disabled checked> OFF
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="ml-4 form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="deRechazo"
-                                                    value="OFF" disabled checked> OFF
-                                            </label>
-                                        </div>
-                                    </div>
                                     <?php
                                 }
                                     ?>
-                                </div>
-                                <div style="overflow-x: auto;" class="table-responsive" align="center">
-                                    <table class="table table-condensed table-bordered">
-                                        <thead class="colspanHead">
-                                            <tr style="text-align: center;">
-                                                <th style="background-color: #f2f4f5;" colspan="7">DATOS DEL MATERIAL
-                                                </th>
-                                                <th style="background-color: #b85f1730;" colspan="5">DATOS DE LA
-                                                    DISCONTINUIDAD</th>
-                                                <th style="background-color: #21abb630;" colspan="4">RESULTADOS DE LA
-                                                    INSPECCI&Oacute;N</th>
-                                            </tr>
-                                        </thead>
-                                        <thead class="dataHead">
-                                            <tr style="text-align: center;">
-                                                <th style="background-color: #f2f4f5;">ID</th>
-                                                <th style="background-color: #f2f4f5;">Elemento / Trazabilidad</th>
-                                                <th style="background-color: #f2f4f5;">Di&aacute;metro IN</th>
-                                                <th style="background-color: #f2f4f5;">No. Aceptaci&oacute;n</th>
-                                                <th style="background-color: #f2f4f5;">No. Serie</th>
-                                                <th style="background-color: #f2f4f5;">No. Colada</th>
-                                                <th style="background-color: #f2f4f5;">Espesor nominal</th>
-                                                <th style="background-color: #b85f1730;">No. De indicaci&oacute;n</th>
-                                                <th style="background-color: #b85f1730;">Largo</th>
-                                                <th style="background-color: #b85f1730;">Ancho</th>
-                                                <th style="background-color: #b85f1730;">Desde "X"</th>
-                                                <th style="background-color: #b85f1730;">Desde "Y"</th>
-                                                <th style="background-color: #21abb630;">Espesor Maximo Detectado</th>
-                                                <th style="background-color: #21abb630;">Espesor Minimo Detectado</th>
-                                                <th style="background-color: #21abb630;">Area de Barrido</th>
-                                                <th style="background-color: #21abb630;">Resultado</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody id="tablaReportes">
-                                            <tr>
-                                                <td style='height: 26px;' class='id'><input name='id[]'
-                                                        style='width: 40px;' required></td>
-                                                <td style='height: 26px;' class='elemento'><input name='elemento[]'
-                                                        required> </td>
-                                                <td style='height: 26px;' class='diametro'><input name='diametro[]'
-                                                        style='width: 125px;' required></td>
-                                                <td style='height: 26px;' class='noDeAceptacion'><input
-                                                        name='noDeAceptacion[]' style='width: 125px;' required></td>
-                                                <td style='height: 26px;' class='noDeSerie'><input name='noDeSerie[]'
-                                                        style='width: 100px;' required></td>
-                                                <td style='height: 26px;' class='noDeColada'><input name='noDeColada[]'
-                                                        style='width: 100px;' required></td>
-                                                <td style='height: 26px;' class='espesorNominal'><input
-                                                        name='espesorNominal[]' style='width: 150px;' required></td>
-                                                <td style='height: 26px;' class='indicacion'><input name='indicacion[]'
-                                                        style='width: 80px;' required></td>
-                                                <td style='height: 26px;' class='largo'><input name='largo[]'
-                                                        style='width: 60px;' required></td>
-                                                <td style='height: 26px;' class='ancho'><input name='ancho[]'
-                                                        style='width: 60px;' required></td>
-                                                <td style='height: 26px;' class='desdeX'><input name='desdeX[]'
-                                                        style='width: 60px;' required></td>
-                                                <td style='height: 26px;' class='desdeY'><input name='desdeY[]'
-                                                        style='width: 60px;' required></td>
-                                                <td style='height: 26px;' class='espesorMax'><input name='espesorMax[]'
-                                                        style='width: 80px;' required></td>
-                                                <td style='height: 26px;' class='espesorMin'><input name='espesorMin[]'
-                                                        style='width: 80px;' required></td>
-                                                <td style='height: 26px;' class='areaBarrido'><input
-                                                        name='areaBarrido[]' style='width: 80px;' required></td>
-                                                <td style='height: 26px;' class='resultado'><input name='resultado[]'
-                                                        style='width: 80px;' required></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                                <div class="form-row mt-5" align="center" id="botonesDim">
-                                    <div class="col-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="button" value="Insertar fila" id="insertar"
-                                                class="btn alazea-btn mt-15">
-                                        </div>
                                     </div>
-                                    <button type="submit" class="btn alazea-btn mt-15" id="finalizar"
-                                        onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
-                                </div>
+                                    <div style="overflow-x: auto;" class="table-responsive" align="center">
+                                        <table class="table table-condensed table-bordered">
+                                            <thead class="colspanHead">
+                                                <tr style="text-align: center;">
+                                                    <th style="background-color: #f2f4f5;" colspan="7">DATOS DEL MATERIAL
+                                                    </th>
+                                                    <th style="background-color: #b85f1730;" colspan="5">DATOS DE LA
+                                                        DISCONTINUIDAD</th>
+                                                    <th style="background-color: #21abb630;" colspan="4">RESULTADOS DE LA
+                                                        INSPECCI&Oacute;N</th>
+                                                </tr>
+                                            </thead>
+                                            <thead class="dataHead">
+                                                <tr style="text-align: center;">
+                                                    <th style="background-color: #f2f4f5;">ID</th>
+                                                    <th style="background-color: #f2f4f5;">Elemento / Trazabilidad</th>
+                                                    <th style="background-color: #f2f4f5;">Di&aacute;metro IN</th>
+                                                    <th style="background-color: #f2f4f5;">No. Aceptaci&oacute;n</th>
+                                                    <th style="background-color: #f2f4f5;">No. Serie</th>
+                                                    <th style="background-color: #f2f4f5;">No. Colada</th>
+                                                    <th style="background-color: #f2f4f5;">Espesor nominal</th>
+                                                    <th style="background-color: #b85f1730;">No. De indicaci&oacute;n</th>
+                                                    <th style="background-color: #b85f1730;">Largo</th>
+                                                    <th style="background-color: #b85f1730;">Ancho</th>
+                                                    <th style="background-color: #b85f1730;">Desde "X"</th>
+                                                    <th style="background-color: #b85f1730;">Desde "Y"</th>
+                                                    <th style="background-color: #21abb630;">Espesor Maximo Detectado</th>
+                                                    <th style="background-color: #21abb630;">Espesor Minimo Detectado</th>
+                                                    <th style="background-color: #21abb630;">Area de Barrido</th>
+                                                    <th style="background-color: #21abb630;">Resultado</th>
+                                                </tr>
+                                            </thead>
 
-                                <div class="mt-5">
-                                    <div style="width: 391px;" class="alert alert-warning" role="alert">
-                                        <span class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</span>
-                                        <hr>
-                                        <ul>
-                                            <li>
-                                                <strong>CI:</strong> Corrosión Interna
-                                            </li>
-                                            <li class="mt-1">
-                                                <strong>I:</strong> Inclusión no Metálica
-                                            </li>
-                                            <li class="mt-1">
-                                                <strong>L:</strong> Laminación
-                                            </li>
-                                            <li class="mt-1">
-                                                <strong>ZI:</strong> Zona de Inclusiones no Metálicas
-                                            </li>
-                                            <li class="mt-1">
-                                                <strong>NPIR:</strong> No Presenta Indicaciones Relevantes
-                                            </li>
-                                            <li class="mt-1">
-                                                <strong>LE:</strong> Laminación Escalonada
-                                            </li>
-
-                                        </ul>
+                                            <tbody id="tablaReportes">
+                                                <tr>
+                                                    <td style='height: 26px;' class='id'><input name='id[]' style='width: 40px;' required></td>
+                                                    <td style='height: 26px;' class='elemento'><input name='elemento[]' required> </td>
+                                                    <td style='height: 26px;' class='diametro'><input name='diametro[]' style='width: 125px;' required></td>
+                                                    <td style='height: 26px;' class='noDeAceptacion'><input name='noDeAceptacion[]' style='width: 125px;' required></td>
+                                                    <td style='height: 26px;' class='noDeSerie'><input name='noDeSerie[]' style='width: 100px;' required></td>
+                                                    <td style='height: 26px;' class='noDeColada'><input name='noDeColada[]' style='width: 100px;' required></td>
+                                                    <td style='height: 26px;' class='espesorNominal'><input name='espesorNominal[]' style='width: 150px;' required></td>
+                                                    <td style='height: 26px;' class='indicacion'><input name='indicacion[]' style='width: 80px;' required></td>
+                                                    <td style='height: 26px;' class='largo'><input name='largo[]' style='width: 60px;' required></td>
+                                                    <td style='height: 26px;' class='ancho'><input name='ancho[]' style='width: 60px;' required></td>
+                                                    <td style='height: 26px;' class='desdeX'><input name='desdeX[]' style='width: 60px;' required></td>
+                                                    <td style='height: 26px;' class='desdeY'><input name='desdeY[]' style='width: 60px;' required></td>
+                                                    <td style='height: 26px;' class='espesorMax'><input name='espesorMax[]' style='width: 80px;' required></td>
+                                                    <td style='height: 26px;' class='espesorMin'><input name='espesorMin[]' style='width: 80px;' required></td>
+                                                    <td style='height: 26px;' class='areaBarrido'><input name='areaBarrido[]' style='width: 80px;' required></td>
+                                                    <td style='height: 26px;' class='resultado'><input name='resultado[]' style='width: 80px;' required></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div style="float:right;" class="mt-5 form-group col-md-4">
+                                        <label for="deMetros">Metros Lineales</label>
+                                        <input class="form-control" type="text" name="deMetros" value="N/A" >
                                     </div>
 
-                                </div>
-                                <fieldset class="mt-5 mb-5">
-                                    <legend align="center">FIRMAS</legend>
-                                    <div class="form-row">
-                                        <div class="col-12 col-sm-4">
+                                    <div class="form-row mt-5" align="center" id="botonesDim">
+                                        <div class="col-12 col-sm-6">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="deFirma1"
-                                                    value="<?php echo  $row->deFirma1; ?>" disabled>
-                                                <br>
-                                                <label>Nombre de la empresa</label>
-                                                <textarea class="form-control" type="text" name="deEmpresa1"
-                                                    style="resize:none;" rows="3"
-                                                    disabled><?php echo  $row->deEmpresa1; ?></textarea>
+                                                <input type="button" value="Insertar fila" id="insertar" class="btn alazea-btn mt-15">
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" name="deFirma2"
-                                                    value="<?php echo  $row->deFirma2; ?>" disabled>
-                                                <br>
-                                                <label>Nombre de la empresa</label>
-                                                <textarea class="form-control" type="text" name="deEmpresa2"
-                                                    style="resize:none;" rows="3"
-                                                    disabled><?php echo  $row->deEmpresa2; ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" name="deFirma3"
-                                                    value="<?php echo  $row->deFirma3; ?> " disabled>
-                                                <br>
-                                                <label>Nombre de la empresa</label>
-                                                <textarea class="form-control" type="text" name="deEmpresa3"
-                                                    style="resize:none;" rows="3"
-                                                    disabled><?php echo  $row->deEmpresa3; ?></textarea>
-                                            </div>
-                                        </div>
+                                        <button type="submit" class="btn alazea-btn mt-15" id="finalizar" onclick=this.form.action="formRegistroFotBT.php">Enviar</button>
                                     </div>
-                                    <!--form-row-->
-                                </fieldset>
 
-                            </div>
+                                    <div class="mt-5">
+                                        <div style="width: 391px;" class="alert alert-warning" role="alert">
+                                            <span class="alert-heading">NOMENCLARURA DE INDICACIONES O HALLAZGOS</span>
+                                            <hr>
+                                            <ul>
+                                                <li>
+                                                    <strong>CI:</strong> Corrosión Interna
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>I:</strong> Inclusión no Metálica
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>L:</strong> Laminación
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>ZI:</strong> Zona de Inclusiones no Metálicas
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>NPIR:</strong> No Presenta Indicaciones Relevantes
+                                                </li>
+                                                <li class="mt-1">
+                                                    <strong>LE:</strong> Laminación Escalonada
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <fieldset class="mt-5 mb-5">
+                                        <legend align="center">FIRMAS</legend>
+                                        <div class="form-row">
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma1" value="<?php echo  $row->deFirma1; ?>" disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa1" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa1; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma2" value="<?php echo  $row->deFirma2; ?>" disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa2" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa2; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="deFirma3" value="<?php echo  $row->deFirma3; ?> " disabled>
+                                                    <br>
+                                                    <label>Nombre de la empresa</label>
+                                                    <textarea class="form-control" type="text" name="deEmpresa3" style="resize:none;" rows="3" disabled><?php echo  $row->deEmpresa3; ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--form-row-->
+                                    </fieldset>
+
+                                </div>
                         </div>
                     </form>
                 </div>
@@ -639,7 +583,7 @@ if (isset($_SESSION['tecnico'])) {
                         <div class="copywrite-text">
                             <p>&copy;
                                 Copyright AICO - <script>
-                                document.write(new Date().getFullYear());
+                                    document.write(new Date().getFullYear());
                                 </script> Todos los derechos reservados</a>
                             </p>
                         </div>
