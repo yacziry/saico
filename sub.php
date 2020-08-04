@@ -2,7 +2,8 @@
 <?php
 
 $galletita = $_POST['galletita'];
-$cmd = "wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie PHPSESSID ".$galletita." -O landscape --dpi 55 --footer-center [page]/[topage] http://localhost:8080/saico/formBocaTuboMostrar.php ./tmp/ReporteBocaTubo.pdf";
+$link = $_POST['link'];
+$cmd = "wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie PHPSESSID ".$galletita." -O landscape --dpi 55 --footer-center [page]/[topage] ".$link." ./tmp/ReporteBocaTubo.pdf";
 $output = system($cmd);
 
 $filename = "./tmp/ReporteBocaTubo.pdf";
