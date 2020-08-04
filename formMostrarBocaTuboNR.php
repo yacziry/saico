@@ -16,6 +16,7 @@ if (isset($_SESSION['tecnico'])) {
 }
 ?>
 <?php
+$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 require 'bocaTuboDAO.php';
 $bdt = new bocaDeTubo();
 //$forReportes = $bdt->buscarReporte("tt");
@@ -164,28 +165,28 @@ foreach ($forReportes as $row) {
 						</thead>
 						<tbody>
 							<tr style="height: 27px;">
-								<td style="background-color: darkgray;  height: 27px; ">MARCA:</td>
+								<td style="background-color: darkgray;  height: 27px; text-align: center;">MARCA:</td>
 								<td style="width: 297px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center" value="<?php echo $row->deMarca; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">MARCA:</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">MARCA:</td>
 								<td style="width: 490px; height: 27px; text-align: center;" colspan="3"><input class="sinborde" style="text-align: center" type="text" value="<?php echo $row->deMarca2; ?>"></td>
 								<th style="background-color: darkgray; height: 27px; text-align: center;" colspan="2">BLOQUE</th>
 							</tr>
 							<tr style="height: 27px; ">
-								<td style="background-color: darkgray; height: 27px;">MODELO:</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">MODELO:</td>
 								<td style="width: 297px; height: 27px; text-align: center; "><input class="sinborde" style="text-align: center;" type="text" value="<?php echo $row->deModelo; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">MODELO:</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">MODELO:</td>
 								<td style="width: 490px; height: 27px; text-align: center;" colspan="3"><input class="sinborde" style="text-align: center;" type="text" value="<?php echo $row->deModelo2; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">TIPO:</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">TIPO:</td>
 								<td style="width: 327px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deTipo; ?>"></td>
 							</tr>
 							<tr style="height: 27px;">
-								<td style="background-color: darkgray; height: 27px;">N.S.</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">N.S.</td>
 								<td style="width: 297px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deNs; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">N.S.</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">N.S.</td>
 								<td style="width: 190px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deNs2; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">FREC:</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">FREC:</td>
 								<td style="width: 227px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deFrec; ?>"></td>
-								<td style="background-color: darkgray; height: 27px;">N.S.</td>
+								<td style="background-color: darkgray; height: 27px; text-align: center;">N.S.</td>
 								<td style="width: 327px; height: 27px; text-align: center;"><input class="sinborde" type="text" style="text-align: center;" value="<?php echo $row->deNs3; ?>"></td>
 							</tr>
 						</tbody>
@@ -422,9 +423,9 @@ foreach ($forReportes as $row) {
 		}
 			?>
 			<form class="float" action="./sub.php" method="post" accept-charset="utf-8">
-				<input type="text" name="fileName" id="fileName" value='formMostrarBocaTuboNR.php'>
-				<input type="text" name="galletita" value="<?php echo $galletita ?>">
-				<input type="submit" value="Decargar PDF">
+				<input style="display: none;" type="text" name="link" value="<?php echo $link ?>">
+				<input style="display: none;" type="text" name="galletita" value="<?php echo $galletita ?>">
+				<input type="image" src="./img/pdf.png" alt="Decargar PDF" width="48" height="48">
 			</form>
 
 			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
