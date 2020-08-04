@@ -2,11 +2,10 @@
 <?php
 
 $galletita = $_POST['galletita'];
+$cmd = "wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie PHPSESSID ".$galletita." -O landscape --dpi 55 --footer-center [page]/[topage] http://localhost:8080/saico/formBocaTuboMostrar.php ./tmp/ReporteBocaTubo.pdf";
+$output = system($cmd);
 
-$cmd = "wkhtmltopdf --margin-top 10 --margin-bottom 10 --margin-left 30 --margin-right 30 --cookie 'PHPSESSID' '" . $galletita . "'   -O landscape --dpi 55 --footer-center [page]/[topage] 'http://localhost/saico/formBocaTuboMostrar.php' 'E:\Users\david\Downloads\SAICO\ReporteBocaTubo.pdf'";
-$output = shell_exec($cmd);
-
-$filename = "E:\Users\david\Downloads\SAICO\ReporteBocaTubo.pdf";
+$filename = "./tmp/ReporteBocaTubo.pdf";
 
 if(file_exists($filename)){
 

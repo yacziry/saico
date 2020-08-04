@@ -9,7 +9,6 @@ session_start();
 if (isset($_SESSION['tecnico'])) {
 	$tec = $_SESSION['tecnico'];
 	$clNumReporte = $_SESSION['clNumReporte'];
-	$sessionID = !isset($_SESSION['tecnico']) ? $_COOKIE['tecnico'] : $_SESSION['tecnico'];
 	$galletita = $_COOKIE['PHPSESSID'];
 } else {
 	header("location:notFound.html");
